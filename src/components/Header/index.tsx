@@ -1,9 +1,12 @@
+import { NavLink } from '../NavLink';
 import { Container } from './styles';
 
 export function Header() {
   return (
     <Container>
-      <h1>Header</h1>
+      <ul>
+        <NavLink title="Home" path="/" />
+      </ul>
     </Container>
   );
 }
