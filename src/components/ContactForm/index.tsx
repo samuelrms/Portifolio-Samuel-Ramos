@@ -1,3 +1,4 @@
+import { Form } from '../Form';
 import { SectionTitle } from '../SectionTitle';
 import { Container } from './styles';
 
@@ -15,5 +16,6 @@ export const ContactForm = () => (
         </>
       }
     />
+    <Form />
   </Container>
 );
