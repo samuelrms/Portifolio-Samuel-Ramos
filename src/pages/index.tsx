@@ -1,4 +1,4 @@
-import { Experiences, Header, HeroHome } from '../components';
+import { Experiences, Header, HeroHome, Projects } from '../components';
 import { HomeContainer } from '../styles/HomeStyles';
 
 export default function Home() {
@@ -8,6 +8,7 @@ export default function Home() {
       <main className="container">
         <HeroHome />
         <Experiences />
+        <Projects />
       </main>
     </HomeContainer>
   );
