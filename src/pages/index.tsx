@@ -1,4 +1,10 @@
-import { Experiences, Header, HeroHome, Projects } from '../components';
+import {
+  Experiences,
+  Guideline,
+  Header,
+  HeroHome,
+  Projects
+} from '../components';
 import { HomeContainer } from '../styles/HomeStyles';
 
 export default function Home() {
@@ -9,6 +15,7 @@ export default function Home() {
         <HeroHome />
         <Experiences />
         <Projects />
+        <Guideline />
       </main>
     </HomeContainer>
   );
