@@ -12,10 +12,16 @@ export default function Projeto() {
       />
       <main>
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo
-          quasi accusantium totam blanditiis harum adipisci rerum atque neque
-          sed, repellat aspernatur perspiciatis illo cum voluptas sequi rem
-          praesentium maiores error!
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ad incidunt
+          reprehenderit repellendus dignissimos quo nisi quis voluptate ipsam
+          impedit. Doloremque corrupti excepturi repellendus? A, quibusdam.
+          Ipsam illum reprehenderit, vitae explicabo expedita quo id laudantium
+          deleniti nulla eligendi natus temporibus minus doloremque quasi porro
+          delectus soluta, possimus quis excepturi aut. Aperiam aspernatur
+          possimus ipsum corporis qui, tempora blanditiis. Animi voluptatibus
+          incidunt culpa molestiae voluptatem, ex repudiandae? Ducimus,
+          obcaecati libero autem quod culpa doloribus harum illum ipsum nemo
+          unde debitis veniam ut.
         </p>
         <button type="button">
           <a href="#">Ver projeto online</a>
