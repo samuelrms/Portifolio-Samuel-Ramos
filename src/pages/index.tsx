@@ -1,4 +1,4 @@
-import { Header, HeroHome } from '../components';
+import { Experiences, Header, HeroHome } from '../components';
 import { HomeContainer } from '../styles/HomeStyles';
 
 export default function Home() {
@@ -7,6 +7,7 @@ export default function Home() {
       <Header />
       <main className="container">
         <HeroHome />
+        <Experiences />
       </main>
     </HomeContainer>
   );
