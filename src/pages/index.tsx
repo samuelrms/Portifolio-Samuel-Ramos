@@ -1,4 +1,5 @@
 import {
+  ContactForm,
   Experiences,
   Guideline,
   Header,
@@ -16,6 +17,7 @@ export default function Home() {
         <Experiences />
         <Projects />
         <Guideline />
+        <ContactForm />
       </main>
     </HomeContainer>
   );
