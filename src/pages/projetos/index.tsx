@@ -9,7 +9,7 @@ export default function Projetos() {
         <ProjectDetails
           title="Projeto 01"
           type="Website"
-          slug="test"
+          slug="projeto"
           imgURL="https://images.unsplash.com/photo-1517433456452-f9633a875f6f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1032&q=80"
         />
         <ProjectDetails
