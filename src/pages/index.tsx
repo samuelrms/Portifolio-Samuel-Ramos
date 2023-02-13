@@ -1,6 +1,7 @@
 import {
   ContactForm,
   Experiences,
+  Footer,
   Guideline,
   Header,
   HeroHome,
@@ -19,6 +20,7 @@ export default function Home() {
         <Guideline />
         <ContactForm />
       </main>
+      <Footer />
     </HomeContainer>
   );
 }
