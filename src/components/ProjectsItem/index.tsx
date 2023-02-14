@@ -5,7 +5,7 @@ import { Props } from './ProjectsItem.types';
 import { Container } from './styles';
 
 export const ProjectsItem: FC<Props> = ({ imgURL, slug, title, type }) => (
-  <Container imgURL={imgURL}>
+  <Container imgURL={imgURL} data-aos="fade-up">
     <section>
       <div className="overlay" />
       <div className="text">

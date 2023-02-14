@@ -3,7 +3,7 @@ import { CodeItem, Container } from './styles';
 
 export const InfosContainer = () => (
   <Container>
-    <CodeItem>
+    <CodeItem data-aos="zoom-in">
       <span className="comment">//Minha apresentação</span>
       <span className="purple">Infos</span>
       {/* Utilização de unicode para chaves abrindo */}
@@ -17,7 +17,7 @@ export const InfosContainer = () => (
       {/* Utilização de unicode para chaves abrindo */}
       {'\u007D'}
     </CodeItem>
-    <CodeItem>
+    <CodeItem data-aos="zoom-in">
       <span className="purple">Area</span>
       {/* Utilização de unicode para chaves abrindo */}
       {'\u007b'}

@@ -3,7 +3,7 @@ import picture from '../../assets/samuel-rms.png';
 import { InfosContainer } from '../InfosContainer';
 
 export const HeroHome = () => (
-  <Container>
+  <Container data-aos="fade-up">
     <img src={picture} alt="Foto de Samuel Ramos" />
     <div>
       <TextContainer>

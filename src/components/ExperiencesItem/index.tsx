@@ -3,7 +3,7 @@ import { Props } from './ExperiencesItem.types';
 import { Container } from './styles';
 
 export const ExperiencesItem: FC<Props> = ({ description, title, year }) => (
-  <Container>
+  <Container data-aos="fade-up">
     <div>
       <h1>{year}</h1>
       <h2>{title}</h2>
