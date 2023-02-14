@@ -2,6 +2,7 @@ import { ThemeProvider } from 'styled-components';
 import { useEffect } from 'react';
 import Aos from 'aos';
 import 'aos/dist/aos.css';
+import NextNProgress from 'nextjs-progressbar';
 
 import GlobalStyles from '../styles/global';
 import theme from '../styles/theme';
@@ -13,6 +14,13 @@ function MyApp({ Component, pageProps }) {
 
   return (
     <ThemeProvider theme={theme}>
+      <NextNProgress
+        color={theme.primary}
+        startPosition={0.3}
+        stopDelayMs={200}
+        height={6}
+        showOnShallow
+      />
       <Component {...pageProps} />
       <GlobalStyles />
     </ThemeProvider>
