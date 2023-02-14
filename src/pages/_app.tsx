@@ -1,6 +1,7 @@
 import { ThemeProvider } from 'styled-components';
 import { useEffect } from 'react';
 import Aos from 'aos';
+import 'aos/dist/aos.css';
 
 import GlobalStyles from '../styles/global';
 import theme from '../styles/theme';
