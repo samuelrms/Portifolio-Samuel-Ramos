@@ -1,5 +1,6 @@
 import { GetStaticProps } from 'next';
 import Prismic from '@prismicio/client';
+import Head from 'next/head';
 
 import {
   ContactForm,
@@ -18,6 +19,21 @@ import { PropsProjectArr } from '../types';
 export default function Home({ projects }: PropsProjectArr) {
   return (
     <HomeContainer>
+      <Head>
+        <title>Home | Portifólio Samuel Ramos</title>
+        <meta
+          name="description"
+          content="Sou um dev Front-end e aqui apresento alguns projetos desenvolvidos por mim, tecnologias que utilizo e outros..."
+        />
+        <meta property="og:image" content="/ogimage.png" />
+        <meta property="og:image:secure_url" content="/ogimage.png" />
+        <meta property="instagram:image" content="/ogimage.png" />
+        <meta property="instagram:image:src" content="/ogimage.png" />
+        <meta
+          property="og:description"
+          content="Sou um dev Front-end e aqui apresento alguns projetos desenvolvidos por mim, tecnologias que utilizo e outros..."
+        />
+      </Head>
       <Header />
       <main className="container">
         <HeroHome />

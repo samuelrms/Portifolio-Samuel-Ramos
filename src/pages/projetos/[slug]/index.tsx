@@ -1,5 +1,6 @@
 import { GetStaticPaths, GetStaticProps } from 'next';
 import Prismic from '@prismicio/client';
+import Head from 'next/head';
 
 import { Header, LoadScreen, Thumb } from '../../../components';
 import { day } from '../../../constants';
@@ -17,6 +18,15 @@ export default function Projeto({ project }: ProjectUID) {
 
   return (
     <Container>
+      <Head>
+        <title>{project.title} | Portifólio Samuel Ramos</title>
+        <meta name="description" content={project.description} />
+        <meta property="og:image" content={project.thumb} />
+        <meta property="og:image:secure_url" content={project.thumb} />
+        <meta property="instagram:image" content={project.thumb} />
+        <meta property="instagram:image:src" content={project.thumb} />
+        <meta property="og:description" content={project.description} />
+      </Head>
       <Header />
       <Thumb title={project.title} type={project.type} imgURL={project.thumb} />
       <main>

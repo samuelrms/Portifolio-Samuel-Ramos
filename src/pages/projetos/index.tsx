@@ -1,5 +1,6 @@
 import { GetStaticProps } from 'next';
 import Prismic from '@prismicio/client';
+import Head from 'next/head';
 
 import { Header, ProjectDetails } from '../../components';
 import { getPrismicClient } from '../../services/prismic';
@@ -10,6 +11,21 @@ import { PropsProjectArr } from '../../types';
 export default function Projetos({ projects }: PropsProjectArr) {
   return (
     <Container>
+      <Head>
+        <title>Projetos | Portifólio Samuel Ramos</title>
+        <meta
+          name="description"
+          content="Aqui se encontram projetos desenvolvidos por mim!"
+        />
+        <meta property="og:image" content="/ogimage.png" />
+        <meta property="og:image:secure_url" content="/ogimage.png" />
+        <meta property="instagram:image" content="/ogimage.png" />
+        <meta property="instagram:image:src" content="/ogimage.png" />
+        <meta
+          property="og:description"
+          content="Aqui se encontram projetos desenvolvidos por mim"
+        />
+      </Head>
       <Header />
       <main className="container">
         {projects.map(data => (
