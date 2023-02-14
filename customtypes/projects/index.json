@@ -1,0 +1,54 @@
+{
+  "id": "projects",
+  "label": "projects",
+  "repeatable": true,
+  "status": true,
+  "json": {
+    "Main": {
+      "uid": {
+        "type": "UID",
+        "config": {
+          "label": "Slug",
+          "placeholder": ""
+        }
+      },
+      "title": {
+        "type": "Text",
+        "config": {
+          "label": "Title",
+          "placeholder": ""
+        }
+      },
+      "description": {
+        "type": "Text",
+        "config": {
+          "label": "Description",
+          "placeholder": ""
+        }
+      },
+      "type": {
+        "type": "Text",
+        "config": {
+          "label": "type",
+          "placeholder": ""
+        }
+      },
+      "project_link": {
+        "type": "Link",
+        "config": {
+          "label": "Project Link",
+          "placeholder": "",
+          "select": null
+        }
+      },
+      "thumb": {
+        "type": "Image",
+        "config": {
+          "label": "Thumb",
+          "constraint": {},
+          "thumbnails": []
+        }
+      }
+    }
+  }
+}
