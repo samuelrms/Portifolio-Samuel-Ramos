@@ -5,8 +5,6 @@ import { SectionTitle } from '../SectionTitle';
 import { Container } from './styles';
 
 export const Projects = ({ projects }: PropsProjectArr) => {
-  console.log(projects);
-
   return (
     <Container>
       <SectionTitle title="Últimos Projetos" />
