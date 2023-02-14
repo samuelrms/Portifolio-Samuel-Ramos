@@ -7,3 +7,4 @@ export * from './ContactForm';
 export * from './Footer';
 export * from './ProjectDetails';
 export * from './Thumb';
+export * from './LoadScreen';
