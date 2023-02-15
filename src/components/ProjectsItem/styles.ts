@@ -63,7 +63,7 @@ export const Container = styled.div<Partial<Props>>`
       top: 3rem;
       right: -10rem;
       transition: 0.5s;
-      width: fit-content;
+      width: 100%;
 
       h1 {
         color: ${({ theme }) => theme.primary};

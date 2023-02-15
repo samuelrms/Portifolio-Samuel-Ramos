@@ -13,7 +13,7 @@ export const CodeItem = styled.pre`
   font-family: 'JetBrains Mono', monospace;
   font-weight: 300;
   color: #fff;
-  width: 24rem;
+  width: 30rem;
   align-self: flex-start;
   transition: 1s !important;
 
@@ -27,6 +27,10 @@ export const CodeItem = styled.pre`
     width: 100%;
   }
 
+  @media (max-width: 425px) {
+    padding: 1rem;
+  }
+
   &:hover {
     filter: brightness(1.2);
   }
@@ -38,6 +42,11 @@ export const CodeItem = styled.pre`
   > div {
     margin: 0.2rem 0;
     margin-left: 1rem;
+
+    @media (max-width: 425px) {
+      display: flex;
+      flex-wrap: wrap;
+    }
   }
 
   span.purple {
