@@ -1,13 +1,13 @@
 import { GetStaticPaths, GetStaticProps } from 'next';
 import Prismic from '@prismicio/client';
 import Head from 'next/head';
+import { useRouter } from 'next/router';
 
 import { Header, LoadScreen, Thumb } from '../../../components';
 import { day } from '../../../constants';
 import { getPrismicClient } from '../../../services/prismic';
 import { Container } from '../../../styles/ProjectDynamicStyles';
 import { ProjectUID } from '../../../types';
-import { useRouter } from 'next/router';
 
 export default function Projeto({ project }: ProjectUID) {
   const router = useRouter();

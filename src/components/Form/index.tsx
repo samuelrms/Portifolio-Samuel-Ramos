@@ -35,10 +35,7 @@ export const Form = () => {
       setLoading(true);
       emailjs
         .sendForm('gmail', 'contact-portifolio', e.target, 'aQZ_-tHoFflFCvWRE')
-        .then(
-          () => {},
-          error => console.log(error.text)
-        );
+        .then();
       setName('');
       setEmail('');
       setMensagem('');
