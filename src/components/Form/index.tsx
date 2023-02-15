@@ -85,7 +85,7 @@ export const Form = () => {
       />
       <TextArea
         placeholder="Mensagem"
-        name="content"
+        name="massage"
         value={mensagem}
         onChange={({ target }) => setMensagem(target.value)}
       />
