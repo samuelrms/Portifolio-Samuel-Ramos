@@ -11,7 +11,7 @@ export const Container = styled.header`
   background-color: rgba(122, 199, 227, 0);
   border: 0 0 1px solid ${({ theme }) => theme.secondary};
   position: fixed;
-  z-index: 2;
+  z-index: 99;
 
   ul {
     display: flex;
