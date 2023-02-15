@@ -148,6 +148,12 @@ export const Container = styled.div<Partial<Props>>`
           left: 1rem;
         }
       }
+
+      @media (max-width: 450px) {
+        > section > div.text {
+          left: 0.5rem;
+        }
+      }
     }
   }
 
@@ -166,6 +172,8 @@ export const Container = styled.div<Partial<Props>>`
     }
 
     > section > div.text {
+      left: 0.5rem;
+
       h1 {
         font-size: 1.5rem;
       }
