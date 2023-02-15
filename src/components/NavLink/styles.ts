@@ -6,14 +6,14 @@ export const NavLinkContainer = styled.li<NavLinkProps>`
   a {
     text-transform: uppercase;
     color: ${props =>
-      props.isActive ? props.theme.primary : props.theme.textHighlight};
+      props.isActive ? props.theme.primary : props.theme.secondary};
     transition: 0.5s;
 
     &:hover {
       color: ${props =>
         props.isActive
           ? lighten(0.2, props.theme.primary)
-          : lighten(0.2, props.theme.textHighlight)};
+          : lighten(0.2, props.theme.secondary)};
     }
   }
 `;
