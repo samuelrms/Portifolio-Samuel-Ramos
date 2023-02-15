@@ -1,12 +1,11 @@
 import { GetStaticProps } from 'next';
-import Prismic from '@prismicio/client';
 import Head from 'next/head';
 
 import { Header, ProjectDetails } from '../../components';
-import { getPrismicClient } from '../../services/prismic';
 import { Container } from '../../styles/ProjectsStyles';
-import { day } from '../../constants';
+import { hour } from '../../constants';
 import { PropsProjectArr } from '../../types';
+import { projectResponse } from '../../utils/getQueryPrismic';
 
 export default function Projetos({ projects }: PropsProjectArr) {
   return (
@@ -43,14 +42,7 @@ export default function Projetos({ projects }: PropsProjectArr) {
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const prismic = getPrismicClient();
-
-  const projectResponse = await prismic.query(
-    [Prismic.Predicates.at('document.type', 'projects')],
-    { orderings: '[document.first_publication_data desc]' }
-  );
-
-  const projects = projectResponse.results.map(project => ({
+  const projects = (await projectResponse('projects')).results.map(project => ({
     slug: project.uid,
     title: project.data.title,
     type: project.data.type,
@@ -63,6 +55,6 @@ export const getStaticProps: GetStaticProps = async () => {
     props: {
       projects
     },
-    revalidate: day
+    revalidate: hour
   };
 };

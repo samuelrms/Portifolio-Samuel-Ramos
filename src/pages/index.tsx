@@ -11,7 +11,7 @@ import {
   Projects
 } from '../components';
 import { HomeContainer } from '../styles/HomeStyles';
-import { day } from '../constants';
+import { hour } from '../constants';
 import { PropsHome } from '../types';
 import { projectResponse } from '../utils/getQueryPrismic';
 
@@ -71,6 +71,6 @@ export const getStaticProps: GetStaticProps = async () => {
       projects,
       homeHero
     },
-    revalidate: day
+    revalidate: hour
   };
 };
