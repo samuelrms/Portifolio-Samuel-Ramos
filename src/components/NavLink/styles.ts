@@ -8,6 +8,7 @@ export const NavLinkContainer = styled.li<NavLinkProps>`
     color: ${props =>
       props.isActive ? props.theme.primary : props.theme.secondary};
     transition: 0.5s;
+    font-weight: 700;
 
     &:hover {
       color: ${props =>
