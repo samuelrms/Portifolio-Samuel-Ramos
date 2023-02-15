@@ -15,7 +15,7 @@ import { hour } from '../constants';
 import { PropsHome } from '../types';
 import { projectResponse } from '../utils/getQueryPrismic';
 
-export default function Home({ projects, homeHero }: PropsHome) {
+export default function Home({ projects, homeHero, experience }: PropsHome) {
   return (
     <HomeContainer>
       <Head>
@@ -36,7 +36,7 @@ export default function Home({ projects, homeHero }: PropsHome) {
       <Header />
       <main className="container">
         <HeroHome data={homeHero} />
-        <Experiences />
+        <Experiences experience={experience} />
         <Projects projects={projects} />
         <Guideline />
         <ContactForm />
@@ -66,10 +66,15 @@ export const getStaticProps: GetStaticProps = async () => {
     })
   );
 
+  const experience = (await projectResponse('experience')).results.map(
+    ({ data }) => data
+  );
+
   return {
     props: {
       projects,
-      homeHero
+      homeHero,
+      experience
     },
     revalidate: hour
   };

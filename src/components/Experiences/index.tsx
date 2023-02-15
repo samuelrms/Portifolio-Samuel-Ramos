@@ -1,31 +1,34 @@
+import { FC } from 'react';
+import { WorkExperience } from '../../types';
 import { ExperiencesItem } from '../ExperiencesItem';
 import { SectionTitle } from '../SectionTitle';
+import { Props } from './Experiences.types';
 import { Container } from './styles';
 
-export const Experiences = () => (
-  <Container>
-    <SectionTitle title="01 Ano" description="de experiência" />
-    <section>
-      <ExperiencesItem
-        year={2021}
-        description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum voluptatum similique saepe ut ratione cumque obcaecati."
-        title="Dev Front-end"
-      />
-      <ExperiencesItem
-        year={2021}
-        description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum voluptatum similique saepe ut ratione cumque obcaecati."
-        title="Dev Front-end"
-      />
-      <ExperiencesItem
-        year={2021}
-        description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum voluptatum similique saepe ut ratione cumque obcaecati."
-        title="Dev Front-end"
-      />
-      <ExperiencesItem
-        year={2021}
-        description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum voluptatum similique saepe ut ratione cumque obcaecati."
-        title="Dev Front-end"
-      />
-    </section>
-  </Container>
-);
+export const Experiences: FC<Props> = ({ experience }) => {
+  const data = experience[0];
+
+  return (
+    <Container>
+      <SectionTitle title={data.title} description={data.subtitle} />
+      <section>
+        {data.work_experience.map(
+          ({
+            description_function,
+            entry_year,
+            exit_year,
+            function: title
+          }: WorkExperience) => (
+            <ExperiencesItem
+              key={exit_year}
+              yearEntry={entry_year}
+              yearExit={exit_year}
+              description={description_function}
+              title={title}
+            />
+          )
+        )}
+      </section>
+    </Container>
+  );
+};

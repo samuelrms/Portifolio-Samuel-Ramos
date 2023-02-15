@@ -1,3 +1,5 @@
+export type Year = number | string;
+
 export interface ProjectProps {
   slug: string;
   title: string;
@@ -36,6 +38,19 @@ export interface HomeHero {
   presentation_skills: PresentationSkills[];
 }
 
+export interface WorkExperience {
+  entry_year: Year;
+  exit_year: Year;
+  function: string;
+  description_function: string;
+}
+
+export interface Experience {
+  title: string;
+  subtitle: string;
+  work_experience: WorkExperience[];
+}
+
 export interface PropsProjectArr {
   projects: ProjectProps[];
 }
@@ -47,4 +62,5 @@ export interface ProjectUID {
 export interface PropsHome {
   projects: ProjectProps[];
   homeHero: HomeHero;
+  experience: Experience;
 }

@@ -1,5 +1,8 @@
+import { Year } from '../../types';
+
 export interface Props {
-  year: number;
+  yearEntry: Year;
+  yearExit: Year;
   title: string;
   description: string;
 }

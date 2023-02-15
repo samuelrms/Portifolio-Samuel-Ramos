@@ -6,6 +6,98 @@ import type * as prismic from "@prismicio/client";
 type Simplify<T> = {
     [KeyType in keyof T]: T[KeyType];
 };
+/** Content for experience documents */
+interface ExperienceDocumentData {
+    /**
+     * title field in *experience*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: experience.title
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    title: prismicT.KeyTextField;
+    /**
+     * subtitle field in *experience*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: experience.subtitle
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    subtitle: prismicT.KeyTextField;
+    /**
+     * work_experience field in *experience*
+     *
+     * - **Field Type**: Group
+     * - **Placeholder**: *None*
+     * - **API ID Path**: experience.work_experience[]
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/group
+     *
+     */
+    work_experience: prismicT.GroupField<Simplify<ExperienceDocumentDataWorkExperienceItem>>;
+}
+/**
+ * Item in experience → work_experience
+ *
+ */
+export interface ExperienceDocumentDataWorkExperienceItem {
+    /**
+     * entry_year field in *experience → work_experience*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: experience.work_experience[].entry_year
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    entry_year: prismicT.KeyTextField;
+    /**
+     * exit_year field in *experience → work_experience*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: experience.work_experience[].exit_year
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    exit_year: prismicT.KeyTextField;
+    /**
+     * function field in *experience → work_experience*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: experience.work_experience[].function
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    function: prismicT.KeyTextField;
+    /**
+     * description_function field in *experience → work_experience*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: experience.work_experience[].description_function
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    description_function: prismicT.KeyTextField;
+}
+/**
+ * experience document from Prismic
+ *
+ * - **API ID**: `experience`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type ExperienceDocument<Lang extends string = string> = prismicT.PrismicDocumentWithUID<Simplify<ExperienceDocumentData>, "experience", Lang>;
 /** Content for home_hero documents */
 interface HomeHeroDocumentData {
     /**
@@ -304,12 +396,12 @@ interface ProjectsDocumentData {
  * @typeParam Lang - Language API ID of the document.
  */
 export type ProjectsDocument<Lang extends string = string> = prismicT.PrismicDocumentWithUID<Simplify<ProjectsDocumentData>, "projects", Lang>;
-export type AllDocumentTypes = HomeHeroDocument | ProjectsDocument;
+export type AllDocumentTypes = ExperienceDocument | HomeHeroDocument | ProjectsDocument;
 declare module "@prismicio/client" {
     interface CreateClient {
         (repositoryNameOrEndpoint: string, options?: prismic.ClientConfig): prismic.Client<AllDocumentTypes>;
     }
     namespace Content {
-        export type { HomeHeroDocumentData, HomeHeroDocumentDataPresentationAreaItem, HomeHeroDocumentDataPresentationSkillsItem, HomeHeroDocument, ProjectsDocumentData, ProjectsDocument, AllDocumentTypes };
+        export type { ExperienceDocumentData, ExperienceDocumentDataWorkExperienceItem, ExperienceDocument, HomeHeroDocumentData, HomeHeroDocumentDataPresentationAreaItem, HomeHeroDocumentDataPresentationSkillsItem, HomeHeroDocument, ProjectsDocumentData, ProjectsDocument, AllDocumentTypes };
     }
 }

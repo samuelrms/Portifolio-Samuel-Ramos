@@ -1,0 +1,58 @@
+{
+  "uid": {
+    "__TYPE__": "UIDContent",
+    "value": "machine"
+  },
+  "title": {
+    "__TYPE__": "FieldContent",
+    "value": "sang",
+    "type": "Text"
+  },
+  "subtitle": {
+    "__TYPE__": "FieldContent",
+    "value": "leaf",
+    "type": "Text"
+  },
+  "work_experience": {
+    "__TYPE__": "GroupContentType",
+    "value": [
+      {
+        "__TYPE__": "GroupItemContent",
+        "value": [
+          [
+            "entry_year",
+            {
+              "__TYPE__": "FieldContent",
+              "value": "rain",
+              "type": "Text"
+            }
+          ],
+          [
+            "exit_year",
+            {
+              "__TYPE__": "FieldContent",
+              "value": "collect",
+              "type": "Text"
+            }
+          ],
+          [
+            "function",
+            {
+              "__TYPE__": "FieldContent",
+              "value": "drop",
+              "type": "Text"
+            }
+          ],
+          [
+            "description_function",
+            {
+              "__TYPE__": "FieldContent",
+              "value": "now",
+              "type": "Text"
+            }
+          ]
+        ]
+      }
+    ]
+  }
+}
