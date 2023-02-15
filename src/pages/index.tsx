@@ -1,5 +1,4 @@
 import { GetStaticProps } from 'next';
-import Prismic from '@prismicio/client';
 import Head from 'next/head';
 
 import {
@@ -11,12 +10,12 @@ import {
   HeroHome,
   Projects
 } from '../components';
-import { getPrismicClient } from '../services/prismic';
 import { HomeContainer } from '../styles/HomeStyles';
 import { day } from '../constants';
-import { PropsProjectArr } from '../types';
+import { PropsHome } from '../types';
+import { projectResponse } from '../utils/getQueryPrismic';
 
-export default function Home({ projects }: PropsProjectArr) {
+export default function Home({ projects, homeHero }: PropsHome) {
   return (
     <HomeContainer>
       <Head>
@@ -36,7 +35,7 @@ export default function Home({ projects }: PropsProjectArr) {
       </Head>
       <Header />
       <main className="container">
-        <HeroHome />
+        <HeroHome data={homeHero} />
         <Experiences />
         <Projects projects={projects} />
         <Guideline />
@@ -48,14 +47,7 @@ export default function Home({ projects }: PropsProjectArr) {
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const prismic = getPrismicClient();
-
-  const projectResponse = await prismic.query(
-    [Prismic.Predicates.at('document.type', 'projects')],
-    { orderings: '[document.first_publication_data desc]' }
-  );
-
-  const projects = projectResponse.results.map(project => ({
+  const projects = (await projectResponse('projects')).results.map(project => ({
     slug: project.uid,
     title: project.data.title,
     type: project.data.type,
@@ -64,9 +56,20 @@ export const getStaticProps: GetStaticProps = async () => {
     thumb: project.data.thumb.url
   }));
 
+  const homeHero = (await projectResponse('home_hero')).results.map(
+    ({ data }) => ({
+      img: data.photo.url,
+      title: data.title,
+      subtitle: data.subtitle,
+      presentation_area: data.presentation_area,
+      presentation_skills: data.presentation_skills
+    })
+  );
+
   return {
     props: {
-      projects
+      projects,
+      homeHero
     },
     revalidate: day
   };

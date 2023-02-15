@@ -10,7 +10,9 @@
   },
   "dependencies": {
     "@prismicio/client": "5.1.0",
+    "@prismicio/custom-types-client": "^1.0.2",
     "@prismicio/helpers": "^2.3.9",
+    "@prismicio/next": "^1.0.2",
     "@prismicio/react": "^2.5.1",
     "@prismicio/slice-simulator-react": "^0.2.3",
     "aos": "^2.3.4",

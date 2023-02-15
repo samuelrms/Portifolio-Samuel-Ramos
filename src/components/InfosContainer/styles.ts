@@ -13,17 +13,16 @@ export const CodeItem = styled.pre`
   font-family: 'JetBrains Mono', monospace;
   font-weight: 300;
   color: #fff;
-  width: 24rem;
+  width: 33rem;
   align-self: flex-start;
   transition: 1s !important;
 
   @media (max-width: 1450px) {
-    width: 18rem;
     padding: 1.5rem;
     font-size: 0.8rem;
   }
 
-  @media (max-width: 100px) {
+  @media (max-width: 1000px) {
     width: 100%;
   }
 

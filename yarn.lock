@@ -440,6 +440,13 @@
   resolved "https://registry.yarnpkg.com/@prismicio/custom-types-client/-/custom-types-client-0.0.7.tgz#f55ee5f1d5f9e1307ed2ecca6a5e47dff1ecb91a"
   integrity sha512-pf0rG1rwKAEQ5WeGTG4vyxzW6FFG2iySgrGCAbil5XvHTajwJ1qdG53h0bU71AQRXZmL7b48YFdI7DQcy5ASFw==
 
+"@prismicio/custom-types-client@^1.0.2":
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/@prismicio/custom-types-client/-/custom-types-client-1.0.2.tgz#5b087e27cb40ada7aa3f157764f72ce9d7fca2b5"
+  integrity sha512-GoVRf9RMlfdcgVpkm9YrMCt7/8Bku9YVcBo2RyiJI6vR/EZKxCg3/pN+/VuXysgaD0hzYHZOn/aDI0wBiPV7fg==
+  dependencies:
+    "@prismicio/types" "^0.2.4"
+
 "@prismicio/editor-fields@^0.1.0":
   version "0.1.0"
   resolved "https://registry.yarnpkg.com/@prismicio/editor-fields/-/editor-fields-0.1.0.tgz#30d88aa6f7ab886797772ce43b2a971cb175fd6d"
@@ -507,7 +514,7 @@
     react-easy-crop "4.6.1"
     tslib "2.4.0"
 
-"@prismicio/helpers@^2.3.8", "@prismicio/helpers@^2.3.9":
+"@prismicio/helpers@^2.3.5", "@prismicio/helpers@^2.3.8", "@prismicio/helpers@^2.3.9":
   version "2.3.9"
   resolved "https://registry.yarnpkg.com/@prismicio/helpers/-/helpers-2.3.9.tgz#dd2513a429644ed2d7a6fbc8955de6b2e9659fc0"
   integrity sha512-p7Y1sG83A2YPZvptfAzuZA8xH1bdM2wGRjqSKW9Qa0rAnBq2OfVKRvwl9OMCZML4eLUMxSEUAEWRVSoKpQnJvA==
@@ -531,6 +538,15 @@
     newtype-ts "^0.3.5"
     tslib "^2.3.1"
     uuid "^8.3.2"
+
+"@prismicio/next@^1.0.2":
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/@prismicio/next/-/next-1.0.2.tgz#76dcc6357a0a74cb69af52cf1821874307bcb7e5"
+  integrity sha512-QGUe8nIEawMDj7MuO9ZP497hwiKUtO+ZIpyHeoMul7+2t4p36wgrKIETVlDD+J8W+K8T9Ayj/zsKbH+BQQmRhA==
+  dependencies:
+    "@prismicio/helpers" "^2.3.5"
+    "@prismicio/types" "^0.2.3"
+    imgix-url-builder "^0.0.3"
 
 "@prismicio/react@^2.5.1":
   version "2.5.1"
@@ -598,7 +614,7 @@
     newtype-ts "^0.3.5"
     tslib "^2.3.1"
 
-"@prismicio/types@^0.2.0", "@prismicio/types@^0.2.7":
+"@prismicio/types@^0.2.0", "@prismicio/types@^0.2.3", "@prismicio/types@^0.2.4", "@prismicio/types@^0.2.7":
   version "0.2.7"
   resolved "https://registry.yarnpkg.com/@prismicio/types/-/types-0.2.7.tgz#4091136fa198b366d3fefb49d1dd31d336522540"
   integrity sha512-xHPBWg+lPcl8U97VB/2oYK3MJlQoVPZq91hbeQO8WRyvq+zgpNST3xFOTk8SkQpgoH6wd50AxGZELvPrpojajQ==

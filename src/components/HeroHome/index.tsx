@@ -1,15 +1,20 @@
+import { FC } from 'react';
 import { Container, TextContainer } from './styles';
 import { InfosContainer } from '../InfosContainer';
+import { Props } from './HomeHero.types';
 
-export const HeroHome = () => (
-  <Container data-aos="fade-up">
-    <img src="/samuel-rms.png" alt="Foto de Samuel Ramos" />
-    <div>
-      <TextContainer>
-        <h1>Olá</h1>
-        <h2>Me chamo Samuel</h2>
-      </TextContainer>
-      <InfosContainer />
-    </div>
-  </Container>
-);
+export const HeroHome: FC<Props> = ({ data }) => {
+  const value = data[0];
+  return (
+    <Container data-aos="fade-up">
+      <img src={value.img} alt="Foto de Samuel Ramos" />
+      <div>
+        <TextContainer>
+          <h1>{value.title}</h1>
+          <h2>{value.subtitle}</h2>
+        </TextContainer>
+        <InfosContainer data={value} />
+      </div>
+    </Container>
+  );
+};
