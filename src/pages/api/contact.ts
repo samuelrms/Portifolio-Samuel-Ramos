@@ -2,7 +2,7 @@ import nodemailer from 'nodemailer';
 import sendgridTransport from 'nodemailer-sendgrid-transport';
 import { NextApiRequest, NextApiResponse } from 'next';
 
-const email = process.env.MAIL_ADRESS;
+const email = process.env.MAIL_ADDRESS;
 
 const transporter = nodemailer.createTransport(
   sendgridTransport({
@@ -30,7 +30,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
 
     await transporter.sendMail(message);
 
-    return res.send('ok');
+    return res.send('');
   } catch (err) {
     return res.json({
       error: true,

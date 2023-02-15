@@ -8,6 +8,10 @@ export const Container = styled.form`
   grid-template-columns: 1fr 1fr;
   gap: 1rem;
 
+  > .name {
+    grid-column: 1 / 3;
+  }
+
   > button {
     border: none;
     padding: 1rem 2.5rem;
@@ -28,9 +32,10 @@ export const Container = styled.form`
     }
   }
 
-  @media (max-width: 700px) {
+  @media (max-width: 1000px) {
     margin-top: 5rem;
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
   }
 
   @media (max-width: 450px) {

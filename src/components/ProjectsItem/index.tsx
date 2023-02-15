@@ -15,9 +15,7 @@ export const ProjectsItem: FC<Props> = ({ imgURL, slug, title, type }) => (
     </section>
     <button type="button">
       <Link href={`/projetos/${slug}`}>
-        <a>
-          Ver mais <AiOutlineRightCircle />
-        </a>
+        Ver mais <AiOutlineRightCircle />
       </Link>
     </button>
   </Container>

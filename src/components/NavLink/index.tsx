@@ -19,9 +19,7 @@ export const NavLink: FC<Props> = ({ title, path, includes }) => {
 
   return (
     <NavLinkContainer isActive={isActive}>
-      <Link href={path}>
-        <a>{title}</a>
-      </Link>
+      <Link href={path}>{title}</Link>
     </NavLinkContainer>
   );
 };
