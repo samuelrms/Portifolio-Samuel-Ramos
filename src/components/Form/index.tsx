@@ -87,6 +87,7 @@ export const Form = () => {
         placeholder="Mensagem"
         name="massage"
         value={mensagem}
+        as="textarea"
         onChange={({ target }) => setMensagem(target.value)}
       />
       <button type="submit" disabled={loading}>
