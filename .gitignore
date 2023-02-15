@@ -33,6 +33,6 @@ yarn-error.log*
 # vercel
 .vercel
 
-# .slicemachine
-# customtypes
-# sm.json
+.slicemachine
+customtypes
+sm.json
