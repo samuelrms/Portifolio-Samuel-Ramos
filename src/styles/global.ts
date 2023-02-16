@@ -85,6 +85,9 @@ export default createGlobalStyle`
 
 .cardCode {
   .contentObj{
+    div{
+      word-break: break-all;
+    }
     p{
       font-family: 'Source Code Pro', monospace;
     }

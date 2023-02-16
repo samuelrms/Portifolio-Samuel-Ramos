@@ -20,15 +20,16 @@ export const AboutContainer: FC<Props> = ({ data }) => (
     </div>
     <CodeItem className="contentObj" key={data.about_me} data-aos="zoom-in">
       <div className="openObj">
-        <p className="purple">{data.title_resume}</p>
-        {`\u007B`}
+        <p className="purple">
+          {data.title_resume} {`\u007B`}
+        </p>
       </div>
       {data.resume.map((value, i) => (
         <div key={i}>
           <p>{value.text}</p>
         </div>
       ))}
-      {`\u007D`}
+      <p className="purple">{`\u007D`}</p>
     </CodeItem>
   </Container>
 );
