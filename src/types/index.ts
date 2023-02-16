@@ -68,8 +68,26 @@ export interface ProjectUID {
   project: ProjectProps;
 }
 
+export interface LogoSkill {
+  dimensions: { width: number; height: number };
+  alt: null;
+  copyright: null;
+  url: string;
+}
+
+export interface SkillArr {
+  logo_skill: LogoSkill;
+  name_skill: string;
+}
+
+export interface Skills {
+  skills_title: string;
+  skills: SkillArr[];
+}
+
 export interface PropsHome {
   projects: ProjectProps[];
   homeHero: HomeHero;
   experience: Experience;
+  skills?: Skills;
 }
