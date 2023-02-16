@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React, { FC } from 'react';
 import { Props } from './InfosContainer.types';
 import { CodeItem, Container } from './styles';
@@ -33,5 +34,20 @@ export const InfosContainer: FC<Props> = ({ data }) => (
         {value.close}
       </CodeItem>
     ))}
+    {data.about.map(value => (
+      <CodeItem key={value.title} data-aos="zoom-in">
+        <span className="purple">{value.title}</span> {value.open}
+        <div>
+          {value.label}
+          <span className="blue"> {value.resume}</span>
+        </div>
+        {value.close}
+      </CodeItem>
+    ))}
+    <div data-aos="zoom-in">
+      <button type="button">
+        <Link href="/sobre">Saiba mais</Link>
+      </button>
+    </div>
   </Container>
 );

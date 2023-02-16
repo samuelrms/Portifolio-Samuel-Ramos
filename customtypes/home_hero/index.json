@@ -147,6 +147,49 @@
             }
           }
         }
+      },
+      "about": {
+        "type": "Group",
+        "config": {
+          "label": "about",
+          "fields": {
+            "open": {
+              "type": "Text",
+              "config": {
+                "label": "open",
+                "placeholder": ""
+              }
+            },
+            "title": {
+              "type": "Text",
+              "config": {
+                "label": "title",
+                "placeholder": ""
+              }
+            },
+            "label": {
+              "type": "Text",
+              "config": {
+                "label": "label",
+                "placeholder": ""
+              }
+            },
+            "close": {
+              "type": "Text",
+              "config": {
+                "label": "close",
+                "placeholder": ""
+              }
+            },
+            "resume": {
+              "type": "Text",
+              "config": {
+                "label": "resume",
+                "placeholder": ""
+              }
+            }
+          }
+        }
       }
     }
   }

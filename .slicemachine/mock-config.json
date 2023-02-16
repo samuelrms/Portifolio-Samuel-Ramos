@@ -3,8 +3,10 @@
     "projects": {},
     "home_hero": {
       "presentation_area": {},
-      "presentation_skills": {}
+      "presentation_skills": {},
+      "about": {}
     },
-    "experience": {}
+    "experience": {},
+    "skills": {}
   }
 }

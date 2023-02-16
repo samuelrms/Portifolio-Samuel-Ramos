@@ -30,12 +30,21 @@ export interface PresentationSkills {
   close: string;
 }
 
+export interface About {
+  open: string;
+  title: string;
+  label: string;
+  resume: string;
+  close: string;
+}
+
 export interface HomeHero {
   img: string;
   title: string;
   subtitle: string;
   presentation_area: PresentationArea[];
   presentation_skills: PresentationSkills[];
+  about: About[];
 }
 
 export interface WorkExperience {

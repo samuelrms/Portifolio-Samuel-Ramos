@@ -1,3 +1,4 @@
+import { darken } from 'polished';
 import styled from 'styled-components';
 
 export const Container = styled.section`
@@ -5,6 +6,35 @@ export const Container = styled.section`
   display: flex;
   flex-direction: column;
   gap: 2rem;
+
+  > div {
+    display: flex;
+    justify-content: center;
+    > button {
+      background: ${({ theme }) => theme.primary};
+      padding: 0.8rem 3rem;
+      border-radius: 0.5rem;
+      border: none;
+      transition: 0.5s;
+
+      &:hover {
+        background: ${({ theme }) => darken(0.05, theme.primary)};
+      }
+
+      a {
+        color: ${({ theme }) => theme.background};
+        text-transform: uppercase;
+        font-size: 1.5rem;
+      }
+
+      @media (max-width: 500px) {
+        padding: 1rem;
+        a {
+          font-size: 1rem;
+        }
+      }
+    }
+  }
 `;
 
 export const CodeItem = styled.pre`
@@ -35,7 +65,7 @@ export const CodeItem = styled.pre`
     filter: brightness(1.2);
   }
 
-  &:last-child {
+  &:nth-child(even) {
     align-self: flex-end;
   }
 

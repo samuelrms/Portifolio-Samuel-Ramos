@@ -155,6 +155,17 @@ interface HomeHeroDocumentData {
      *
      */
     presentation_skills: prismicT.GroupField<Simplify<HomeHeroDocumentDataPresentationSkillsItem>>;
+    /**
+     * about field in *home_hero*
+     *
+     * - **Field Type**: Group
+     * - **Placeholder**: *None*
+     * - **API ID Path**: home_hero.about[]
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/group
+     *
+     */
+    about: prismicT.GroupField<Simplify<HomeHeroDocumentDataAboutItem>>;
 }
 /**
  * Item in home_hero → presentation_area
@@ -319,6 +330,62 @@ export interface HomeHeroDocumentDataPresentationSkillsItem {
     close: prismicT.KeyTextField;
 }
 /**
+ * Item in home_hero → about
+ *
+ */
+export interface HomeHeroDocumentDataAboutItem {
+    /**
+     * open field in *home_hero → about*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: home_hero.about[].open
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    open: prismicT.KeyTextField;
+    /**
+     * title field in *home_hero → about*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: home_hero.about[].title
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    title: prismicT.KeyTextField;
+    /**
+     * label field in *home_hero → about*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: home_hero.about[].label
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    label: prismicT.KeyTextField;
+    /**
+     * close field in *home_hero → about*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: home_hero.about[].close
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    close: prismicT.KeyTextField;
+    /**
+     * resume field in *home_hero → about*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: home_hero.about[].resume
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    resume: prismicT.KeyTextField;
+}
+/**
  * home_hero document from Prismic
  *
  * - **API ID**: `home_hero`
@@ -396,12 +463,73 @@ interface ProjectsDocumentData {
  * @typeParam Lang - Language API ID of the document.
  */
 export type ProjectsDocument<Lang extends string = string> = prismicT.PrismicDocumentWithUID<Simplify<ProjectsDocumentData>, "projects", Lang>;
-export type AllDocumentTypes = ExperienceDocument | HomeHeroDocument | ProjectsDocument;
+/** Content for skills documents */
+interface SkillsDocumentData {
+    /**
+     * skills_title field in *skills*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: skills.skills_title
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    skills_title: prismicT.KeyTextField;
+    /**
+     * skills field in *skills*
+     *
+     * - **Field Type**: Group
+     * - **Placeholder**: *None*
+     * - **API ID Path**: skills.skills[]
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/group
+     *
+     */
+    skills: prismicT.GroupField<Simplify<SkillsDocumentDataSkillsItem>>;
+}
+/**
+ * Item in skills → skills
+ *
+ */
+export interface SkillsDocumentDataSkillsItem {
+    /**
+     * logo_skill field in *skills → skills*
+     *
+     * - **Field Type**: Image
+     * - **Placeholder**: *None*
+     * - **API ID Path**: skills.skills[].logo_skill
+     * - **Documentation**: https://prismic.io/docs/core-concepts/image
+     *
+     */
+    logo_skill: prismicT.ImageField<never>;
+    /**
+     * name_skill field in *skills → skills*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: skills.skills[].name_skill
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    name_skill: prismicT.KeyTextField;
+}
+/**
+ * skills document from Prismic
+ *
+ * - **API ID**: `skills`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type SkillsDocument<Lang extends string = string> = prismicT.PrismicDocumentWithoutUID<Simplify<SkillsDocumentData>, "skills", Lang>;
+export type AllDocumentTypes = ExperienceDocument | HomeHeroDocument | ProjectsDocument | SkillsDocument;
 declare module "@prismicio/client" {
     interface CreateClient {
         (repositoryNameOrEndpoint: string, options?: prismic.ClientConfig): prismic.Client<AllDocumentTypes>;
     }
     namespace Content {
-        export type { ExperienceDocumentData, ExperienceDocumentDataWorkExperienceItem, ExperienceDocument, HomeHeroDocumentData, HomeHeroDocumentDataPresentationAreaItem, HomeHeroDocumentDataPresentationSkillsItem, HomeHeroDocument, ProjectsDocumentData, ProjectsDocument, AllDocumentTypes };
+        export type { ExperienceDocumentData, ExperienceDocumentDataWorkExperienceItem, ExperienceDocument, HomeHeroDocumentData, HomeHeroDocumentDataPresentationAreaItem, HomeHeroDocumentDataPresentationSkillsItem, HomeHeroDocumentDataAboutItem, HomeHeroDocument, ProjectsDocumentData, ProjectsDocument, SkillsDocumentData, SkillsDocumentDataSkillsItem, SkillsDocument, AllDocumentTypes };
     }
 }

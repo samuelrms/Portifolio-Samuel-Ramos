@@ -56,15 +56,14 @@ export const getStaticProps: GetStaticProps = async () => {
     thumb: project.data.thumb.url
   }));
 
-  const homeHero = (await projectResponse('home_hero')).results.map(
-    ({ data }) => ({
-      img: data.photo.url,
-      title: data.title,
-      subtitle: data.subtitle,
-      presentation_area: data.presentation_area,
-      presentation_skills: data.presentation_skills
-    })
-  );
+  const homeHero = (await projectResponse('home_hero')).results.map(hero => ({
+    img: hero.data.photo.url,
+    title: hero.data.title,
+    subtitle: hero.data.subtitle,
+    presentation_area: hero.data.presentation_area,
+    presentation_skills: hero.data.presentation_skills,
+    about: hero.data.about
+  }));
 
   const experience = (await projectResponse('experience')).results.map(
     ({ data }) => data

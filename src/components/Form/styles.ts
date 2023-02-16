@@ -16,12 +16,12 @@ export const Container = styled.form`
     border: none;
     padding: 1rem 2.5rem;
     color: #fff;
-    font-weight: 300;
     font-size: 1.2rem;
     border-radius: 0.5rem;
     background: ${({ theme }) => theme.primary};
     transition: 0.5s;
     width: fit-content;
+    color: ${({ theme }) => theme.background};
 
     &:disabled {
       opacity: 0.5;

@@ -31,10 +31,9 @@ export const Container = styled.section`
     }
 
     a {
+      color: ${({ theme }) => theme.background};
       text-transform: uppercase;
-      color: #fff;
       font-size: 1.5rem;
-      font-weight: 300;
     }
 
     @media (max-width: 500px) {

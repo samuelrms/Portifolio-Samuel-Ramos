@@ -32,6 +32,11 @@ export default createGlobalStyle`
   }
   button {
     cursor: pointer;
+    font-weight: 700;
+
+    > a {
+      font-weight: 700;
+    }
   }
   a {
     text-decoration: none;
