@@ -3,7 +3,7 @@ import Prismic from '@prismicio/client';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 
-import { Header, LoadScreen, Thumb } from '../../../components';
+import { LoadScreen, Thumb } from '../../../components';
 import { day } from '../../../constants';
 import { getPrismicClient } from '../../../services/prismic';
 import { Container } from '../../../styles/ProjectDynamicStyles';
@@ -27,7 +27,6 @@ export default function Projeto({ project }: ProjectUID) {
         <meta property="instagram:image:src" content={project.thumb} />
         <meta property="og:description" content={project.description} />
       </Head>
-      <Header />
       <Thumb title={project.title} type={project.type} imgURL={project.thumb} />
       <main>
         <p>{project.description}</p>

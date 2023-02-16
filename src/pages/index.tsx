@@ -6,7 +6,6 @@ import {
   Experiences,
   Footer,
   Guideline,
-  Header,
   HeroHome,
   Projects
 } from '../components';
@@ -38,7 +37,6 @@ export default function Home({
           content="Sou um dev Front-end e aqui apresento alguns projetos desenvolvidos por mim, tecnologias que utilizo e outros..."
         />
       </Head>
-      <Header />
       <main className="container">
         <HeroHome data={homeHero} />
         <Experiences experience={experience} />

@@ -8,6 +8,7 @@ import NextNProgress from 'nextjs-progressbar';
 
 import GlobalStyles from '../styles/global';
 import theme from '../styles/theme';
+import { Header } from '../components';
 
 function MyApp({ Component, pageProps }) {
   useEffect(() => {
@@ -24,6 +25,7 @@ function MyApp({ Component, pageProps }) {
         showOnShallow
       />
       <Toaster position="top-center" reverseOrder={false} />
+      <Header />
 
       <Component {...pageProps} />
       <GlobalStyles />

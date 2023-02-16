@@ -1,7 +1,7 @@
 import { GetStaticProps } from 'next';
 import Head from 'next/head';
 
-import { Header, ProjectDetails } from '../../components';
+import { ProjectDetails } from '../../components';
 import { Container } from '../../styles/ProjectsStyles';
 import { hour } from '../../constants';
 import { PropsProjectArr } from '../../types';
@@ -25,7 +25,6 @@ export default function Projetos({ projects }: PropsProjectArr) {
           content="Aqui se encontram projetos desenvolvidos por mim"
         />
       </Head>
-      <Header />
       <main className="container">
         {projects.map(data => (
           <ProjectDetails
