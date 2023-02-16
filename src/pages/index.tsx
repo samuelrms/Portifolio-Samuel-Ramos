@@ -4,14 +4,13 @@ import Head from 'next/head';
 import {
   ContactForm,
   Experiences,
-  Footer,
   Guideline,
   HeroHome,
   Projects
 } from '../components';
 import { HomeContainer } from '../styles/HomeStyles';
 import { hour } from '../constants';
-import { PropsHome } from '../types';
+import { PropsHome } from '../types/Home.types';
 import { projectResponse } from '../utils/getQueryPrismic';
 
 export default function Home({
@@ -44,7 +43,6 @@ export default function Home({
         <Guideline data={skills} />
         <ContactForm />
       </main>
-      <Footer />
     </HomeContainer>
   );
 }
@@ -77,12 +75,17 @@ export const getStaticProps: GetStaticProps = async () => {
     skills: data.skills
   }));
 
+  const about = (await projectResponse('about')).results.map(
+    ({ data }) => data
+  );
+
   return {
     props: {
       projects,
       homeHero,
       experience,
-      skills
+      skills,
+      about
     },
     revalidate: hour
   };

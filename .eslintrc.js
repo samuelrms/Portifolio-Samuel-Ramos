@@ -31,6 +31,7 @@ module.exports = {
     'import/prefer-default-export': 'off',
     'react/require-default-props': 'off',
     'jsx-a11y/anchor-is-valid': 'off',
-    'react/jsx-no-comment-textnodes': 'off'
+    'react/jsx-no-comment-textnodes': 'off',
+    'react/no-array-index-key': 'off'
   }
 };

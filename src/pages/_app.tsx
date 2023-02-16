@@ -8,7 +8,7 @@ import NextNProgress from 'nextjs-progressbar';
 
 import GlobalStyles from '../styles/global';
 import theme from '../styles/theme';
-import { Header } from '../components';
+import { Footer, Header } from '../components';
 
 function MyApp({ Component, pageProps }) {
   useEffect(() => {
@@ -28,6 +28,8 @@ function MyApp({ Component, pageProps }) {
       <Header />
 
       <Component {...pageProps} />
+      <Footer />
+
       <GlobalStyles />
     </ThemeProvider>
   );

@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { PropsProjectArr } from '../../types';
+import { PropsProjectArr } from '../../types/Home.types';
 import { ProjectsItem } from '../ProjectsItem';
 import { SectionTitle } from '../SectionTitle';
 import { Container } from './styles';

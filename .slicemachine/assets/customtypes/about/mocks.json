@@ -1,0 +1,64 @@
+{
+  "about_me": {
+    "__TYPE__": "FieldContent",
+    "value": "wall",
+    "type": "Text"
+  },
+  "name": {
+    "__TYPE__": "FieldContent",
+    "value": "class",
+    "type": "Text"
+  },
+  "presentation": {
+    "__TYPE__": "FieldContent",
+    "value": "equator",
+    "type": "Text"
+  },
+  "experience": {
+    "__TYPE__": "FieldContent",
+    "value": "pupil",
+    "type": "Text"
+  },
+  "motivational": {
+    "__TYPE__": "FieldContent",
+    "value": "support",
+    "type": "Text"
+  },
+  "title_resume": {
+    "__TYPE__": "FieldContent",
+    "value": "mill",
+    "type": "Text"
+  },
+  "resume": {
+    "__TYPE__": "StructuredTextContent",
+    "value": [
+      {
+        "type": "paragraph",
+        "content": {
+          "text": "Quis cillum pariatur minim nulla culpa aute ex est eu."
+        }
+      }
+    ]
+  },
+  "image_person": {
+    "__TYPE__": "ImageContent",
+    "origin": {
+      "id": "main",
+      "url": "https://images.unsplash.com/photo-1547082299-de196ea013d6",
+      "width": 4272,
+      "height": 2848
+    },
+    "url": "https://images.unsplash.com/photo-1547082299-de196ea013d6",
+    "width": 4272,
+    "height": 2848,
+    "edit": {
+      "zoom": 1,
+      "crop": {
+        "x": 0,
+        "y": 0
+      },
+      "background": "transparent"
+    },
+    "thumbnails": {}
+  }
+}

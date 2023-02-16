@@ -7,7 +7,7 @@ import { LoadScreen, Thumb } from '../../../components';
 import { day } from '../../../constants';
 import { getPrismicClient } from '../../../services/prismic';
 import { Container } from '../../../styles/ProjectDynamicStyles';
-import { ProjectUID } from '../../../types';
+import { ProjectUID } from '../../../types/Home.types';
 
 export default function Projeto({ project }: ProjectUID) {
   const router = useRouter();

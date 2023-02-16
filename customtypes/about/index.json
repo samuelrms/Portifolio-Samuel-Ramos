@@ -1,0 +1,69 @@
+{
+  "id": "about",
+  "label": "about",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "about_me": {
+        "type": "Text",
+        "config": {
+          "label": "about_me",
+          "placeholder": ""
+        }
+      },
+      "name": {
+        "type": "Text",
+        "config": {
+          "label": "name",
+          "placeholder": ""
+        }
+      },
+      "presentation": {
+        "type": "Text",
+        "config": {
+          "label": "presentation",
+          "placeholder": ""
+        }
+      },
+      "experience": {
+        "type": "Text",
+        "config": {
+          "label": "experience",
+          "placeholder": ""
+        }
+      },
+      "motivational": {
+        "type": "Text",
+        "config": {
+          "label": "motivational",
+          "placeholder": ""
+        }
+      },
+      "title_resume": {
+        "type": "Text",
+        "config": {
+          "label": "title_resume",
+          "placeholder": ""
+        }
+      },
+      "resume": {
+        "type": "StructuredText",
+        "config": {
+          "label": "resume",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+        }
+      },
+      "image_person": {
+        "type": "Image",
+        "config": {
+          "label": "image_person",
+          "constraint": {},
+          "thumbnails": []
+        }
+      }
+    }
+  }
+}

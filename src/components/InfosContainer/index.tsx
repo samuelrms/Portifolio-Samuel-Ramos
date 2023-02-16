@@ -1,47 +1,53 @@
 import Link from 'next/link';
 import React, { FC } from 'react';
 import { Props } from './InfosContainer.types';
-import { CodeItem, Container } from './styles';
+import { CodeItem, Container, ContentCardCode } from './styles';
 
 export const InfosContainer: FC<Props> = ({ data }) => (
   <Container>
     {data.presentation_area.map(value => (
-      <CodeItem key={value.title} data-aos="zoom-in">
-        <span className="comment">{value.comment}</span>
-        <span className="purple">{value.title}</span> {value.open}
-        <div>
+      <CodeItem className="cardCode" key={value.title} data-aos="zoom-in">
+        <p className="comment">{value.comment}</p>
+        <div className="openObj">
+          <p className="purple">{value.title}</p> {value.open}
+        </div>
+        <ContentCardCode>
           {value.label_function}
-          <span className="blue"> {value.content_function}</span>
-        </div>
-        <div>
+          <p className="blue"> {value.content_function}</p>
+        </ContentCardCode>
+        <ContentCardCode>
           {value.label_level}
-          <span className="blue"> {value.content_level}</span>
-        </div>
-        {value.close}
+          <p className="blue"> {value.content_level}</p>
+        </ContentCardCode>
+        <div>{value.close}</div>
       </CodeItem>
     ))}
     {data.presentation_skills.map(value => (
       <CodeItem key={value.title} data-aos="zoom-in">
-        <span className="purple">{value.title}</span> {value.open}
-        <div>
+        <div className="openObj">
+          <p className="purple">{value.title}</p> {value.open}
+        </div>
+        <ContentCardCode>
           {value.label_tech_stack}
-          <span className="blue"> {value.content_tech_stack}</span>
-        </div>
-        <div>
+          <p className="blue"> {value.content_tech_stack}</p>
+        </ContentCardCode>
+        <ContentCardCode>
           {value.label_frameworks}
-          <span className="blue"> {value.content_frameworks}</span>
-        </div>
-        {value.close}
+          <p className="blue"> {value.content_frameworks}</p>
+        </ContentCardCode>
+        <div>{value.close}</div>
       </CodeItem>
     ))}
     {data.about.map(value => (
       <CodeItem key={value.title} data-aos="zoom-in">
-        <span className="purple">{value.title}</span> {value.open}
-        <div>
-          {value.label}
-          <span className="blue"> {value.resume}</span>
+        <div className="openObj">
+          <p className="purple">{value.title}</p> {value.open}
         </div>
-        {value.close}
+        <ContentCardCode>
+          {value.label}
+          <p className="blue"> {value.resume}</p>
+        </ContentCardCode>
+        <div>{value.close}</div>
       </CodeItem>
     ))}
     <div data-aos="zoom-in">

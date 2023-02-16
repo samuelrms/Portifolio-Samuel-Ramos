@@ -35,6 +35,30 @@ export const Container = styled.section`
       }
     }
   }
+
+  .presentation {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .contentTop {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    justify-content: center;
+    margin: 3rem 0 6rem;
+
+    @media (max-width: 700px) {
+      display: flex;
+      flex-wrap: wrap-reverse;
+    }
+
+    > div:last-child {
+      width: 100%;
+      margin: auto;
+    }
+  }
 `;
 
 export const CodeItem = styled.div`
@@ -43,16 +67,16 @@ export const CodeItem = styled.div`
   font-family: 'JetBrains Mono', monospace;
   font-weight: 300;
   color: #fff;
-  width: 30rem;
+  min-width: 30rem;
   align-self: flex-start;
   transition: 1s !important;
   flex-direction: column;
   border-radius: 8px;
 
   @media (max-width: 1450px) {
-    width: 22rem;
+    min-width: 22rem;
     padding: 1.5rem;
-    font-size: 0.8rem;
+    font-size: 1.3rem;
   }
 
   @media (max-width: 1000px) {
@@ -67,13 +91,12 @@ export const CodeItem = styled.div`
     filter: brightness(1.2);
   }
 
-  &:nth-child(even) {
-    align-self: flex-end;
-  }
-
   > div {
     margin: 0.2rem 2rem;
-    margin-left: 1rem;
+
+    > p {
+      text-align: justify;
+    }
 
     @media (max-width: 425px) {
       display: flex;
@@ -81,23 +104,20 @@ export const CodeItem = styled.div`
     }
   }
 
-  .purple {
-    color: #c38cdd;
+  > div:first-child {
+    margin-left: 1rem;
   }
 
-  .blue {
-    color: #7ac7e3;
-  }
-
-  .comment {
-    color: ${({ theme }) => theme.text};
-    margin-bottom: 1rem;
-    display: block;
+  > div + div {
+    margin-bottom: 0.8rem;
   }
 `;
 
-export const ContentCardCode = styled.div`
-  display: flex;
-  margin-left: 1.5rem !important;
-  gap: 0.5rem;
+export const ContentImage = styled.div`
+  width: 50%;
+  > img {
+    width: 20rem;
+    flex: 1;
+    border-radius: 100%;
+  }
 `;

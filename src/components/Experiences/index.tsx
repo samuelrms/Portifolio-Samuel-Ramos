@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { WorkExperience } from '../../types';
+import { WorkExperience } from '../../types/Home.types';
 import { ExperiencesItem } from '../ExperiencesItem';
 import { SectionTitle } from '../SectionTitle';
 import { Props } from './Experiences.types';

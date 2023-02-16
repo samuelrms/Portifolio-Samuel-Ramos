@@ -4,7 +4,7 @@ import Head from 'next/head';
 import { ProjectDetails } from '../../components';
 import { Container } from '../../styles/ProjectsStyles';
 import { hour } from '../../constants';
-import { PropsProjectArr } from '../../types';
+import { PropsProjectArr } from '../../types/Home.types';
 import { projectResponse } from '../../utils/getQueryPrismic';
 
 export default function Projetos({ projects }: PropsProjectArr) {
