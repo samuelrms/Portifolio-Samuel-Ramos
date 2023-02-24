@@ -44,6 +44,10 @@ const Curso = ({ course }: Course) => {
         imgURL={course.certificate_image.url}
       />
       <main>
+        <div>
+          <p>Finalizado em: {course.completion_period}</p>
+          <p>Carga horaria: {course.workload}</p>
+        </div>
         <p>{resume}</p>
         <button type="button">
           <a

@@ -39,6 +39,14 @@ export const Container = styled.div`
       }
     }
 
+    div p {
+      width: fit-content;
+      border-bottom: 3px solid ${({ theme }) => theme.primary};
+      margin-bottom: 32px;
+      padding-bottom: 2px;
+      font-weight: 500;
+    }
+
     @media (max-width: 700px) {
       padding: 0 2.5rem;
 
