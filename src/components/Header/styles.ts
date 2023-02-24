@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import * as DropdownMenu from '@radix-ui/react-dropdown-menu';
 
 export const Container = styled.header`
   width: 100%;
@@ -6,10 +7,8 @@ export const Container = styled.header`
   align-items: center;
   justify-content: center;
   height: 4rem;
-  border-bottom: 1px solid ${({ theme }) => theme.backgroundLight};
   backdrop-filter: blur(13px) saturate(100%);
   background-color: rgba(122, 199, 227, 0);
-  border: 0 0 1px solid ${({ theme }) => theme.secondary};
   position: fixed;
   z-index: 99;
 
@@ -18,4 +17,39 @@ export const Container = styled.header`
     gap: 2rem;
     align-items: center;
   }
+
+  .contentDropdownMenu {
+    display: none;
+  }
+
+  @media (max-width: 786px) {
+    justify-content: flex-end;
+    padding-right: 2rem;
+    ul {
+      display: none;
+    }
+    button {
+      background: transparent;
+      border: none;
+    }
+    .contentDropdownMenu {
+      display: block;
+    }
+  }
 `;
+
+export const StyledContent = styled(DropdownMenu.Content)`
+  width: 100vw;
+  height: 100vh;
+  background: #fff;
+  padding: 0 12px 48px;
+  list-style: none;
+  background: ${({ theme }) => theme.gradient};
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-top: -54px;
+`;
+
+export const StyledItem = styled(DropdownMenu.Item)``;

@@ -6,7 +6,7 @@ import { Props } from './NavLink.types';
 
 import { NavLinkContainer } from './styles';
 
-export const NavLink: FC<Props> = ({ title, path, includes }) => {
+export const NavLink: FC<Props> = ({ title, path, includes, onClick }) => {
   const router = useRouter();
 
   const verifyIsActive = () => {
@@ -18,7 +18,7 @@ export const NavLink: FC<Props> = ({ title, path, includes }) => {
   const isActive = verifyIsActive();
 
   return (
-    <NavLinkContainer isActive={isActive}>
+    <NavLinkContainer onClick={onClick} isActive={isActive}>
       <Link href={path}>{title}</Link>
     </NavLinkContainer>
   );
