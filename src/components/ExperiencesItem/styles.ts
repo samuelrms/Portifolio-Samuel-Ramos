@@ -5,11 +5,13 @@ export const Container = styled.div`
     background: ${({ theme }) => theme.gradient};
     padding: 1rem;
     padding-top: 2.5rem;
-    height: 20rem;
+    min-height: 20rem;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
+    max-width: 25rem;
+    width: 100%;
 
     transition: 0.5s;
 
@@ -44,7 +46,7 @@ export const Container = styled.div`
 
   @media (max-width: 1000px) {
     > div {
-      height: 15rem;
+      min-height: 15rem;
       padding-top: 1.5rem;
 
       h1 {
