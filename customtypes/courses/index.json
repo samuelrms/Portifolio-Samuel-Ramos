@@ -12,64 +12,57 @@
           "placeholder": ""
         }
       },
-      "subtitle": {
+      "completion_period": {
         "type": "Text",
         "config": {
-          "label": "subtitle",
+          "label": "completion_period",
           "placeholder": ""
         }
       },
-      "courses_taken": {
-        "type": "Group",
+      "certificates_link": {
+        "type": "Link",
         "config": {
-          "label": "courses_taken",
-          "fields": {
-            "title": {
-              "type": "Text",
-              "config": {
-                "label": "title",
-                "placeholder": ""
-              }
-            },
-            "completion_period": {
-              "type": "Text",
-              "config": {
-                "label": "completion_period",
-                "placeholder": ""
-              }
-            },
-            "workload": {
-              "type": "Text",
-              "config": {
-                "label": "workload",
-                "placeholder": ""
-              }
-            },
-            "achievement_platform": {
-              "type": "Text",
-              "config": {
-                "label": "achievement_platform",
-                "placeholder": ""
-              }
-            },
-            "certificates_link": {
-              "type": "Link",
-              "config": {
-                "label": "certificates_link",
-                "placeholder": "",
-                "select": null
-              }
-            },
-            "resume": {
-              "type": "StructuredText",
-              "config": {
-                "label": "resume",
-                "placeholder": "",
-                "allowTargetBlank": true,
-                "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
-              }
-            }
-          }
+          "label": "certificates_link",
+          "placeholder": "",
+          "select": null
+        }
+      },
+      "resume": {
+        "type": "StructuredText",
+        "config": {
+          "label": "resume",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+        }
+      },
+      "achievement_platform": {
+        "type": "Text",
+        "config": {
+          "label": "achievement_platform",
+          "placeholder": ""
+        }
+      },
+      "uid": {
+        "type": "UID",
+        "config": {
+          "label": "uid",
+          "placeholder": ""
+        }
+      },
+      "workload": {
+        "type": "Text",
+        "config": {
+          "label": "workload",
+          "placeholder": ""
+        }
+      },
+      "certificate_image": {
+        "type": "Image",
+        "config": {
+          "label": "certificate_image",
+          "constraint": {},
+          "thumbnails": []
         }
       }
     }

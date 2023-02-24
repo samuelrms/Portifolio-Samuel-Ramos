@@ -121,93 +121,71 @@ interface CoursesDocumentData {
      */
     title: prismicT.KeyTextField;
     /**
-     * subtitle field in *courses*
+     * completion_period field in *courses*
      *
      * - **Field Type**: Text
      * - **Placeholder**: *None*
-     * - **API ID Path**: courses.subtitle
+     * - **API ID Path**: courses.completion_period
      * - **Tab**: Main
-     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
-     *
-     */
-    subtitle: prismicT.KeyTextField;
-    /**
-     * courses_taken field in *courses*
-     *
-     * - **Field Type**: Group
-     * - **Placeholder**: *None*
-     * - **API ID Path**: courses.courses_taken[]
-     * - **Tab**: Main
-     * - **Documentation**: https://prismic.io/docs/core-concepts/group
-     *
-     */
-    courses_taken: prismicT.GroupField<Simplify<CoursesDocumentDataCoursesTakenItem>>;
-}
-/**
- * Item in courses → courses_taken
- *
- */
-export interface CoursesDocumentDataCoursesTakenItem {
-    /**
-     * title field in *courses → courses_taken*
-     *
-     * - **Field Type**: Text
-     * - **Placeholder**: *None*
-     * - **API ID Path**: courses.courses_taken[].title
-     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
-     *
-     */
-    title: prismicT.KeyTextField;
-    /**
-     * completion_period field in *courses → courses_taken*
-     *
-     * - **Field Type**: Text
-     * - **Placeholder**: *None*
-     * - **API ID Path**: courses.courses_taken[].completion_period
      * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
      *
      */
     completion_period: prismicT.KeyTextField;
     /**
-     * workload field in *courses → courses_taken*
-     *
-     * - **Field Type**: Text
-     * - **Placeholder**: *None*
-     * - **API ID Path**: courses.courses_taken[].workload
-     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
-     *
-     */
-    workload: prismicT.KeyTextField;
-    /**
-     * achievement_platform field in *courses → courses_taken*
-     *
-     * - **Field Type**: Text
-     * - **Placeholder**: *None*
-     * - **API ID Path**: courses.courses_taken[].achievement_platform
-     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
-     *
-     */
-    achievement_platform: prismicT.KeyTextField;
-    /**
-     * certificates_link field in *courses → courses_taken*
+     * certificates_link field in *courses*
      *
      * - **Field Type**: Link
      * - **Placeholder**: *None*
-     * - **API ID Path**: courses.courses_taken[].certificates_link
+     * - **API ID Path**: courses.certificates_link
+     * - **Tab**: Main
      * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
      *
      */
     certificates_link: prismicT.LinkField;
     /**
-     * resume field in *courses → courses_taken*
+     * resume field in *courses*
      *
      * - **Field Type**: Rich Text
      * - **Placeholder**: *None*
-     * - **API ID Path**: courses.courses_taken[].resume
+     * - **API ID Path**: courses.resume
+     * - **Tab**: Main
      * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
      *
      */
     resume: prismicT.RichTextField;
+    /**
+     * achievement_platform field in *courses*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: courses.achievement_platform
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    achievement_platform: prismicT.KeyTextField;
+    /**
+     * workload field in *courses*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: courses.workload
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    workload: prismicT.KeyTextField;
+    /**
+     * certificate_image field in *courses*
+     *
+     * - **Field Type**: Image
+     * - **Placeholder**: *None*
+     * - **API ID Path**: courses.certificate_image
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/image
+     *
+     */
+    certificate_image: prismicT.ImageField<never>;
 }
 /**
  * courses document from Prismic
@@ -218,7 +196,7 @@ export interface CoursesDocumentDataCoursesTakenItem {
  *
  * @typeParam Lang - Language API ID of the document.
  */
-export type CoursesDocument<Lang extends string = string> = prismicT.PrismicDocumentWithoutUID<Simplify<CoursesDocumentData>, "courses", Lang>;
+export type CoursesDocument<Lang extends string = string> = prismicT.PrismicDocumentWithUID<Simplify<CoursesDocumentData>, "courses", Lang>;
 /** Content for experience documents */
 interface ExperienceDocumentData {
     /**
@@ -743,6 +721,6 @@ declare module "@prismicio/client" {
         (repositoryNameOrEndpoint: string, options?: prismic.ClientConfig): prismic.Client<AllDocumentTypes>;
     }
     namespace Content {
-        export type { AboutDocumentData, AboutDocument, CoursesDocumentData, CoursesDocumentDataCoursesTakenItem, CoursesDocument, ExperienceDocumentData, ExperienceDocumentDataWorkExperienceItem, ExperienceDocument, HomeHeroDocumentData, HomeHeroDocumentDataPresentationAreaItem, HomeHeroDocumentDataPresentationSkillsItem, HomeHeroDocumentDataAboutItem, HomeHeroDocument, ProjectsDocumentData, ProjectsDocument, SkillsDocumentData, SkillsDocumentDataSkillsItem, SkillsDocument, AllDocumentTypes };
+        export type { AboutDocumentData, AboutDocument, CoursesDocumentData, CoursesDocument, ExperienceDocumentData, ExperienceDocumentDataWorkExperienceItem, ExperienceDocument, HomeHeroDocumentData, HomeHeroDocumentDataPresentationAreaItem, HomeHeroDocumentDataPresentationSkillsItem, HomeHeroDocumentDataAboutItem, HomeHeroDocument, ProjectsDocumentData, ProjectsDocument, SkillsDocumentData, SkillsDocumentDataSkillsItem, SkillsDocument, AllDocumentTypes };
     }
 }
