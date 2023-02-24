@@ -31,7 +31,7 @@ export default function Projeto({ project }: ProjectUID) {
       <main>
         <p>{project.description}</p>
         <button type="button">
-          <a href={project.link}>Ver projeto online</a>
+          <a href={project.link}>Ver projeto repositório</a>
         </button>
       </main>
     </Container>

@@ -2,7 +2,7 @@ import * as RadixDropdownMenu from '@radix-ui/react-dropdown-menu';
 import { useState } from 'react';
 import { useTheme } from 'styled-components';
 import { Sling as Hamburger } from 'hamburger-react';
-import { Container, StyledContent, StyledItem } from './styles';
+import { Container, Divider, StyledContent, StyledItem } from './styles';
 import { NavLink } from '../NavLink';
 
 export const DropdownMenu = () => {
@@ -26,6 +26,7 @@ export const DropdownMenu = () => {
             <StyledItem>
               <NavLink onClick={handleOpen} title="Home" path="/" />
             </StyledItem>
+            <Divider />
             <StyledItem>
               <NavLink
                 onClick={handleOpen}
@@ -34,6 +35,7 @@ export const DropdownMenu = () => {
                 includes
               />
             </StyledItem>
+            <Divider />
             <StyledItem>
               <NavLink onClick={handleOpen} title="Sobre" path="/sobre" />
             </StyledItem>

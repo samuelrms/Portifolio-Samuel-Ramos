@@ -32,10 +32,10 @@ export const Container = styled.div`
       }
 
       a {
-        color: #fff;
+        color: ${({ theme }) => theme.background};
         text-transform: uppercase;
         font-size: 1.5rem;
-        font-weight: 300;
+        font-weight: 500;
       }
     }
 

@@ -12,7 +12,7 @@ export const StyledContent = styled(DropdownMenu.Content)`
   width: 100vw;
   height: 100vh;
   background: #fff;
-  padding: 0 12px 48px;
+  padding: 48px 12px;
   list-style: none;
   background: ${({ theme }) => theme.gradient};
   display: flex;
@@ -24,3 +24,10 @@ export const StyledContent = styled(DropdownMenu.Content)`
 `;
 
 export const StyledItem = styled(DropdownMenu.Item)``;
+
+export const Divider = styled(DropdownMenu.Separator)`
+  background: ${({ theme }) => theme.secondary};
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+`;

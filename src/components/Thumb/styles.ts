@@ -5,7 +5,7 @@ export const Container = styled.div<Partial<Props>>`
   width: 100%;
   background: url(${({ imgURL }) => imgURL}) no-repeat center;
   background-size: cover;
-  height: 26rem;
+  height: 30rem;
   position: relative;
   padding: 3rem 5rem;
   display: flex;
@@ -40,7 +40,7 @@ export const Container = styled.div<Partial<Props>>`
 
   @media (max-width: 700px) {
     padding: 2rem 2.5rem;
-    height: 20rem;
+    height: 24rem;
 
     > section {
       h1 {

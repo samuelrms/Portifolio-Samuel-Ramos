@@ -12,6 +12,7 @@ export const Container = styled.div`
     justify-content: flex-start;
     max-width: 25rem;
     width: 100%;
+    border-radius: 8px;
 
     transition: 0.5s;
 
@@ -65,6 +66,7 @@ export const Container = styled.div`
   }
 
   @media (max-width: 700px) {
+    max-width: 100%;
     &:nth-child(even) > div {
       margin-top: 0;
     }
@@ -76,6 +78,7 @@ export const Container = styled.div`
     > div {
       height: auto;
       padding: 2rem;
+      max-width: 100%;
 
       h1 {
         font-size: 2rem;
