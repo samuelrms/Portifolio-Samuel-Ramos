@@ -1,0 +1,77 @@
+{
+  "id": "courses",
+  "label": "courses",
+  "repeatable": true,
+  "status": true,
+  "json": {
+    "Main": {
+      "title": {
+        "type": "Text",
+        "config": {
+          "label": "title",
+          "placeholder": ""
+        }
+      },
+      "subtitle": {
+        "type": "Text",
+        "config": {
+          "label": "subtitle",
+          "placeholder": ""
+        }
+      },
+      "courses_taken": {
+        "type": "Group",
+        "config": {
+          "label": "courses_taken",
+          "fields": {
+            "title": {
+              "type": "Text",
+              "config": {
+                "label": "title",
+                "placeholder": ""
+              }
+            },
+            "completion_period": {
+              "type": "Text",
+              "config": {
+                "label": "completion_period",
+                "placeholder": ""
+              }
+            },
+            "workload": {
+              "type": "Text",
+              "config": {
+                "label": "workload",
+                "placeholder": ""
+              }
+            },
+            "achievement_platform": {
+              "type": "Text",
+              "config": {
+                "label": "achievement_platform",
+                "placeholder": ""
+              }
+            },
+            "certificates_link": {
+              "type": "Link",
+              "config": {
+                "label": "certificates_link",
+                "placeholder": "",
+                "select": null
+              }
+            },
+            "resume": {
+              "type": "StructuredText",
+              "config": {
+                "label": "resume",
+                "placeholder": "",
+                "allowTargetBlank": true,
+                "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

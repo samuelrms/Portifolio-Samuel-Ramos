@@ -39,6 +39,10 @@ export const DropdownMenu = () => {
             <StyledItem>
               <NavLink onClick={handleOpen} title="Sobre" path="/sobre" />
             </StyledItem>
+            <Divider />
+            <StyledItem>
+              <NavLink title="Cursos" path="/cursos" includes />
+            </StyledItem>
           </StyledContent>
         </RadixDropdownMenu.Portal>
       </RadixDropdownMenu.Root>

@@ -1,0 +1,78 @@
+{
+  "title": {
+    "__TYPE__": "FieldContent",
+    "value": "me",
+    "type": "Text"
+  },
+  "subtitle": {
+    "__TYPE__": "FieldContent",
+    "value": "fourth",
+    "type": "Text"
+  },
+  "courses_taken": {
+    "__TYPE__": "GroupContentType",
+    "value": [
+      {
+        "__TYPE__": "GroupItemContent",
+        "value": [
+          [
+            "title",
+            {
+              "__TYPE__": "FieldContent",
+              "value": "spread",
+              "type": "Text"
+            }
+          ],
+          [
+            "completion_period",
+            {
+              "__TYPE__": "FieldContent",
+              "value": "tin",
+              "type": "Text"
+            }
+          ],
+          [
+            "workload",
+            {
+              "__TYPE__": "FieldContent",
+              "value": "island",
+              "type": "Text"
+            }
+          ],
+          [
+            "achievement_platform",
+            {
+              "__TYPE__": "FieldContent",
+              "value": "when",
+              "type": "Text"
+            }
+          ],
+          [
+            "certificates_link",
+            {
+              "__TYPE__": "LinkContent",
+              "value": {
+                "__TYPE__": "ExternalLink",
+                "url": "https://slicemachine.dev"
+              }
+            }
+          ],
+          [
+            "resume",
+            {
+              "__TYPE__": "StructuredTextContent",
+              "value": [
+                {
+                  "type": "paragraph",
+                  "content": {
+                    "text": "Voluptate officia nostrud amet pariatur mollit officia excepteur enim amet magna amet enim labore dolor."
+                  }
+                }
+              ]
+            }
+          ]
+        ]
+      }
+    ]
+  }
+}
