@@ -9,7 +9,7 @@ import { LoadScreen, Thumb } from '../../../components';
 import { day } from '../../../constants';
 import { Course } from '../../../types/Courses.types';
 
-const Curso = ({ course }: Course) => {
+export default function Curso({ course }: Course) {
   const router = useRouter();
 
   const resume = course.resume[0].text;
@@ -61,9 +61,7 @@ const Curso = ({ course }: Course) => {
       </main>
     </Container>
   );
-};
-
-export default Curso;
+}
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const prismic = getPrismicClient();
