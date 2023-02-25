@@ -72,7 +72,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
   const paths = projects.results.map(data => ({
     params: {
-      slug: data.uid
+      curso: data.uid
     }
   }));
 
@@ -84,9 +84,9 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 export const getStaticProps: GetStaticProps = async context => {
   const prismic = getPrismicClient();
-  const { slug } = context.params;
+  const { curso } = context.params;
 
-  const response = await prismic.getByUID('courses', String(slug), {});
+  const response = await prismic.getByUID('courses', String(curso), {});
 
   const course = response.data;
 
