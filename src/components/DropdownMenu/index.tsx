@@ -4,6 +4,7 @@ import { useTheme } from 'styled-components';
 import { Sling as Hamburger } from 'hamburger-react';
 import { Container, Divider, StyledContent, StyledItem } from './styles';
 import { NavLink } from '../NavLink';
+import { routes } from '../Routes';
 
 export const DropdownMenu = () => {
   const [isOpen, setOpen] = useState<boolean>(false);
@@ -23,31 +24,19 @@ export const DropdownMenu = () => {
         </RadixDropdownMenu.Trigger>
         <RadixDropdownMenu.Portal>
           <StyledContent>
-            <StyledItem>
-              <NavLink onClick={handleOpen} title="Home" path="/" />
-            </StyledItem>
-            <Divider />
-            <StyledItem>
-              <NavLink
-                onClick={handleOpen}
-                title="Projetos"
-                path="/projetos"
-                includes
-              />
-            </StyledItem>
-            <Divider />
-            <StyledItem>
-              <NavLink onClick={handleOpen} title="Sobre" path="/sobre" />
-            </StyledItem>
-            <Divider />
-            <StyledItem>
-              <NavLink
-                onClick={handleOpen}
-                title="Cursos"
-                path="/cursos"
-                includes
-              />
-            </StyledItem>
+            {routes.map((data, i) => (
+              <>
+                <StyledItem key={data.path}>
+                  <NavLink
+                    onClick={handleOpen}
+                    title={data.title}
+                    path={data.path}
+                    includes={data.includes}
+                  />
+                </StyledItem>
+                {i + 1 < routes.length && <Divider />}
+              </>
+            ))}
           </StyledContent>
         </RadixDropdownMenu.Portal>
       </RadixDropdownMenu.Root>
