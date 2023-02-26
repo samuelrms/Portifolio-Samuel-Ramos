@@ -9,3 +9,4 @@ export * from './ProjectDetails';
 export * from './Thumb';
 export * from './LoadScreen';
 export * from './Courses';
+export * from './SectionTitle';

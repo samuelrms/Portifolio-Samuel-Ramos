@@ -1,7 +1,7 @@
 import { GetStaticProps } from 'next';
 import Head from 'next/head';
 
-import { ProjectDetails } from '../../components';
+import { ProjectDetails, SectionTitle } from '../../components';
 import { Container } from '../../styles/ProjectsStyles';
 import { hour } from '../../constants';
 import { PropsProjectArr } from '../../types/Home.types';
@@ -26,15 +26,18 @@ export default function Projetos({ projects }: PropsProjectArr) {
         />
       </Head>
       <main className="container">
-        {projects.map(data => (
-          <ProjectDetails
-            key={data.slug}
-            title={data.title}
-            type={data.type}
-            slug={data.slug}
-            imgURL={data.thumb}
-          />
-        ))}
+        <SectionTitle title="Projetos" />
+        <section>
+          {projects.map(data => (
+            <ProjectDetails
+              key={data.slug}
+              title={data.title}
+              type={data.type}
+              slug={data.slug}
+              imgURL={data.thumb}
+            />
+          ))}
+        </section>
       </main>
     </Container>
   );
