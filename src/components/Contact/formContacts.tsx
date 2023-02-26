@@ -22,16 +22,6 @@ export const formContacts = [
     link: whatsApp
   },
   {
-    icon: <BiMailSend />,
-    label: 'Email',
-    link: mailLink
-  },
-  {
-    icon: <IoDownloadOutline />,
-    label: 'Currículo',
-    link: curriculum
-  },
-  {
     icon: <AiOutlineGithub />,
     label: 'GitHub',
     link: github
@@ -41,6 +31,17 @@ export const formContacts = [
     label: 'LinkedIn',
     link: linkedIn
   },
+  {
+    icon: <BiMailSend />,
+    label: 'Email',
+    link: mailLink
+  },
+  {
+    icon: <IoDownloadOutline />,
+    label: 'Currículo',
+    link: curriculum
+  },
+
   {
     icon: <AiFillInstagram />,
     label: 'Instagram',

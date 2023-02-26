@@ -39,6 +39,12 @@ export const Container = styled.footer`
           color: ${({ theme }) => theme.primary};
         }
       }
+
+      .arrow {
+        width: 10px;
+        height: 5px;
+        fill: ${({ theme }) => theme.text};
+      }
     }
 
     @media (max-width: 450px) {
