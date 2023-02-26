@@ -12,11 +12,11 @@ import { Course } from '../../../types/Courses.types';
 export default function Curso({ course }: Course) {
   const router = useRouter();
 
-  const resume = course.resume[0].text;
-
   if (router.isFallback) {
     return <LoadScreen />;
   }
+
+  const resume = course.resume[0].text;
 
   return (
     <Container>
@@ -72,21 +72,21 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
   const paths = projects.results.map(data => ({
     params: {
-      curso: data.uid
+      id: data.uid
     }
   }));
 
   return {
     paths,
-    fallback: false
+    fallback: true
   };
 };
 
 export const getStaticProps: GetStaticProps = async context => {
   const prismic = getPrismicClient();
-  const { curso } = context.params;
+  const { id } = context.params;
 
-  const response = await prismic.getByUID('courses', String(curso), {});
+  const response = await prismic.getByUID('courses', String(id), {});
 
   const course = response.data;
 
