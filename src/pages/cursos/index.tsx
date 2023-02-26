@@ -1,11 +1,12 @@
 import { GetStaticProps } from 'next';
 import Head from 'next/head';
 
-import { Container } from '../../styles/ProjectsStyles';
+import { Container } from '../../styles/CoursesStyles';
 import { hour } from '../../constants';
 import { projectResponse } from '../../utils/getQueryPrismic';
 import { CoursesProps } from '../../types/Courses.types';
 import { CoursesDetails } from '../../components/CoursesDetails';
+import { SectionTitle } from '../../components';
 
 export default function Courses({ courses }: CoursesProps) {
   return (
@@ -26,15 +27,18 @@ export default function Courses({ courses }: CoursesProps) {
         />
       </Head>
       <main className="container">
-        {courses.map(data => (
-          <CoursesDetails
-            key={data.route}
-            title={data.title}
-            imgURL={data.certificate_image.url}
-            slug={data.route}
-            type={data.achievement_platform}
-          />
-        ))}
+        <SectionTitle title="Cursos" />
+        <section>
+          {courses.map(data => (
+            <CoursesDetails
+              key={data.route}
+              title={data.title}
+              imgURL={data.certificate_image.url}
+              slug={data.route}
+              type={data.achievement_platform}
+            />
+          ))}
+        </section>
       </main>
     </Container>
   );
