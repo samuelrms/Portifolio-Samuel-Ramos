@@ -22,17 +22,29 @@ export const Container = styled.header`
     display: none;
   }
 
+  .logo {
+    display: none;
+    cursor: pointer;
+  }
+
   @media (max-width: 786px) {
     justify-content: flex-end;
     padding-right: 2rem;
+
     ul {
       display: none;
     }
+
     button {
       background: transparent;
       border: none;
     }
+
     .contentDropdownMenu {
+      display: block;
+    }
+
+    .logo {
       display: block;
     }
   }

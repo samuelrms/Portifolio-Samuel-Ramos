@@ -1,10 +1,12 @@
 import * as RadixDropdownMenu from '@radix-ui/react-dropdown-menu';
 import { useState } from 'react';
+import Link from 'next/link';
 import { useTheme } from 'styled-components';
 import { Sling as Hamburger } from 'hamburger-react';
 import { Container, Divider, StyledContent, StyledItem } from './styles';
 import { NavLink } from '../NavLink';
 import { routes } from '../Routes';
+import { LogoSVG } from '../Header/Logo';
 
 export const DropdownMenu = () => {
   const [isOpen, setOpen] = useState<boolean>(false);
@@ -14,6 +16,9 @@ export const DropdownMenu = () => {
   const theme = useTheme();
   return (
     <Container>
+      <Link href="/">
+        <LogoSVG className="logo" stroke={theme.primary} />
+      </Link>
       <RadixDropdownMenu.Root
         modal={false}
         onOpenChange={handleOpen}

@@ -4,7 +4,11 @@ import * as DropdownMenu from '@radix-ui/react-dropdown-menu';
 export const Container = styled.div`
   display: none;
   @media (max-width: 786px) {
-    display: block;
+    display: flex;
+    width: 100%;
+    padding-left: 2rem;
+    align-items: center;
+    justify-content: space-between;
   }
 `;
 
