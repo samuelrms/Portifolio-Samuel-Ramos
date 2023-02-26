@@ -6,7 +6,6 @@ type CertificatesLink = {
 };
 
 interface Resume {
-  spans: [];
   text: string;
   type: string;
 }

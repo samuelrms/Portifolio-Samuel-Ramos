@@ -3,7 +3,6 @@ import { Image } from '.';
 export interface Resume {
   type: string;
   text: string;
-  spans: [];
 }
 
 export interface About {
