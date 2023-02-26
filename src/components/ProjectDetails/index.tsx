@@ -4,7 +4,7 @@ import { Props } from './ProjectDetails.types';
 import { Container } from './styles';
 
 export const ProjectDetails: FC<Props> = ({ title, imgURL, slug, type }) => (
-  <Container imgURL={imgURL}>
+  <Container data-aos="fade-up" imgURL={imgURL}>
     <Link href={`/projetos/${slug}`}>
       <div className="overlay" />
       <section>

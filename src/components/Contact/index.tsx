@@ -7,7 +7,7 @@ export const Contact = () => (
   <Container>
     <SectionTitle
       title="Contato"
-      description="Escolha a melhor forma para você de entrar em contato comigo."
+      description="Escolha a melhor forma para entrar em contato comigo."
     />
     <Content>
       {formContacts.map(data => (

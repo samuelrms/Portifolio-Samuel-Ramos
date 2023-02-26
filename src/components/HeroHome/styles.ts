@@ -43,7 +43,7 @@ export const Container = styled.section`
 
 export const TextContainer = styled.section`
   margin-bottom: 2rem;
-  width: 100%;
+  width: fit-content;
 
   h1 {
     font-size: 8rem;

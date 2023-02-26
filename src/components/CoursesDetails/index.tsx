@@ -4,7 +4,7 @@ import { Props } from './CoursesDetails.types';
 import { Container } from './styles';
 
 export const CoursesDetails: FC<Props> = ({ title, imgURL, slug, type }) => (
-  <Container imgURL={imgURL}>
+  <Container data-aos="fade-up" imgURL={imgURL}>
     <Link href={`/cursos/${slug}`}>
       <div className="overlay" />
       <section>

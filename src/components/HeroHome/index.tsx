@@ -7,7 +7,9 @@ export const HeroHome: FC<Props> = ({ data }) => {
   const value = data[0];
   return (
     <Container data-aos="fade-up">
-      <img src={value.img} alt="Foto de Samuel Ramos" />
+      <div data-aos="fade-up">
+        <img src={value.img} alt="Foto de Samuel Ramos" />
+      </div>
       <div>
         <TextContainer>
           <h1>{value.title}</h1>
