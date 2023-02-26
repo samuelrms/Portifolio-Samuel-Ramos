@@ -47,8 +47,16 @@ export default class MyDocument extends Document {
             href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@200&family=Montserrat:wght@300;400;500;600;700&display=swap"
             rel="stylesheet"
           />
+          <link rel="preconnect" href="https://fonts.googleapis.com" />
+          <link rel="preconnect" href="https://fonts.gstatic.com" />
+          <link
+            href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300;500;700&display=swap"
+            rel="stylesheet"
+          />
+
           <meta charSet="utf-8" />
           <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
+          <link rel="shortcut icon" href="/iconImage.png" />
         </Head>
         <body>
           <Main />

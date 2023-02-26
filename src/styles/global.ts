@@ -32,10 +32,20 @@ export default createGlobalStyle`
   }
   button {
     cursor: pointer;
+    font-weight: 700;
+
+    > a {
+      font-weight: 700;
+    }
   }
   a {
     text-decoration: none;
   }
+
+  pre{
+    border-radius: 8px;
+  }
+
   .container {
     width: 100%;
     margin: 0 auto;
@@ -51,4 +61,36 @@ export default createGlobalStyle`
       padding: 0 2rem;
     }
   }
+
+  .purple {
+    color: #c38cdd;
+  }
+
+  .blue {
+    color: #7ac7e3;
+  }
+
+  .comment {
+    color: ${({ theme }) => theme.text};
+    margin-bottom: 1rem;
+    display: block;
+  }
+
+  .openObj {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+
+.cardCode {
+  .contentObj{
+    div{
+      word-break: break-all;
+    }
+    p{
+      font-family: 'Source Code Pro', monospace;
+    }
+  }
+}
 `;

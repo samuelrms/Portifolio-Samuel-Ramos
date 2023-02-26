@@ -1,0 +1,65 @@
+{
+  "title": {
+    "__TYPE__": "FieldContent",
+    "value": "contain",
+    "type": "Text"
+  },
+  "completion_period": {
+    "__TYPE__": "FieldContent",
+    "value": "load",
+    "type": "Text"
+  },
+  "certificates_link": {
+    "__TYPE__": "LinkContent",
+    "value": {
+      "__TYPE__": "ExternalLink",
+      "url": "http://twitter.com"
+    }
+  },
+  "resume": {
+    "__TYPE__": "StructuredTextContent",
+    "value": [
+      {
+        "type": "paragraph",
+        "content": {
+          "text": "Commodo mollit officia reprehenderit consectetur consectetur eiusmod veniam quis id. Proident veniam minim dolor dolor id laboris nulla nostrud est cupidatat aute tempor culpa esse anim."
+        }
+      }
+    ]
+  },
+  "achievement_platform": {
+    "__TYPE__": "FieldContent",
+    "value": "rapidly",
+    "type": "Text"
+  },
+  "uid": {
+    "__TYPE__": "UIDContent",
+    "value": "pocket"
+  },
+  "workload": {
+    "__TYPE__": "FieldContent",
+    "value": "instead",
+    "type": "Text"
+  },
+  "certificate_image": {
+    "__TYPE__": "ImageContent",
+    "origin": {
+      "id": "main",
+      "url": "https://images.unsplash.com/photo-1491975474562-1f4e30bc9468",
+      "width": 4000,
+      "height": 6000
+    },
+    "url": "https://images.unsplash.com/photo-1491975474562-1f4e30bc9468",
+    "width": 4000,
+    "height": 6000,
+    "edit": {
+      "zoom": 1,
+      "crop": {
+        "x": 0,
+        "y": 0
+      },
+      "background": "transparent"
+    },
+    "thumbnails": {}
+  }
+}

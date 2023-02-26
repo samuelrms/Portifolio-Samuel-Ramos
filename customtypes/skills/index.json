@@ -1,0 +1,40 @@
+{
+  "id": "skills",
+  "label": "skills",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "skills_title": {
+        "type": "Text",
+        "config": {
+          "label": "skills_title",
+          "placeholder": ""
+        }
+      },
+      "skills": {
+        "type": "Group",
+        "config": {
+          "label": "skills",
+          "fields": {
+            "logo_skill": {
+              "type": "Image",
+              "config": {
+                "label": "logo_skill",
+                "constraint": {},
+                "thumbnails": []
+              }
+            },
+            "name_skill": {
+              "type": "Text",
+              "config": {
+                "label": "name_skill",
+                "placeholder": ""
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

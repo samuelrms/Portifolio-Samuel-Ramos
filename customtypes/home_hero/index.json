@@ -1,0 +1,196 @@
+{
+  "id": "home_hero",
+  "label": "home_hero",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "photo": {
+        "type": "Image",
+        "config": {
+          "label": "photo",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
+      "title": {
+        "type": "Text",
+        "config": {
+          "label": "title",
+          "placeholder": ""
+        }
+      },
+      "subtitle": {
+        "type": "Text",
+        "config": {
+          "label": "subtitle",
+          "placeholder": ""
+        }
+      },
+      "presentation_area": {
+        "type": "Group",
+        "config": {
+          "label": "presentation_area",
+          "fields": {
+            "comment": {
+              "type": "Text",
+              "config": {
+                "label": "comment",
+                "placeholder": ""
+              }
+            },
+            "title": {
+              "type": "Text",
+              "config": {
+                "label": "title",
+                "placeholder": ""
+              }
+            },
+            "open": {
+              "type": "Text",
+              "config": {
+                "label": "open",
+                "placeholder": ""
+              }
+            },
+            "label_function": {
+              "type": "Text",
+              "config": {
+                "label": "label_function",
+                "placeholder": ""
+              }
+            },
+            "content_function": {
+              "type": "Text",
+              "config": {
+                "label": "content_function",
+                "placeholder": ""
+              }
+            },
+            "label_level": {
+              "type": "Text",
+              "config": {
+                "label": "label_level",
+                "placeholder": ""
+              }
+            },
+            "content_level": {
+              "type": "Text",
+              "config": {
+                "label": "content_level",
+                "placeholder": ""
+              }
+            },
+            "close": {
+              "type": "Text",
+              "config": {
+                "label": "close",
+                "placeholder": ""
+              }
+            }
+          }
+        }
+      },
+      "presentation_skills": {
+        "type": "Group",
+        "config": {
+          "label": "presentation_skills",
+          "fields": {
+            "title": {
+              "type": "Text",
+              "config": {
+                "label": "title",
+                "placeholder": ""
+              }
+            },
+            "open": {
+              "type": "Text",
+              "config": {
+                "label": "open",
+                "placeholder": ""
+              }
+            },
+            "label_tech_stack": {
+              "type": "Text",
+              "config": {
+                "label": "label_tech_stack",
+                "placeholder": ""
+              }
+            },
+            "content_tech_stack": {
+              "type": "Text",
+              "config": {
+                "label": "content_tech_stack",
+                "placeholder": ""
+              }
+            },
+            "label_frameworks": {
+              "type": "Text",
+              "config": {
+                "label": "label_frameworks",
+                "placeholder": ""
+              }
+            },
+            "content_frameworks": {
+              "type": "Text",
+              "config": {
+                "label": "content_frameworks",
+                "placeholder": ""
+              }
+            },
+            "close": {
+              "type": "Text",
+              "config": {
+                "label": "close",
+                "placeholder": ""
+              }
+            }
+          }
+        }
+      },
+      "about": {
+        "type": "Group",
+        "config": {
+          "label": "about",
+          "fields": {
+            "open": {
+              "type": "Text",
+              "config": {
+                "label": "open",
+                "placeholder": ""
+              }
+            },
+            "title": {
+              "type": "Text",
+              "config": {
+                "label": "title",
+                "placeholder": ""
+              }
+            },
+            "label": {
+              "type": "Text",
+              "config": {
+                "label": "label",
+                "placeholder": ""
+              }
+            },
+            "close": {
+              "type": "Text",
+              "config": {
+                "label": "close",
+                "placeholder": ""
+              }
+            },
+            "resume": {
+              "type": "Text",
+              "config": {
+                "label": "resume",
+                "placeholder": ""
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
