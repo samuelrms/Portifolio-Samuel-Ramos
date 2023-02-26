@@ -6,11 +6,11 @@ export const Container = styled.section`
 
 export const Card = styled.div`
   cursor: pointer;
+  width: 100%;
   background: ${({ theme }) => theme.gradient};
   padding: 2rem;
   font-weight: 300;
   color: #fff;
-  width: 30rem;
   align-self: flex-start;
   display: flex;
   transition: 1s !important;
@@ -20,13 +20,8 @@ export const Card = styled.div`
   align-items: center;
 
   @media (max-width: 1450px) {
-    width: 22rem;
     padding: 1.5rem;
     font-size: 0.8rem;
-  }
-
-  @media (max-width: 1000px) {
-    width: 100%;
   }
 
   @media (max-width: 425px) {
