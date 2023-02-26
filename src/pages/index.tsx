@@ -3,6 +3,7 @@ import Head from 'next/head';
 
 import {
   ContactForm,
+  Courses,
   Experiences,
   Guideline,
   HeroHome,
@@ -17,7 +18,8 @@ export default function Home({
   projects,
   homeHero,
   experience,
-  skills
+  skills,
+  courses
 }: PropsHome) {
   return (
     <HomeContainer>
@@ -41,6 +43,7 @@ export default function Home({
         <Experiences experience={experience} />
         <Projects projects={projects} />
         <Guideline data={skills} />
+        <Courses courses={courses} />
         <ContactForm />
       </main>
     </HomeContainer>
@@ -79,13 +82,17 @@ export const getStaticProps: GetStaticProps = async () => {
     ({ data }) => data
   );
 
+  const courses = (await projectResponse('courses')).results.map(
+    res => res.data
+  );
   return {
     props: {
       projects,
       homeHero,
       experience,
       skills,
-      about
+      about,
+      courses
     },
     revalidate: hour
   };

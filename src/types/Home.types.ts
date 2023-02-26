@@ -1,4 +1,5 @@
 import { Image, Year } from '.';
+import { Courses } from './Courses.types';
 
 export interface ProjectProps {
   slug: string;
@@ -83,4 +84,5 @@ export interface PropsHome {
   homeHero: HomeHero;
   experience: Experience;
   skills: Skills;
+  courses: Courses[];
 }
