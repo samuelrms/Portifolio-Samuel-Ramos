@@ -12,7 +12,7 @@ export const StyledContent = styled(DropdownMenu.Content)`
   width: 100vw;
   height: 100vh;
   background: #fff;
-  padding: 48px 12px;
+  padding: 112px 12px;
   list-style: none;
   background: ${({ theme }) => theme.gradient};
   display: flex;

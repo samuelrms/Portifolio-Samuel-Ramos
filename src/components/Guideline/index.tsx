@@ -6,13 +6,13 @@ import { Props } from './Guideline.types';
 import { Container } from './styles';
 
 export const Guideline: FC<Props> = ({ data }) => {
-  const getArr = data[0];
+  const guideLine = data[0];
 
   return (
     <Container>
-      <SectionTitle title={getArr.skillsTitle} />
+      <SectionTitle title={guideLine.skillsTitle} />
       <section>
-        {getArr.skills.map((value: { name_skill: string }, i: number) => (
+        {guideLine.skills.map((value: { name_skill: string }, i: number) => (
           <GuidelineItem
             key={value.name_skill}
             title={value.name_skill}

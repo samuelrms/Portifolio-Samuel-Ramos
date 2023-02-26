@@ -10,3 +10,4 @@ export * from './Thumb';
 export * from './LoadScreen';
 export * from './Courses';
 export * from './SectionTitle';
+export * from './Contact';
