@@ -3,7 +3,8 @@ import { Props } from './Thumb.types';
 
 export const Container = styled.div<Partial<Props>>`
   width: 100%;
-  background: url(${({ imgURL }) => imgURL}) no-repeat center;
+  background: url(${({ imgURL }) => imgURL}) no-repeat;
+  background-position: inherit;
   background-size: cover;
   height: 36rem;
   position: relative;
@@ -14,16 +15,20 @@ export const Container = styled.div<Partial<Props>>`
 
   > section {
     z-index: 2;
+    padding: 1rem 0;
+    border-radius: 8px;
 
     h1 {
       color: ${({ theme }) => theme.primary};
       font-size: 3rem;
+      text-shadow: 8px 8px 8px rgba(0, 0, 0, 0.6);
     }
 
     h2 {
       color: ${({ theme }) => theme.secondary};
       font-size: 2rem;
       font-weight: 300;
+      text-shadow: 8px 8px 8px rgba(0, 0, 0, 0.6);
     }
   }
 
@@ -40,7 +45,7 @@ export const Container = styled.div<Partial<Props>>`
 
   @media (max-width: 700px) {
     padding: 2rem 2.5rem;
-    height: 24rem;
+    height: 30rem;
 
     > section {
       h1 {
