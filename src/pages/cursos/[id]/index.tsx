@@ -45,7 +45,6 @@ export default function Curso({ course }: Course) {
       />
       <main>
         <div>
-          <p>Finalizado em: {course.completion_period}</p>
           <p>Carga horaria: {course.workload}</p>
         </div>
         <p>{resume}</p>
