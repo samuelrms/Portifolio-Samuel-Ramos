@@ -4,12 +4,13 @@ import { createGlobalStyle } from 'styled-components';
 export default createGlobalStyle`
        html {
           scroll-behavior: smooth;
-        }
+        };
   * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
     font-family: 'Montserrat', sans-serif;
+
     ::-webkit-scrollbar {
       width: 8px;
       height: 5px;
@@ -54,6 +55,8 @@ export default createGlobalStyle`
     margin: 0 auto;
     max-width: 85rem;
     padding: 0 1rem;
+    scroll-behavior: smooth;
+
     @media(max-width:1450px) {
       max-width: 70rem;
     }
