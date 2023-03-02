@@ -10,27 +10,26 @@ export const Container = styled.section`
   > div {
     display: flex;
     justify-content: center;
-    > button {
-      background: ${({ theme }) => theme.primary};
-      padding: 0.8rem 3rem;
-      border-radius: 0.5rem;
-      border: none;
-      transition: 0.5s;
 
-      &:hover {
-        background: ${({ theme }) => darken(0.05, theme.primary)};
-      }
+    a {
+      color: ${({ theme }) => theme.background};
+      text-transform: uppercase;
 
-      a {
-        color: ${({ theme }) => theme.background};
-        text-transform: uppercase;
+      > button {
         font-size: 1.5rem;
-      }
+        background: ${({ theme }) => theme.primary};
+        padding: 0.8rem 3rem;
+        border-radius: 0.5rem;
+        border: none;
+        transition: 0.5s;
 
-      @media (max-width: 500px) {
-        padding: 1rem;
-        a {
+        @media (max-width: 500px) {
+          padding: 1rem;
           font-size: 1rem;
+        }
+
+        &:hover {
+          background: ${({ theme }) => darken(0.05, theme.primary)};
         }
       }
     }
