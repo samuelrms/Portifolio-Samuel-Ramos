@@ -37,6 +37,7 @@ export const Container = styled.div<Partial<Props>>`
       display: flex;
       align-items: center;
       gap: 0.8rem;
+      cursor: pointer !important;
 
       transition: 0.5s;
     }
