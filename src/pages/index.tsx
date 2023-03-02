@@ -82,9 +82,11 @@ export const getStaticProps: GetStaticProps = async () => {
     ({ data }) => data
   );
 
-  const courses = (await projectResponse('courses')).results.map(
-    res => res.data
-  );
+  const courses = (await projectResponse('courses')).results.map(res => ({
+    route: res.uid,
+    ...res.data
+  }));
+
   return {
     props: {
       projects,
