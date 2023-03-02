@@ -2,6 +2,9 @@ import { lighten } from 'polished';
 import { createGlobalStyle } from 'styled-components';
 
 export default createGlobalStyle`
+       html {
+          scroll-behavior: smooth;
+        }
   * {
     padding: 0;
     margin: 0;
