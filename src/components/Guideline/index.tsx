@@ -1,4 +1,5 @@
 import { FC } from 'react';
+import Link from 'next/link';
 import { icons } from '../../constants/iconsSkills';
 import { GuidelineItem } from '../GuidelineItem';
 import { SectionTitle } from '../SectionTitle';
@@ -10,7 +11,9 @@ export const Guideline: FC<Props> = ({ data }) => {
 
   return (
     <Container>
-      <SectionTitle title={guideLine.skillsTitle} />
+      <Link href="#conhecimentos">
+        <SectionTitle id="conhecimentos" title={guideLine.skillsTitle} />
+      </Link>
       <section>
         {guideLine.skills.map((value: { name_skill: string }, i: number) => (
           <GuidelineItem
