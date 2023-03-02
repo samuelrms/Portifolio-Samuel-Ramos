@@ -6,7 +6,9 @@ import { Container } from './styles';
 
 export const Courses = ({ courses }: CoursesProps) => (
   <Container>
-    <SectionTitle title="Últimos Cursos realizados" />
+    <Link href="#cursos">
+      <SectionTitle id="cursos" title="Últimos Cursos realizados" />
+    </Link>
     <section>
       {courses.slice(0, 3).map(data => (
         <CoursesItem
@@ -18,8 +20,8 @@ export const Courses = ({ courses }: CoursesProps) => (
         />
       ))}
     </section>
-    <button type="button">
-      <Link href="/cursos">Ver todos os cursos</Link>
-    </button>
+    <Link href="/cursos">
+      <button type="button">Ver todos os cursos</button>
+    </Link>
   </Container>
 );

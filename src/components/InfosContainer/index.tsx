@@ -51,9 +51,9 @@ export const InfosContainer: FC<Props> = ({ data }) => (
       </CodeItem>
     ))}
     <div data-aos="zoom-in">
-      <button type="button">
-        <Link href="/sobre">Saiba mais</Link>
-      </button>
+      <Link href="/sobre">
+        <button type="button">Saiba mais</button>
+      </Link>
     </div>
   </Container>
 );

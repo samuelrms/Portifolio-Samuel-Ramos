@@ -3,6 +3,10 @@ import styled from 'styled-components';
 export const Container = styled.section`
   width: 100%;
 
+  a {
+    cursor: default;
+  }
+
   > section {
     margin-top: 8rem;
     width: 100%;

@@ -55,6 +55,10 @@ export const TextContainer = styled.section`
     color: ${({ theme }) => theme.secondary};
   }
 
+  a {
+    cursor: default;
+  }
+
   @media (max-width: 1450px) {
     h1 {
       font-size: 5rem;

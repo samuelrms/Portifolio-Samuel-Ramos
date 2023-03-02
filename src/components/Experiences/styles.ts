@@ -3,7 +3,12 @@ import styled from 'styled-components';
 export const Container = styled.section`
   width: 100%;
 
+  > a {
+    cursor: default;
+  }
+
   > section {
+    flex-wrap: wrap;
     width: 100%;
     margin-top: 7rem;
     display: flex;

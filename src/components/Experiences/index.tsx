@@ -1,4 +1,5 @@
 import { FC } from 'react';
+import Link from 'next/link';
 import { WorkExperience } from '../../types/Home.types';
 import { ExperiencesItem } from '../ExperiencesItem';
 import { SectionTitle } from '../SectionTitle';
@@ -10,7 +11,13 @@ export const Experiences: FC<Props> = ({ experience }) => {
 
   return (
     <Container>
-      <SectionTitle title={data.title} description={data.subtitle} />
+      <Link href="#experiencias">
+        <SectionTitle
+          id="experiencias"
+          title={data.title}
+          description={data.subtitle}
+        />
+      </Link>
       <section>
         {data.work_experience.map(
           ({

@@ -1,4 +1,5 @@
 import { FC } from 'react';
+import Link from 'next/link';
 import { Container, TextContainer } from './styles';
 import { InfosContainer } from '../InfosContainer';
 import { Props } from './HomeHero.types';
@@ -12,7 +13,9 @@ export const HeroHome: FC<Props> = ({ data }) => {
       </div>
       <div>
         <TextContainer>
-          <h1>{value.title}</h1>
+          <Link href="#home-hero">
+            <h1 id="home-hero">{value.title}</h1>
+          </Link>
           <h2>{value.subtitle}</h2>
         </TextContainer>
         <InfosContainer data={value} />
