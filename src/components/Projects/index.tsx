@@ -6,7 +6,9 @@ import { Container } from './styles';
 
 export const Projects = ({ projects }: PropsProjectArr) => (
   <Container>
-    <SectionTitle title="Últimos Projetos" />
+    <Link href="#ultimos-projetos">
+      <SectionTitle id="ultimos-projetos" title="Últimos Projetos" />
+    </Link>
     <section>
       {projects.slice(0, 3).map(data => (
         <ProjectsItem
@@ -18,8 +20,8 @@ export const Projects = ({ projects }: PropsProjectArr) => (
         />
       ))}
     </section>
-    <button type="button">
-      <Link href="/projetos">Ver todos os projetos</Link>
-    </button>
+    <Link href="/projetos">
+      <button type="button">Ver todos os projetos</button>
+    </Link>
   </Container>
 );
