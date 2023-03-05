@@ -81,10 +81,12 @@ export const CodeItem = styled.div`
 
   @media (max-width: 1000px) {
     width: 100%;
+    font-size: 1rem;
   }
 
   @media (max-width: 425px) {
     padding: 1rem;
+    font-size: 0.8rem;
   }
 
   &:hover {
@@ -96,6 +98,10 @@ export const CodeItem = styled.div`
 
     > p {
       text-align: justify;
+
+      @media (max-width: 335px) {
+        text-align: left;
+      }
     }
 
     @media (max-width: 425px) {
