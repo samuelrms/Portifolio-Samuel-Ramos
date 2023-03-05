@@ -1,8 +1,12 @@
 import Head from 'next/head';
+import { GetStaticProps } from 'next';
 import { Contact, ContactForm } from '../components';
+import { hour } from '../constants';
 import { Container } from '../styles/ContactStyles';
+import { projectResponse } from '../utils/getQueryPrismic';
+import { Props } from '../types/Contact.types';
 
-export default function Contato() {
+export default function Contato({ contact }: Props) {
   return (
     <Container>
       <Head>
@@ -21,9 +25,22 @@ export default function Contato() {
         />
       </Head>
       <main className="container">
-        <Contact />
+        <Contact contact={contact} />
         <ContactForm />
       </main>
     </Container>
   );
 }
+
+export const getStaticProps: GetStaticProps = async () => {
+  const contact = (await projectResponse('contact')).results.map(
+    response => response.data
+  );
+
+  return {
+    props: {
+      contact: contact[0]
+    },
+    revalidate: hour
+  };
+};

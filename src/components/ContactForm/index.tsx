@@ -1,11 +1,11 @@
 import Link from 'next/link';
 import { Form } from '../Form';
 import { SectionTitle } from '../SectionTitle';
+import { IsHome } from './ContactForm.types';
 import { Container } from './styles';
 
-export const ContactForm = () => (
+export const ContactForm = ({ isHome = false }: IsHome) => (
   <Container>
-    <div />
     <Link href="#contato" scroll={false}>
       <SectionTitle
         id="contato"
@@ -22,5 +22,12 @@ export const ContactForm = () => (
       />
     </Link>
     <Form />
+    {isHome && (
+      <div className="contentRoute">
+        <Link href="/contato">
+          <button type="button">Outras formas de contato</button>
+        </Link>
+      </div>
+    )}
   </Container>
 );

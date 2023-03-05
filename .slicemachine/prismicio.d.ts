@@ -96,6 +96,17 @@ interface AboutDocumentData {
      *
      */
     image_person: prismicT.ImageField<never>;
+    /**
+     * graduation field in *about*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: about.graduation
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    graduation: prismicT.KeyTextField;
 }
 /**
  * about document from Prismic
@@ -106,7 +117,79 @@ interface AboutDocumentData {
  *
  * @typeParam Lang - Language API ID of the document.
  */
-export type AboutDocument<Lang extends string = string> = prismicT.PrismicDocumentWithoutUID<Simplify<AboutDocumentData>, "about", Lang>;
+export type AboutDocument<Lang extends string = string> = prismicT.PrismicDocumentWithUID<Simplify<AboutDocumentData>, "about", Lang>;
+/** Content for contact documents */
+interface ContactDocumentData {
+    /**
+     * title field in *contact*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: contact.title
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    title: prismicT.KeyTextField;
+    /**
+     * subtitle field in *contact*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: contact.subtitle
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    subtitle: prismicT.KeyTextField;
+    /**
+     * contacts field in *contact*
+     *
+     * - **Field Type**: Group
+     * - **Placeholder**: *None*
+     * - **API ID Path**: contact.contacts[]
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/group
+     *
+     */
+    contacts: prismicT.GroupField<Simplify<ContactDocumentDataContactsItem>>;
+}
+/**
+ * Item in contact → contacts
+ *
+ */
+export interface ContactDocumentDataContactsItem {
+    /**
+     * link field in *contact → contacts*
+     *
+     * - **Field Type**: Link
+     * - **Placeholder**: *None*
+     * - **API ID Path**: contact.contacts[].link
+     * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
+     *
+     */
+    link: prismicT.LinkField;
+    /**
+     * label_contact field in *contact → contacts*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: contact.contacts[].label_contact
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    label_contact: prismicT.KeyTextField;
+}
+/**
+ * contact document from Prismic
+ *
+ * - **API ID**: `contact`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type ContactDocument<Lang extends string = string> = prismicT.PrismicDocumentWithUID<Simplify<ContactDocumentData>, "contact", Lang>;
 /** Content for courses documents */
 interface CoursesDocumentData {
     /**
@@ -715,12 +798,12 @@ export interface SkillsDocumentDataSkillsItem {
  * @typeParam Lang - Language API ID of the document.
  */
 export type SkillsDocument<Lang extends string = string> = prismicT.PrismicDocumentWithoutUID<Simplify<SkillsDocumentData>, "skills", Lang>;
-export type AllDocumentTypes = AboutDocument | CoursesDocument | ExperienceDocument | HomeHeroDocument | ProjectsDocument | SkillsDocument;
+export type AllDocumentTypes = AboutDocument | ContactDocument | CoursesDocument | ExperienceDocument | HomeHeroDocument | ProjectsDocument | SkillsDocument;
 declare module "@prismicio/client" {
     interface CreateClient {
         (repositoryNameOrEndpoint: string, options?: prismic.ClientConfig): prismic.Client<AllDocumentTypes>;
     }
     namespace Content {
-        export type { AboutDocumentData, AboutDocument, CoursesDocumentData, CoursesDocument, ExperienceDocumentData, ExperienceDocumentDataWorkExperienceItem, ExperienceDocument, HomeHeroDocumentData, HomeHeroDocumentDataPresentationAreaItem, HomeHeroDocumentDataPresentationSkillsItem, HomeHeroDocumentDataAboutItem, HomeHeroDocument, ProjectsDocumentData, ProjectsDocument, SkillsDocumentData, SkillsDocumentDataSkillsItem, SkillsDocument, AllDocumentTypes };
+        export type { AboutDocumentData, AboutDocument, ContactDocumentData, ContactDocumentDataContactsItem, ContactDocument, CoursesDocumentData, CoursesDocument, ExperienceDocumentData, ExperienceDocumentDataWorkExperienceItem, ExperienceDocument, HomeHeroDocumentData, HomeHeroDocumentDataPresentationAreaItem, HomeHeroDocumentDataPresentationSkillsItem, HomeHeroDocumentDataAboutItem, HomeHeroDocument, ProjectsDocumentData, ProjectsDocument, SkillsDocumentData, SkillsDocumentDataSkillsItem, SkillsDocument, AllDocumentTypes };
     }
 }

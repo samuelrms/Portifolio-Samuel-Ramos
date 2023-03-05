@@ -14,6 +14,8 @@ export interface About {
   title_resume: string;
   resume: Resume[];
   image_person: Image;
+  graduation: string;
+  graduation_label: string;
 }
 
 export interface Props {
