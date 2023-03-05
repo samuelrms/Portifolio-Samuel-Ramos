@@ -44,7 +44,7 @@ export default function Home({
         <Projects projects={projects} />
         <Guideline data={skills} />
         <Courses courses={courses} />
-        <ContactForm />
+        <ContactForm isHome />
       </main>
     </HomeContainer>
   );
