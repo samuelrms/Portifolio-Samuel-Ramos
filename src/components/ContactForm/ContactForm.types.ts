@@ -1,3 +1,3 @@
 export type IsHome = {
-  isHome: boolean;
+  isHome?: boolean;
 };
