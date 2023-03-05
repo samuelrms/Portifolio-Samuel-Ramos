@@ -63,6 +63,20 @@
           "constraint": {},
           "thumbnails": []
         }
+      },
+      "graduation": {
+        "type": "Text",
+        "config": {
+          "label": "graduation",
+          "placeholder": ""
+        }
+      },
+      "uid": {
+        "type": "UID",
+        "config": {
+          "label": "title_page",
+          "placeholder": ""
+        }
       }
     }
   }

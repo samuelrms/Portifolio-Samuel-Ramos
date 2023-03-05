@@ -16,6 +16,7 @@ export const AboutContainer: FC<Props> = ({ data }) => (
         <p>{data.presentation}</p>
         <p>{data.experience}</p>
         <p>{data.motivational}</p>
+        <p>{data.graduation}</p>
       </CodeItem>
     </div>
     <CodeItem className="contentObj" key={data.about_me} data-aos="zoom-in">

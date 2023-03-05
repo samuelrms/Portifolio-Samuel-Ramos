@@ -96,6 +96,17 @@ interface AboutDocumentData {
      *
      */
     image_person: prismicT.ImageField<never>;
+    /**
+     * graduation field in *about*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: about.graduation
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    graduation: prismicT.KeyTextField;
 }
 /**
  * about document from Prismic
@@ -106,7 +117,7 @@ interface AboutDocumentData {
  *
  * @typeParam Lang - Language API ID of the document.
  */
-export type AboutDocument<Lang extends string = string> = prismicT.PrismicDocumentWithoutUID<Simplify<AboutDocumentData>, "about", Lang>;
+export type AboutDocument<Lang extends string = string> = prismicT.PrismicDocumentWithUID<Simplify<AboutDocumentData>, "about", Lang>;
 /** Content for courses documents */
 interface CoursesDocumentData {
     /**
