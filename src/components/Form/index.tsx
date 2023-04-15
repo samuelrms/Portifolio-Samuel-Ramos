@@ -25,7 +25,7 @@ export const Form = () => {
       toast('Preencha todos os campos para enviar sua mensagem!', {
         style: {
           background: theme.error,
-          color: '#fff'
+          color: theme.white
         }
       });
       return;
@@ -33,25 +33,38 @@ export const Form = () => {
 
     try {
       setLoading(true);
-      emailjs
-        .sendForm('gmail', 'contact-portifolio', e.target, 'aQZ_-tHoFflFCvWRE')
-        .then();
+
       setName('');
       setEmail('');
       setMensagem('');
       setPhone('');
 
-      toast('Mensagem enviada com sucesso!', {
-        style: {
-          background: theme.primary,
-          color: '#fff'
+      toast.promise(
+        emailjs
+          .sendForm(
+            process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
+            process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
+            e.target,
+            process.env.NEXT_PUBLIC_EMAILJS_USER_ID!
+          )
+          .then(),
+        {
+          loading: 'Enviando email...',
+          success: 'Mensagem enviada com sucesso!',
+          error: 'Erro ao enviar email'
+        },
+        {
+          style: {
+            background: theme.primary,
+            color: theme.white
+          }
         }
-      });
+      );
     } catch (error) {
       toast('Ocorreu um erro ao tentar enviar sua mensagem. Tente novamente!', {
         style: {
           background: theme.error,
-          color: '#fff'
+          color: theme.white
         }
       });
     } finally {

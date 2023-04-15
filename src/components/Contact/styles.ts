@@ -10,7 +10,7 @@ export const Card = styled.div`
   background: ${({ theme }) => theme.gradient};
   padding: 2rem;
   font-weight: 300;
-  color: #fff;
+  color: ${({ theme }) => theme.white};
   align-self: flex-start;
   display: flex;
   transition: 1s !important;

@@ -66,15 +66,13 @@ export const CodeItem = styled.div`
   padding: 2rem;
   font-family: 'JetBrains Mono', monospace;
   font-weight: 300;
-  color: #fff;
-  /* min-width: 30rem; */
+  color: ${({ theme }) => theme.white};
   align-self: flex-start;
   transition: 1s !important;
   flex-direction: column;
   border-radius: 8px;
 
   @media (max-width: 1450px) {
-    /* min-width: 22rem; */
     padding: 1.5rem;
     font-size: 1.3rem;
   }
