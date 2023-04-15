@@ -53,7 +53,7 @@ export const Container = styled.header`
 export const StyledContent = styled(DropdownMenu.Content)`
   width: 100vw;
   height: 100vh;
-  background: #fff;
+  background: ${({ theme }) => theme.white};
   padding: 0 12px 48px;
   list-style: none;
   background: ${({ theme }) => theme.gradient};

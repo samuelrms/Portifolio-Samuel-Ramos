@@ -15,7 +15,7 @@ export const Container = styled.form`
   > button {
     border: none;
     padding: 1rem 2.5rem;
-    color: #fff;
+    color: ${({ theme }) => theme.white};
     font-size: 1.2rem;
     border-radius: 0.5rem;
     background: ${({ theme }) => theme.primary};

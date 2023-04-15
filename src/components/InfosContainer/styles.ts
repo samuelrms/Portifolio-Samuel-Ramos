@@ -41,7 +41,7 @@ export const CodeItem = styled.div`
   padding: 2rem;
   font-family: 'JetBrains Mono', monospace;
   font-weight: 300;
-  color: #fff;
+  color: ${({ theme }) => theme.white};
   width: 30rem;
   align-self: flex-start;
   transition: 1s !important;
@@ -81,11 +81,11 @@ export const CodeItem = styled.div`
   }
 
   .purple {
-    color: #c38cdd;
+    color: ${({ theme }) => theme.purple};
   }
 
   .blue {
-    color: #7ac7e3;
+    color: ${({ theme }) => theme.blue};
   }
 
   .comment {

@@ -69,11 +69,11 @@ export default createGlobalStyle`
   }
 
   .purple {
-    color: #c38cdd;
+    color: ${({ theme }) => theme.purple};
   }
 
   .blue {
-    color: #7ac7e3;
+    color: ${({ theme }) => theme.blue};
   }
 
   .comment {

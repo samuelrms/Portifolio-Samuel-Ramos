@@ -7,6 +7,6 @@ export const ContainerTooltip = styled.div`
   padding: 0.5rem;
   border-radius: 8px;
   background: ${({ theme }) => theme.text};
-  color: #fff;
+  color: ${({ theme }) => theme.white};
   font-size: 0.75rem;
 `;

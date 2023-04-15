@@ -31,7 +31,7 @@ export const Container = styled.div<Partial<Props>>`
     font-weight: 300;
 
     a {
-      color: #fff;
+      color: ${({ theme }) => theme.white};
       font-size: 2rem;
       font-weight: 300;
       display: flex;
@@ -69,13 +69,13 @@ export const Container = styled.div<Partial<Props>>`
       h1 {
         color: ${({ theme }) => theme.primary};
         font-size: 2.5rem;
-        text-shadow: -4px 5px 22px #11172b;
+        text-shadow: ${({ theme }) => theme.textShadow};
       }
 
       h2 {
         color: ${({ theme }) => theme.secondary};
         font-size: 2rem;
-        text-shadow: -4px 5px 22px #11172b;
+        text-shadow: ${({ theme }) => theme.textShadow};
         font-weight: 300;
       }
     }

@@ -15,7 +15,7 @@ export const Container = styled.div`
 export const StyledContent = styled(DropdownMenu.Content)`
   width: 100vw;
   height: 100vh;
-  background: #fff;
+  background: ${({ theme }) => theme.white};
   padding: 112px 12px;
   list-style: none;
   background: ${({ theme }) => theme.gradient};

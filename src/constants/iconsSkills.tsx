@@ -1,6 +1,13 @@
 import { DiNodejs, DiReact } from 'react-icons/di';
 import { TbBrandNextjs, TbBrandReactNative } from 'react-icons/tb';
-import { SiTypescript, SiJavascript } from 'react-icons/si';
+import {
+  SiTypescript,
+  SiJavascript,
+  SiNestjs,
+  SiTailwindcss,
+  SiFlutter,
+  SiLua
+} from 'react-icons/si';
 
 export const icons = [
   { icon: <TbBrandNextjs /> },
@@ -8,5 +15,9 @@ export const icons = [
   { icon: <TbBrandReactNative /> },
   { icon: <SiTypescript /> },
   { icon: <SiJavascript /> },
-  { icon: <DiNodejs /> }
+  { icon: <DiNodejs /> },
+  { icon: <SiNestjs /> },
+  { icon: <SiTailwindcss /> },
+  { icon: <SiFlutter /> },
+  { icon: <SiLua /> }
 ];
