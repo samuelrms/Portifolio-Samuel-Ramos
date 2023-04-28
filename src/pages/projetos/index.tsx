@@ -14,7 +14,7 @@ export default function Projetos({ projects }: PropsProjectArr) {
         <title>Projetos | Portifólio Samuel Ramos</title>
         <meta
           name="description"
-          content="Aqui se encontram projetos desenvolvidos por mim!"
+          content="Sinta-se à vontade para explorar meus projetos e entrar em contato comigo se tiver alguma dúvida ou quiser saber mais sobre meu trabalho. Obrigado por visitar!"
         />
         <meta property="og:image" content="/ogimage.png" />
         <meta property="og:image:secure_url" content="/ogimage.png" />
@@ -22,7 +22,7 @@ export default function Projetos({ projects }: PropsProjectArr) {
         <meta property="instagram:image:src" content="/ogimage.png" />
         <meta
           property="og:description"
-          content="Aqui se encontram projetos desenvolvidos por mim"
+          content="Sinta-se à vontade para explorar meus projetos e entrar em contato comigo se tiver alguma dúvida ou quiser saber mais sobre meu trabalho. Obrigado por visitar!"
         />
       </Head>
       <main className="container">

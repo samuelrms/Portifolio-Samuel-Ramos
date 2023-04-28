@@ -13,7 +13,7 @@ export default function Contato({ contact }: Props) {
         <title>Contato | Portifólio Samuel Ramos</title>
         <meta
           name="description"
-          content="Formas de entrar em contato com Samuel Ramos, linkedIn, e-mail, GitHub, WhatsApp e formulário"
+          content="Você pode entrar em contato comigo pelo WhatsApp, conferir meu currículo Lattes, conhecer meu perfil profissional no LinkedIn, me enviar um e-mail ou verificar meus projetos no GitHub. Meu currículo também está disponível para download, e você pode me seguir no Instagram para saber mais sobre meu trabalho e interesses pessoais. Sempre aberto para novos desafios e oportunidades, e ficarei feliz em ouvir de você."
         />
         <meta property="og:image" content="/ogimage.png" />
         <meta property="og:image:secure_url" content="/ogimage.png" />
@@ -21,7 +21,7 @@ export default function Contato({ contact }: Props) {
         <meta property="instagram:image:src" content="/ogimage.png" />
         <meta
           property="og:description"
-          content="Formas de entrar em contato com Samuel Ramos, linkedIn, e-mail, GitHub, WhatsApp e formulário"
+          content="Você pode entrar em contato comigo pelo WhatsApp, conferir meu currículo Lattes, conhecer meu perfil profissional no LinkedIn, me enviar um e-mail ou verificar meus projetos no GitHub. Meu currículo também está disponível para download, e você pode me seguir no Instagram para saber mais sobre meu trabalho e interesses pessoais. Sempre aberto para novos desafios e oportunidades, e ficarei feliz em ouvir de você."
         />
       </Head>
       <main className="container">

@@ -27,7 +27,7 @@ export default function Home({
         <title>Home | Portifólio Samuel Ramos</title>
         <meta
           name="description"
-          content="Sou um dev Front-end e aqui apresento alguns projetos desenvolvidos por mim, tecnologias que utilizo e outros..."
+          content="Samuel Ramos, desenvolvedor FullStack, especializado em TypeScript e outras tecnologias modernas de desenvolvimento web. Com ampla experiência em desenvolvimento front-end e back-end, capaz de criar soluções elegantes e escaláveis para os desafios mais complexos de desenvolvimento. Tem compromisso com a excelência técnica e a inovação tornando-se um líder de pensamento no campo do desenvolvimento web. Descubra como as habilidades e a sua podem levar seu projeto de desenvolvimento web e mobile para o próximo nível."
         />
         <meta property="og:image" content="/ogimage.png" />
         <meta property="og:image:secure_url" content="/ogimage.png" />
@@ -35,7 +35,7 @@ export default function Home({
         <meta property="instagram:image:src" content="/ogimage.png" />
         <meta
           property="og:description"
-          content="Sou um dev Front-end e aqui apresento alguns projetos desenvolvidos por mim, tecnologias que utilizo e outros..."
+          content="Samuel Ramos, desenvolvedor FullStack, especializado em TypeScript e outras tecnologias modernas de desenvolvimento web. Com ampla experiência em desenvolvimento front-end e back-end, capaz de criar soluções elegantes e escaláveis para os desafios mais complexos de desenvolvimento. Tem compromisso com a excelência técnica e a inovação tornando-se um líder de pensamento no campo do desenvolvimento web. Descubra como as habilidades e a sua podem levar seu projeto de desenvolvimento web e mobile para o próximo nível."
         />
       </Head>
       <main className="container">
