@@ -8,12 +8,13 @@ export const Container = styled.section`
   }
 
   > section {
-    margin-top: 8rem;
-    width: 100%;
-    display: flex;
+    margin: 8rem auto auto;
+    width: 80%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(145px, 1fr));
     align-items: center;
     justify-content: center;
-    gap: 8rem;
+    gap: 5rem;
     flex-wrap: wrap;
 
     @media (max-width: 1000px) {
