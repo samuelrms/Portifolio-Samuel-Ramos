@@ -15,7 +15,7 @@ export default function Courses({ courses }: CoursesProps) {
         <title>Cursos | Portifólio Samuel Ramos</title>
         <meta
           name="description"
-          content="Aqui se encontram os cursos que já realizei!"
+          content="Bem-vindo à minha página de cursos. Aqui você pode encontrar informações sobre meus cursos online e presenciais, onde compartilho minhas experiências e conhecimentos em desenvolvimento web com outras pessoas interessadas em aprender."
         />
         <meta property="og:image" content="/ogimage.png" />
         <meta property="og:image:secure_url" content="/ogimage.png" />
@@ -23,7 +23,7 @@ export default function Courses({ courses }: CoursesProps) {
         <meta property="instagram:image:src" content="/ogimage.png" />
         <meta
           property="og:description"
-          content="Aqui se encontram os cursos que já realizei!"
+          content="Bem-vindo à minha página de cursos. Aqui você pode encontrar informações sobre meus cursos online e presenciais, onde compartilho minhas experiências e conhecimentos em desenvolvimento web com outras pessoas interessadas em aprender."
         />
       </Head>
       <main className="container">

@@ -71,7 +71,7 @@ export const CodeItem = styled.div`
   }
 
   > div {
-    margin: 0.2rem 2rem;
+    margin: 0.2rem 2rem 0.5rem;
     margin-left: 1rem;
 
     @media (max-width: 425px) {
@@ -98,5 +98,5 @@ export const CodeItem = styled.div`
 export const ContentCardCode = styled.div`
   display: flex;
   margin-left: 1.5rem !important;
-  gap: 0.5rem;
+  flex-direction: column;
 `;
