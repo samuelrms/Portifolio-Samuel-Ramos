@@ -30,9 +30,9 @@ export default function Projeto({ project }: ProjectUID) {
       <Thumb title={project.title} type={project.type} imgURL={project.thumb} />
       <main>
         <p>{project.description}</p>
-        <button type="button">
-          <a href={project.link}>Ver projeto repositório</a>
-        </button>
+        <a href={project.link}>
+          <button type="button">Ver projeto repositório</button>
+        </a>
       </main>
     </Container>
   );

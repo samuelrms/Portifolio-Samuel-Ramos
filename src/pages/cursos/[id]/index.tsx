@@ -48,15 +48,9 @@ export default function Curso({ course }: Course) {
           <p>Carga horaria: {course.workload}</p>
         </div>
         <p>{resume}</p>
-        <button type="button">
-          <a
-            href={course.certificates_link.url}
-            target="_blank"
-            rel="noreferrer"
-          >
-            Ver certificado
-          </a>
-        </button>
+        <a href={course.certificates_link.url} target="_blank" rel="noreferrer">
+          <button type="button">Ver certificado</button>
+        </a>
       </main>
     </Container>
   );
