@@ -10,7 +10,6 @@ import {
   Projects
 } from '../components';
 import { HomeContainer } from '../styles/HomeStyles';
-import { hour } from '../constants';
 import { PropsHome } from '../types/Home.types';
 import { projectResponse } from '../utils/getQueryPrismic';
 
@@ -95,7 +94,6 @@ export const getStaticProps: GetStaticProps = async () => {
       skills,
       about,
       courses
-    },
-    revalidate: hour
+    }
   };
 };

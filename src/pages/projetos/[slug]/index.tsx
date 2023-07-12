@@ -4,7 +4,6 @@ import Head from 'next/head';
 import { useRouter } from 'next/router';
 
 import { LoadScreen, Thumb } from '../../../components';
-import { day } from '../../../constants';
 import { getPrismicClient } from '../../../services/prismic';
 import { Container } from '../../../styles/ProjectDynamicStyles';
 import { ProjectUID } from '../../../types/Home.types';
@@ -73,7 +72,6 @@ export const getStaticProps: GetStaticProps = async context => {
   };
 
   return {
-    props: { project },
-    revalidate: day
+    props: { project }
   };
 };

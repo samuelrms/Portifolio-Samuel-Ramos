@@ -6,7 +6,6 @@ import { useRouter } from 'next/router';
 import { Container } from '../../../styles/CoursesDynamicStyles';
 import { getPrismicClient } from '../../../services/prismic';
 import { LoadScreen, Thumb } from '../../../components';
-import { day } from '../../../constants';
 import { Course } from '../../../types/Courses.types';
 
 export default function Curso({ course }: Course) {
@@ -84,7 +83,6 @@ export const getStaticProps: GetStaticProps = async context => {
   const course = response.data;
 
   return {
-    props: { course },
-    revalidate: day
+    props: { course }
   };
 };

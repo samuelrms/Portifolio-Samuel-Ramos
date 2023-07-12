@@ -2,7 +2,6 @@ import { GetStaticProps } from 'next';
 import Head from 'next/head';
 import React from 'react';
 import { HeroAbout } from '../components/HeroAbout';
-import { hour } from '../constants';
 import { AboutContainer } from '../styles/AboutStyles';
 import { About, Props } from '../types/About.types';
 import { projectResponse } from '../utils/getQueryPrismic';
@@ -43,7 +42,6 @@ export const getStaticProps: GetStaticProps = async () => {
   return {
     props: {
       about
-    },
-    revalidate: hour
+    }
   };
 };

@@ -2,7 +2,6 @@ import { GetStaticProps } from 'next';
 import Head from 'next/head';
 
 import { Container } from '../../styles/CoursesStyles';
-import { hour } from '../../constants';
 import { projectResponse } from '../../utils/getQueryPrismic';
 import { CoursesProps } from '../../types/Courses.types';
 import { CoursesDetails } from '../../components/CoursesDetails';
@@ -51,7 +50,6 @@ export const getStaticProps: GetStaticProps = async () => {
   }));
 
   return {
-    props: { courses },
-    revalidate: hour
+    props: { courses }
   };
 };

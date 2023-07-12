@@ -3,7 +3,6 @@ import Head from 'next/head';
 
 import { ProjectDetails, SectionTitle } from '../../components';
 import { Container } from '../../styles/ProjectsStyles';
-import { hour } from '../../constants';
 import { PropsProjectArr } from '../../types/Home.types';
 import { projectResponse } from '../../utils/getQueryPrismic';
 
@@ -56,7 +55,6 @@ export const getStaticProps: GetStaticProps = async () => {
   return {
     props: {
       projects
-    },
-    revalidate: hour
+    }
   };
 };

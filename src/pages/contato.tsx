@@ -1,7 +1,6 @@
 import Head from 'next/head';
 import { GetStaticProps } from 'next';
 import { Contact, ContactForm } from '../components';
-import { hour } from '../constants';
 import { Container } from '../styles/ContactStyles';
 import { projectResponse } from '../utils/getQueryPrismic';
 import { Props } from '../types/Contact.types';
@@ -40,7 +39,6 @@ export const getStaticProps: GetStaticProps = async () => {
   return {
     props: {
       contact: contact[0]
-    },
-    revalidate: hour
+    }
   };
 };
