@@ -46,7 +46,9 @@ export default function Curso({ course }: Course) {
         <div>
           <p>Carga horaria: {course.workload}</p>
         </div>
-        <p>{resume}</p>
+        {course.resume.map((data, index) => (
+          <p key={index}>{data.text}</p>
+        ))}
         <a href={course.certificates_link.url} target="_blank" rel="noreferrer">
           <button type="button">Ver certificado</button>
         </a>
@@ -83,6 +85,7 @@ export const getStaticProps: GetStaticProps = async context => {
   const course = response.data;
 
   return {
-    props: { course }
+    props: { course },
+    revalidate: 120
   };
 };

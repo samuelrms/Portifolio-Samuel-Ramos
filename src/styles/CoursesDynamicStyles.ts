@@ -17,6 +17,7 @@ export const Container = styled.div`
       font-size: 1.5rem;
       font-weight: 300;
       text-align: justify;
+      padding-bottom: 16px;
     }
 
     a {
