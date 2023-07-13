@@ -105,8 +105,6 @@ export const getStaticProps: GetStaticProps = async context => {
 
   const course = { ...response.data, uid: response.uid };
 
-  console.log(response);
-
   return {
     props: { course },
     revalidate: 120
