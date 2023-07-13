@@ -18,13 +18,34 @@ export default function Projeto({ project }: ProjectUID) {
   return (
     <Container>
       <Head>
-        <title>{project.title} | Portifólio Samuel Ramos</title>
+        <meta charSet="utf-8" />
+        <meta name="language" content="pt-BR" />
+        <title>
+          {project.title} | Portifólio Samuel Ramos - Full-Stack Developer
+        </title>
+        <meta name="robots" content="all" />
         <meta name="description" content={project.description} />
+        <meta
+          name="keywords"
+          content="nodejs-javascript-typescript-react-next-nestjs-wordpress-freelancer"
+        />
         <meta property="og:image" content={project.thumb} />
         <meta property="og:image:secure_url" content={project.thumb} />
         <meta property="instagram:image" content={project.thumb} />
         <meta property="instagram:image:src" content={project.thumb} />
         <meta property="og:description" content={project.description} />
+        <meta name="author" content="Samuel Ramos" />
+
+        <meta property="og:type" content="page" />
+        <meta
+          property="og:url"
+          content={`samuelramos.dev/projetos/${project.slug}`}
+        />
+        <meta
+          property="og:title"
+          content={`${project.title} | Portifólio Samuel Ramos - Full-Stack Developer`}
+        />
+        <meta property="article:author" content="Samuel Ramos" />
       </Head>
       <Thumb title={project.title} type={project.type} imgURL={project.thumb} />
       <main>
@@ -63,7 +84,7 @@ export const getStaticProps: GetStaticProps = async context => {
   const response = await prismic.getByUID('projects', String(slug), {});
 
   const project = {
-    projeto: response.uid,
+    slug: response.uid,
     title: response.data.title,
     type: response.data.type,
     link: response.data.project_link.url,
