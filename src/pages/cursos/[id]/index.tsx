@@ -20,8 +20,17 @@ export default function Curso({ course }: Course) {
   return (
     <Container>
       <Head>
-        <title>{course.title} | Portifólio Samuel Ramos</title>
+        <meta charSet="utf-8" />
+        <meta name="language" content="pt-BR" />
+        <title>
+          {course.title} | Portifólio Samuel Ramos - Full-Stack Developer
+        </title>
+        <meta name="robots" content="all" />
         <meta name="description" content={resume} />
+        <meta
+          name="keywords"
+          content="nodejs-javascript-typescript-react-next-nestjs-wordpress-freelancer"
+        />
         <meta property="og:image" content={course.certificate_image.url} />
         <meta
           property="og:image:secure_url"
@@ -36,6 +45,18 @@ export default function Curso({ course }: Course) {
           content={course.certificate_image.url}
         />
         <meta property="og:description" content={resume} />
+        <meta name="author" content="Samuel Ramos" />
+
+        <meta property="og:type" content="page" />
+        <meta
+          property="og:url"
+          content={`samuelramos.dev/cursos/${course.uid}`}
+        />
+        <meta
+          property="og:title"
+          content={`${course.title} | Portifólio Samuel Ramos - Full-Stack Developer`}
+        />
+        <meta property="article:author" content="Samuel Ramos" />
       </Head>
       <Thumb
         title={course.title}
@@ -82,7 +103,9 @@ export const getStaticProps: GetStaticProps = async context => {
 
   const response = await prismic.getByUID('courses', String(id), {});
 
-  const course = response.data;
+  const course = { ...response.data, uid: response.uid };
+
+  console.log(response);
 
   return {
     props: { course },
