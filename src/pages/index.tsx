@@ -23,19 +23,47 @@ export default function Home({
   return (
     <HomeContainer>
       <Head>
-        <title>Home | Portifólio Samuel Ramos</title>
+        <meta charSet="utf-8" />
+        <meta name="language" content="pt-BR" />
+        <title> Home | Portifólio Samuel Ramos - Full-Stack Developer</title>
+        <meta name="robots" content="all" />
+        <meta
+          name="keywords"
+          content="informações-sobre-pessoal-curiosidades-experiencia-resumo-qualidades-projetos-cursos-techs-skills"
+        />
+        <meta
+          property="og:image"
+          content="https://images.prismic.io/portifolio-samuel-rms/112e8b0d-1dbe-4230-bd20-6ad656faed0f_ogimage.png?auto=compress,format"
+        />
+        <meta
+          property="og:image:secure_url"
+          content="https://images.prismic.io/portifolio-samuel-rms/112e8b0d-1dbe-4230-bd20-6ad656faed0f_ogimage.png?auto=compress,format"
+        />
+        <meta
+          property="instagram:image"
+          content="https://images.prismic.io/portifolio-samuel-rms/112e8b0d-1dbe-4230-bd20-6ad656faed0f_ogimage.png?auto=compress,format"
+        />
+        <meta
+          property="instagram:image:src"
+          content="https://images.prismic.io/portifolio-samuel-rms/112e8b0d-1dbe-4230-bd20-6ad656faed0f_ogimage.png?auto=compress,format"
+        />
         <meta
           name="description"
           content="Samuel Ramos, desenvolvedor FullStack, especializado em TypeScript e outras tecnologias modernas de desenvolvimento web. Com ampla experiência em desenvolvimento front-end e back-end, capaz de criar soluções elegantes e escaláveis para os desafios mais complexos de desenvolvimento. Tem compromisso com a excelência técnica e a inovação tornando-se um líder de pensamento no campo do desenvolvimento web. Descubra como as habilidades e a sua podem levar seu projeto de desenvolvimento web e mobile para o próximo nível."
         />
-        <meta property="og:image" content="/ogimage.png" />
-        <meta property="og:image:secure_url" content="/ogimage.png" />
-        <meta property="instagram:image" content="/ogimage.png" />
-        <meta property="instagram:image:src" content="/ogimage.png" />
         <meta
           property="og:description"
           content="Samuel Ramos, desenvolvedor FullStack, especializado em TypeScript e outras tecnologias modernas de desenvolvimento web. Com ampla experiência em desenvolvimento front-end e back-end, capaz de criar soluções elegantes e escaláveis para os desafios mais complexos de desenvolvimento. Tem compromisso com a excelência técnica e a inovação tornando-se um líder de pensamento no campo do desenvolvimento web. Descubra como as habilidades e a sua podem levar seu projeto de desenvolvimento web e mobile para o próximo nível."
         />
+        <meta name="author" content="Samuel Ramos" />
+
+        <meta property="og:type" content="page" />
+        <meta property="og:url" content="samuelramos.dev" />
+        <meta
+          property="og:title"
+          content="Home | Portifólio Samuel Ramos - Full-Stack Developer"
+        />
+        <meta property="article:author" content="Samuel Ramos" />
       </Head>
       <main className="container">
         <HeroHome data={homeHero} />
