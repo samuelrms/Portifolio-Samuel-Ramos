@@ -23,10 +23,6 @@ export default function Courses({ courses }: CoursesProps) {
           name="description"
           content="Bem-vindo à minha página de cursos. Aqui você pode encontrar informações sobre meus cursos online e presenciais, onde compartilho minhas experiências e conhecimentos em desenvolvimento web com outras pessoas interessadas em aprender."
         />
-        <meta property="og:image" content="/ogimage.png" />
-        <meta property="og:image:secure_url" content="/ogimage.png" />
-        <meta property="instagram:image" content="/ogimage.png" />
-        <meta property="instagram:image:src" content="/ogimage.png" />
         <meta
           property="og:description"
           content="Bem-vindo à minha página de cursos. Aqui você pode encontrar informações sobre meus cursos online e presenciais, onde compartilho minhas experiências e conhecimentos em desenvolvimento web com outras pessoas interessadas em aprender."
@@ -46,10 +42,6 @@ export default function Courses({ courses }: CoursesProps) {
         <meta
           property="instagram:image:src"
           content="https://images.prismic.io/portifolio-samuel-rms/8029349a-26d4-483b-8ea1-77b0207a8f1c_cursos.png?auto=compress,format"
-        />
-        <meta
-          property="og:description"
-          content="Bem-vindo à minha página de cursos. Aqui você pode encontrar informações sobre meus cursos online e presenciais, onde compartilho minhas experiências e conhecimentos em desenvolvimento web com outras pessoas interessadas em aprender."
         />
         <meta name="author" content="Samuel Ramos" />
 
