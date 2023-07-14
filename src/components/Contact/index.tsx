@@ -11,7 +11,11 @@ export const Contact: FC<Props> = ({ contact }) => (
     <Content>
       {contact.contacts.map((data, index) => (
         <div key={data.label_contact} data-aos="zoom-in">
-          <Link target="_blank" href={data.link.url}>
+          <Link
+            target="_blank"
+            href={data.link.url}
+            aria-label={`Entre em contato comigo através do meu ${data.label_contact}`}
+          >
             <Card>
               {formContacts[index].icon}
               <p>{data.label_contact}</p>

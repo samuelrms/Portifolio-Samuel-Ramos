@@ -103,7 +103,7 @@ export const Form = () => {
         as="textarea"
         onChange={({ target }) => setMensagem(target.value)}
       />
-      <button type="submit" disabled={loading}>
+      <button type="submit" disabled={loading} aria-label="Envie sua mensagem">
         ENVIAR
       </button>
     </Container>
