@@ -24,8 +24,12 @@ export const DropdownMenu = () => {
         onOpenChange={handleOpen}
         open={isOpen}
       >
-        <RadixDropdownMenu.Trigger>
-          <Hamburger color={theme.primary} toggled={isOpen} />
+        <RadixDropdownMenu.Trigger aria-label="Abrir menu Hamburger">
+          <Hamburger
+            color={theme.primary}
+            toggled={isOpen}
+            label="Menu Hamburger"
+          />
         </RadixDropdownMenu.Trigger>
         <RadixDropdownMenu.Portal>
           <StyledContent>
