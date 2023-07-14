@@ -51,7 +51,7 @@ export const InfosContainer: FC<Props> = ({ data }) => (
       </CodeItem>
     ))}
     <div data-aos="zoom-in">
-      <Link href="/sobre">
+      <Link href="/sobre" aria-label="Redirecionamento para pagina Sobre">
         <button type="button">Saiba mais</button>
       </Link>
     </div>

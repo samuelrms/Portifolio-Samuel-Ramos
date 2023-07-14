@@ -13,7 +13,10 @@ export const HeroHome: FC<Props> = ({ data }) => {
       </div>
       <div>
         <TextContainer>
-          <Link href="#home-hero">
+          <Link
+            href="#home-hero"
+            aria-label="Redirecionamento para seção de home hero"
+          >
             <h1 id="home-hero">{value.title}</h1>
           </Link>
           <h2>{value.subtitle}</h2>

@@ -5,7 +5,10 @@ import { Container } from './styles';
 
 export const ProjectDetails: FC<Props> = ({ title, imgURL, slug, type }) => (
   <Container data-aos="fade-up" imgURL={imgURL}>
-    <Link href={`/projetos/${slug}`}>
+    <Link
+      href={`/projetos/${slug}`}
+      aria-label={`Redirecionamento para pagina do projeto ${title}`}
+    >
       <div className="overlay" />
       <section>
         <h1>{title}</h1>

@@ -6,7 +6,7 @@ import { Container } from './styles';
 
 export const ContactForm = ({ isHome = false }: IsHome) => (
   <Container>
-    <Link href="#contato" scroll={false}>
+    <Link href="#contato" aria-label="Redirecionamento para seção de contato">
       <SectionTitle
         id="contato"
         title={
@@ -24,7 +24,10 @@ export const ContactForm = ({ isHome = false }: IsHome) => (
     <Form />
     {isHome && (
       <div className="contentRoute">
-        <Link href="/contato">
+        <Link
+          href="/contato"
+          aria-label="Redirecionamento para pagina de contatos"
+        >
           <button type="button">Outras formas de contato</button>
         </Link>
       </div>

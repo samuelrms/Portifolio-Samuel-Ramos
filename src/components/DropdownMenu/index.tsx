@@ -16,7 +16,7 @@ export const DropdownMenu = () => {
   const theme = useTheme();
   return (
     <Container>
-      <Link href="/">
+      <Link href="/" aria-label="Redirecionamento para pagina principal">
         <LogoSVG className="logo" stroke={theme.primary} />
       </Link>
       <RadixDropdownMenu.Root

@@ -18,7 +18,11 @@ export const NavLink: FC<Props> = ({ title, path, includes, onClick }) => {
   const isActive = verifyIsActive();
 
   return (
-    <NavLinkContainer onClick={onClick} isActive={isActive}>
+    <NavLinkContainer
+      onClick={onClick}
+      isActive={isActive}
+      aria-label={`Redirecionamento para pagina ${title}`}
+    >
       <Link href={path}>{title}</Link>
     </NavLinkContainer>
   );

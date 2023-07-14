@@ -11,7 +11,10 @@ export const Experiences: FC<Props> = ({ experience }) => {
 
   return (
     <Container>
-      <Link href="#experiencias">
+      <Link
+        href="#experiencias"
+        aria-label="Redirecionamento para seção de experiencias"
+      >
         <SectionTitle
           id="experiencias"
           title={data.title}

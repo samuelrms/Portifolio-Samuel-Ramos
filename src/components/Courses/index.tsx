@@ -6,7 +6,10 @@ import { Container } from './styles';
 
 export const Courses = ({ courses }: CoursesProps) => (
   <Container>
-    <Link href="#cursos">
+    <Link
+      href="#cursos"
+      aria-label="Redirecionamento para seção de últimos cursos realizados"
+    >
       <SectionTitle id="cursos" title="Últimos Cursos realizados" />
     </Link>
     <section>
@@ -20,8 +23,10 @@ export const Courses = ({ courses }: CoursesProps) => (
         />
       ))}
     </section>
-    <Link href="/cursos">
-      <button type="button">Ver todos os cursos</button>
+    <Link href="/cursos" aria-label="Redirecionamento para pagina de cursos">
+      <button type="button" aria-label="Ver todos os cursos">
+        Ver todos os cursos
+      </button>
     </Link>
   </Container>
 );

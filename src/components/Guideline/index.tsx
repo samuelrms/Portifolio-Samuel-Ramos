@@ -11,7 +11,10 @@ export const Guideline: FC<Props> = ({ data }) => {
 
   return (
     <Container>
-      <Link href="#conhecimentos">
+      <Link
+        href="#conhecimentos"
+        aria-label="Redirecionamento para seção de conhecimentos"
+      >
         <SectionTitle id="conhecimentos" title={guideLine.skillsTitle} />
       </Link>
       <section>

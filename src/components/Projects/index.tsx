@@ -6,7 +6,10 @@ import { Container } from './styles';
 
 export const Projects = ({ projects }: PropsProjectArr) => (
   <Container>
-    <Link href="#ultimos-projetos">
+    <Link
+      href="#ultimos-projetos"
+      aria-label="Redirecionamento para seção de últimos projetos"
+    >
       <SectionTitle id="ultimos-projetos" title="Últimos Projetos" />
     </Link>
     <section>
@@ -20,8 +23,16 @@ export const Projects = ({ projects }: PropsProjectArr) => (
         />
       ))}
     </section>
-    <Link href="/projetos">
-      <button type="button">Ver todos os projetos</button>
+    <Link
+      href="/projetos"
+      aria-label="Redirecionamento para pagina de projetos"
+    >
+      <button
+        type="button"
+        aria-label="Redirecionamento para ver todos os projetos"
+      >
+        Ver todos os projetos
+      </button>
     </Link>
   </Container>
 );
