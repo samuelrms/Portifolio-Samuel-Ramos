@@ -1,6 +1,7 @@
 import { ThemeProvider } from 'styled-components';
 import { useEffect } from 'react';
 import { Toaster } from 'react-hot-toast';
+import { Analytics } from '@vercel/analytics/react';
 
 import Aos from 'aos';
 import 'aos/dist/aos.css';
@@ -28,6 +29,7 @@ function MyApp({ Component, pageProps }) {
       <Header />
 
       <Component {...pageProps} />
+      <Analytics />
       <Footer />
 
       <GlobalStyles />
