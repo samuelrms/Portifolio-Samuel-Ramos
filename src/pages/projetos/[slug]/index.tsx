@@ -1,4 +1,4 @@
-import { GetServerSideProps, GetStaticPaths, GetStaticProps } from 'next';
+import { GetServerSideProps, GetStaticPaths } from 'next';
 import Prismic from '@prismicio/client';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
@@ -87,7 +87,7 @@ export const getServerSideProps: GetServerSideProps = async context => {
     slug: response.uid,
     title: response.data.title,
     type: response.data.type,
-    link: response.data.project_link.url,
+    link: response.data.project_link?.url,
     thumb: response.data.thumb.url,
     description: response.data.description
   };
