@@ -1,4 +1,4 @@
-import { GetStaticProps } from 'next';
+import {GetServerSideProps} from 'next';
 import Head from 'next/head';
 
 import { Container } from '../../styles/CoursesStyles';
@@ -71,7 +71,7 @@ export default function Courses({ courses }: CoursesProps) {
   );
 }
 
-export const getStaticProps: GetStaticProps = async () => {
+export const getServerSideProps: GetServerSideProps = async () => {
   const courses = (await projectResponse('courses')).results.map(res => ({
     route: res.uid,
     ...res.data

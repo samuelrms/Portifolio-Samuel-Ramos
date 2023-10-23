@@ -1,4 +1,4 @@
-import { GetStaticProps } from 'next';
+import {GetServerSideProps} from 'next';
 import Head from 'next/head';
 
 import {
@@ -77,13 +77,13 @@ export default function Home({
   );
 }
 
-export const getStaticProps: GetStaticProps = async () => {
+export const getServerSideProps: GetServerSideProps = async () => {
   const projects = (await projectResponse('projects')).results.map(project => ({
     slug: project.uid,
     title: project.data.title,
     type: project.data.type,
     description: project.data.description,
-    link: project.data.project_link.url,
+    link: project.data.project_link?.url,
     thumb: project.data.thumb.url
   }));
 

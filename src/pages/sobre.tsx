@@ -1,4 +1,4 @@
-import { GetStaticProps } from 'next';
+import {GetServerSideProps} from 'next';
 import Head from 'next/head';
 import React from 'react';
 import { HeroAbout } from '../components/HeroAbout';
@@ -62,7 +62,7 @@ const Sobre = ({ about }: Props) => {
 
 export default Sobre;
 
-export const getStaticProps: GetStaticProps = async () => {
+export const getServerSideProps: GetServerSideProps = async () => {
   const about = (await projectResponse('about')).results.map(
     response => response.data
   );

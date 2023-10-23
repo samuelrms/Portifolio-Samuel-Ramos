@@ -1,5 +1,5 @@
 import React from 'react';
-import { GetStaticPaths, GetStaticProps } from 'next';
+import {GetServerSideProps, GetStaticPaths} from 'next';
 import Prismic from '@prismicio/client';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
@@ -97,7 +97,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
   };
 };
 
-export const getStaticProps: GetStaticProps = async context => {
+export const getServerSideProps: GetServerSideProps = async context => {
   const prismic = getPrismicClient();
   const { id } = context.params;
 

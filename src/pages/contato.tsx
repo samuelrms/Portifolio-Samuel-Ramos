@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import { GetStaticProps } from 'next';
+import {GetServerSideProps} from 'next';
 import { Contact, ContactForm } from '../components';
 import { Container } from '../styles/ContactStyles';
 import { projectResponse } from '../utils/getQueryPrismic';
@@ -59,7 +59,7 @@ export default function Contato({ contact }: Props) {
   );
 }
 
-export const getStaticProps: GetStaticProps = async () => {
+export const getServerSideProps: GetServerSideProps = async () => {
   const contact = (await projectResponse('contact')).results.map(
     response => response.data
   );
