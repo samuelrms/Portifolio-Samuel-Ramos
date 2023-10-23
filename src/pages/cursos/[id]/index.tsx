@@ -1,5 +1,5 @@
 import React from 'react';
-import {GetServerSideProps, GetStaticPaths} from 'next';
+import { GetServerSideProps, GetStaticPaths } from 'next';
 import Prismic from '@prismicio/client';
 import Head from 'next/head';
 import { useRouter } from 'next/router';

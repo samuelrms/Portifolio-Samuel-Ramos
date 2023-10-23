@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import {GetServerSideProps} from 'next';
+import { GetServerSideProps } from 'next';
 import { Contact, ContactForm } from '../components';
 import { Container } from '../styles/ContactStyles';
 import { projectResponse } from '../utils/getQueryPrismic';
