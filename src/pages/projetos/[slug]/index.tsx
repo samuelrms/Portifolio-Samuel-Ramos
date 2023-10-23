@@ -93,7 +93,6 @@ export const getServerSideProps: GetServerSideProps = async context => {
   };
 
   return {
-    props: { project },
-    revalidate: 120
+    props: { project }
   };
 };

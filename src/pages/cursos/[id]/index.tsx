@@ -106,7 +106,6 @@ export const getServerSideProps: GetServerSideProps = async context => {
   const course = { ...response.data, uid: response.uid };
 
   return {
-    props: { course },
-    revalidate: 120
+    props: { course }
   };
 };
