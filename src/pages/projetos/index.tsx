@@ -4,9 +4,15 @@ import Head from 'next/head';
 import { ProjectDetails, SectionTitle } from '../../components';
 import { Container } from '../../styles/ProjectsStyles';
 import { PropsProjectArr } from '../../types/Home.types';
-import { projectResponse } from '../../utils/getQueryPrismic';
+import { projectByGithub, projectResponse } from '../../utils/getQueryPrismic';
+import { useFetch, useFetchData } from '../../hooks';
+import { urlReadmeGithub } from '../../mocks';
+import { ReadmeContent } from '../../types/Project';
+import { decodeBase64 } from '../../functions/decodeBase64';
 
-export default function Projetos({ projects }: PropsProjectArr) {
+export default function Projetos({ projects, test }: PropsProjectArr) {
+  console.log(test);
+
   return (
     <Container>
       <Head>
@@ -59,7 +65,7 @@ export default function Projetos({ projects }: PropsProjectArr) {
 }
 
 export const getServerSideProps: GetServerSideProps = async () => {
-  const projects = (await projectResponse('projects')).results.map(project => ({
+  const test = (await projectResponse('projects')).results.map(project => ({
     slug: project.uid,
     title: project.data.title,
     type: project.data.type,
@@ -68,9 +74,42 @@ export const getServerSideProps: GetServerSideProps = async () => {
     thumb: project.data.thumb.url
   }));
 
+  const projects = await Promise.all(
+    (
+      await projectByGithub()
+    ).map(async project => {
+      try {
+        const readmeData = await useFetchData(
+          `${urlReadmeGithub}${project.name}/readme`
+        );
+        return {
+          slug: project.name,
+          title: project.name,
+          ...project,
+          thumb: decodeBase64(readmeData.content),
+          permissions: null,
+          type: project.language
+        };
+      } catch (error) {
+        console.error(
+          `Erro ao buscar README para o projeto ${project.name}: ${error.message}`
+        );
+        return {
+          slug: project.name,
+          title: project.name,
+          ...project,
+          thumb: null,
+          permissions: null,
+          type: project.language
+        };
+      }
+    })
+  );
+
   return {
     props: {
-      projects
+      projects,
+      test
     }
   };
 };

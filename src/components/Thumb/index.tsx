@@ -2,6 +2,7 @@ import { FC } from 'react';
 
 import { Container } from './styles';
 import { Props } from './Thumb.types';
+import Link from 'next/link';
 
 export const Thumb: FC<Props> = ({ imgURL, title, type }) => (
   <Container imgURL={imgURL}>
