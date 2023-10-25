@@ -13,8 +13,11 @@ export const ProjectsItem: FC<Props> = ({ imgURL, slug, title, type }) => (
         <h2>- {type}</h2>
       </div>
     </section>
-    <button type="button">
-      <Link href={`/projetos/${slug}`}>
+    <button type="button" aria-label="Container de ação para redirecionamento">
+      <Link
+        href={`/projetos/${slug}`}
+        aria-label={`Redirecionamento para pagina do projeto ${title}`}
+      >
         Ver mais <AiOutlineRightCircle />
       </Link>
     </button>

@@ -13,8 +13,11 @@ export const CoursesItem: FC<Props> = ({ imgURL, route, title, type }) => (
         <h2>- {type}</h2>
       </div>
     </section>
-    <button type="button">
-      <Link href={`/cursos/${route}`}>
+    <button type="button" aria-label="Ver detalhes">
+      <Link
+        href={`/cursos/${route}`}
+        aria-label={`Ver detalhes do curso de ${title}`}
+      >
         Ver detalhes <AiOutlineRightCircle />
       </Link>
     </button>

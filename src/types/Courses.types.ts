@@ -19,6 +19,7 @@ export interface Courses {
   route: string;
   workload: string;
   certificate_image: Image;
+  uid: string;
 }
 
 export interface CoursesProps {

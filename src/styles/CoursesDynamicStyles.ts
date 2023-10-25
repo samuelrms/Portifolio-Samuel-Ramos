@@ -17,25 +17,25 @@ export const Container = styled.div`
       font-size: 1.5rem;
       font-weight: 300;
       text-align: justify;
+      padding-bottom: 16px;
     }
 
-    button {
-      background: ${({ theme }) => theme.primary};
-      padding: 0.8rem 3rem;
-      border-radius: 0.5rem;
-      border: none;
-      transition: 0.5s;
-      margin-top: 2rem;
-
-      &:hover {
-        background: ${({ theme }) => darken(0.05, theme.primary)};
-      }
-
-      a {
-        color: ${({ theme }) => theme.background};
-        text-transform: uppercase;
+    a {
+      color: ${({ theme }) => theme.background};
+      text-transform: uppercase;
+      font-weight: 500;
+      button {
         font-size: 1.5rem;
-        font-weight: 500;
+        background: ${({ theme }) => theme.primary};
+        padding: 0.8rem 3rem;
+        border-radius: 0.5rem;
+        border: none;
+        transition: 0.5s;
+        margin-top: 2rem;
+
+        &:hover {
+          background: ${({ theme }) => darken(0.05, theme.primary)};
+        }
       }
     }
 

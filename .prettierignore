@@ -1,0 +1,7 @@
+.next
+node_modules
+.slicemachine
+next-env.d.ts
+next.config.js
+package.json
+yarn.lock

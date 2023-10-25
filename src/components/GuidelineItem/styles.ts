@@ -12,6 +12,7 @@ export const Container = styled.div`
     font-weight: 300;
     font-size: 1.3rem;
     text-transform: uppercase;
+    text-align: center;
   }
 
   svg {
