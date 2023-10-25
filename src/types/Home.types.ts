@@ -1,15 +1,6 @@
 import { Image, Year } from '.';
 import { Courses } from './Courses.types';
 
-export interface ProjectProps {
-  slug: string;
-  title: string;
-  type: string;
-  description: string;
-  link: string;
-  thumb: string;
-}
-
 export interface PresentationArea {
   comment: string;
   title: string;
@@ -60,6 +51,22 @@ export interface Experience {
   subtitle: string;
   work_experience: WorkExperience[];
 }
+
+export type ProjectProps = {
+  slug: string;
+  title: string;
+  type: string;
+  description: string;
+  link: string;
+  thumb: string;
+  language: string;
+  topics: string;
+  created: string;
+  updated: string;
+  created_at: string;
+  updated_at: string;
+  name: string;
+};
 
 export interface PropsProjectArr {
   projects: ProjectProps[];

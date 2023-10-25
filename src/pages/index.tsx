@@ -11,7 +11,11 @@ import {
 } from '../components';
 import { HomeContainer } from '../styles/HomeStyles';
 import { PropsHome } from '../types/Home.types';
-import { projectResponse } from '../utils/getQueryPrismic';
+import { projectByGithub, projectResponse } from '../utils/getQueryPrismic';
+import { useFetchData } from '../hooks';
+import { ReadmeContent } from '../types/Project';
+import { urlReadmeGithub } from '../mocks';
+import { decodeBase64 } from '../functions/decodeBase64';
 
 export default function Home({
   projects,
@@ -78,14 +82,34 @@ export default function Home({
 }
 
 export const getServerSideProps: GetServerSideProps = async () => {
-  const projects = (await projectResponse('projects')).results.map(project => ({
-    slug: project.uid,
-    title: project.data.title,
-    type: project.data.type,
-    description: project.data.description,
-    link: project.data.project_link?.url,
-    thumb: project.data.thumb.url
-  }));
+  const projects = await Promise.all(
+    (
+      await projectByGithub()
+    ).map(async project => {
+      try {
+        const readmeData = await useFetchData<ReadmeContent>(
+          `${urlReadmeGithub}${project.name}/readme`
+        );
+        return {
+          slug: project.name,
+          title: project.name,
+          ...project,
+          thumb: decodeBase64(readmeData.content),
+          permissions: null,
+          type: project.language
+        };
+      } catch (error) {
+        return {
+          slug: project.name,
+          title: project.name,
+          ...project,
+          thumb: null,
+          permissions: null,
+          type: project.language
+        };
+      }
+    })
+  );
 
   const homeHero = (await projectResponse('home_hero')).results.map(hero => ({
     img: hero.data.photo.url,

@@ -4,9 +4,12 @@ import Head from 'next/head';
 import { useRouter } from 'next/router';
 
 import { LoadScreen, Thumb } from '../../../components';
-import { getPrismicClient } from '../../../services/prismic';
 import { Container } from '../../../styles/ProjectDynamicStyles';
 import { ProjectUID } from '../../../types/Home.types';
+import { useFetchData } from '../../../hooks';
+import { noDataImg, urlReadmeGithub } from '../../../mocks';
+import { decodeBase64 } from '../../../functions/decodeBase64';
+import { Project, ReadmeContent } from '../../../types/Project';
 
 export default function Projeto({ project }: ProjectUID) {
   const router = useRouter();
@@ -14,6 +17,8 @@ export default function Projeto({ project }: ProjectUID) {
   if (router.isFallback) {
     return <LoadScreen />;
   }
+
+  const thumb = project.thumb?.length > 0 ? project.thumb : noDataImg;
 
   return (
     <Container>
@@ -29,10 +34,10 @@ export default function Projeto({ project }: ProjectUID) {
           name="keywords"
           content="nodejs-javascript-typescript-react-next-nestjs-wordpress-freelancer"
         />
-        <meta property="og:image" content={project.thumb} />
-        <meta property="og:image:secure_url" content={project.thumb} />
-        <meta property="instagram:image" content={project.thumb} />
-        <meta property="instagram:image:src" content={project.thumb} />
+        <meta property="og:image" content={thumb} />
+        <meta property="og:image:secure_url" content={thumb} />
+        <meta property="instagram:image" content={thumb} />
+        <meta property="instagram:image:src" content={thumb} />
         <meta property="og:description" content={project.description} />
         <meta name="author" content="Samuel Ramos" />
 
@@ -47,10 +52,10 @@ export default function Projeto({ project }: ProjectUID) {
         />
         <meta property="article:author" content="Samuel Ramos" />
       </Head>
-      <Thumb title={project.title} type={project.type} imgURL={project.thumb} />
+      <Thumb title={project.title} type={project.type} imgURL={thumb} />
       <main>
         <p>{project.description}</p>
-        <a href={project.link}>
+        <a href={project.link} target="_blank" rel="noreferrer">
           <button type="button">Ver projeto repositório</button>
         </a>
       </main>
@@ -58,38 +63,35 @@ export default function Projeto({ project }: ProjectUID) {
   );
 }
 
-// export const getStaticPaths: GetStaticPaths = async () => {
-//   const prismic = getPrismicClient();
-//
-//   const projects = await prismic.query([
-//     Prismic.predicates.at('document.type', 'projects')
-//   ]);
-//
-//   const paths = projects.results.map(data => ({
-//     params: {
-//       slug: data.uid
-//     }
-//   }));
-//
-//   return {
-//     paths,
-//     fallback: true
-//   };
-// };
-
 export const getServerSideProps: GetServerSideProps = async context => {
-  const prismic = getPrismicClient();
   const { slug } = context.params;
 
-  const response = await prismic.getByUID('projects', String(slug), {});
+  let readmeData: ReadmeContent;
+  try {
+    readmeData = await useFetchData<ReadmeContent>(
+      `${urlReadmeGithub}${slug}/readme`
+    );
+  } catch (error) {
+    if (error.response && error.response.status === 404) {
+      readmeData = { ...readmeData, content: '' };
+    } else {
+      throw error;
+    }
+  }
+
+  const projectData = await useFetchData<Project>(`${urlReadmeGithub}${slug}`);
+
+  const thumb = readmeData ? decodeBase64(readmeData.content) : '';
 
   const project = {
-    slug: response.uid,
-    title: response.data.title,
-    type: response.data.type,
-    link: response.data.project_link?.url,
-    thumb: response.data.thumb.url,
-    description: response.data.description
+    slug: projectData.name,
+    title: projectData.name,
+    thumb,
+    permissions: null,
+    type: projectData.language,
+    link: projectData.html_url,
+    content: decodeBase64(readmeData.content, true),
+    ...projectData
   };
 
   return {
