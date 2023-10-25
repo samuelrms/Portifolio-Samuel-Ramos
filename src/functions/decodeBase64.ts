@@ -1,5 +1,5 @@
 export const decodeBase64 = (value: string, useMask: boolean = false) => {
-  if (!value) return;
+  if (!value) return null;
 
   const decoded = atob(value);
   if (useMask) {

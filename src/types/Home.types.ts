@@ -1,15 +1,5 @@
 import { Image, Year } from '.';
 import { Courses } from './Courses.types';
-import { Project } from './Project';
-
-export interface ProjectProps {
-  slug: string;
-  title: string;
-  type: string;
-  description: string;
-  link: string;
-  thumb: string;
-}
 
 export interface PresentationArea {
   comment: string;
@@ -62,7 +52,7 @@ export interface Experience {
   work_experience: WorkExperience[];
 }
 
-export type Test = {
+export type ProjectProps = {
   slug: string;
   title: string;
   type: string;

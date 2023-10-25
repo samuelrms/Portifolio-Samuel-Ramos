@@ -3,6 +3,7 @@ import { PropsProjectArr } from '../../types/Home.types';
 import { ProjectsItem } from '../ProjectsItem';
 import { SectionTitle } from '../SectionTitle';
 import { Container } from './styles';
+import { noDataImg } from '../../mocks';
 
 export const Projects = ({ projects }: PropsProjectArr) => (
   <Container>
@@ -16,7 +17,7 @@ export const Projects = ({ projects }: PropsProjectArr) => (
       {projects.slice(0, 3).map(data => (
         <ProjectsItem
           key={data.slug}
-          imgURL={data.thumb}
+          imgURL={data.thumb?.length > 0 ? data.thumb : noDataImg}
           title={data.title}
           type={data.type}
           slug={data.slug}

@@ -89,4 +89,6 @@ export const useFetchData = async <T>(
   } finally {
     source.cancel('Request canceled');
   }
+
+  return null;
 };

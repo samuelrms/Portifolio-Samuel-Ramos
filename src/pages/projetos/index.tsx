@@ -4,15 +4,13 @@ import Head from 'next/head';
 import { ProjectDetails, SectionTitle } from '../../components';
 import { Container } from '../../styles/ProjectsStyles';
 import { PropsProjectArr } from '../../types/Home.types';
-import { projectByGithub, projectResponse } from '../../utils/getQueryPrismic';
-import { useFetch, useFetchData } from '../../hooks';
-import { urlReadmeGithub } from '../../mocks';
-import { ReadmeContent } from '../../types/Project';
+import { projectByGithub } from '../../utils/getQueryPrismic';
+import { useFetchData } from '../../hooks';
+import { noDataImg, urlReadmeGithub } from '../../mocks';
 import { decodeBase64 } from '../../functions/decodeBase64';
+import { ReadmeContent } from '../../types/Project';
 
-export default function Projetos({ projects, test }: PropsProjectArr) {
-  console.log(test);
-
+export default function Projetos({ projects }: PropsProjectArr) {
   return (
     <Container>
       <Head>
@@ -55,7 +53,7 @@ export default function Projetos({ projects, test }: PropsProjectArr) {
               title={data.title}
               type={data.type}
               slug={data.slug}
-              imgURL={data.thumb}
+              imgURL={data.thumb?.length > 0 ? data.thumb : noDataImg}
             />
           ))}
         </section>
@@ -65,21 +63,12 @@ export default function Projetos({ projects, test }: PropsProjectArr) {
 }
 
 export const getServerSideProps: GetServerSideProps = async () => {
-  const test = (await projectResponse('projects')).results.map(project => ({
-    slug: project.uid,
-    title: project.data.title,
-    type: project.data.type,
-    description: project.data.description,
-    link: project.data.project_link?.url,
-    thumb: project.data.thumb.url
-  }));
-
   const projects = await Promise.all(
     (
       await projectByGithub()
     ).map(async project => {
       try {
-        const readmeData = await useFetchData(
+        const readmeData = await useFetchData<ReadmeContent>(
           `${urlReadmeGithub}${project.name}/readme`
         );
         return {
@@ -91,9 +80,6 @@ export const getServerSideProps: GetServerSideProps = async () => {
           type: project.language
         };
       } catch (error) {
-        console.error(
-          `Erro ao buscar README para o projeto ${project.name}: ${error.message}`
-        );
         return {
           slug: project.name,
           title: project.name,
@@ -108,8 +94,7 @@ export const getServerSideProps: GetServerSideProps = async () => {
 
   return {
     props: {
-      projects,
-      test
+      projects
     }
   };
 };

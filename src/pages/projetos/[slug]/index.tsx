@@ -4,13 +4,12 @@ import Head from 'next/head';
 import { useRouter } from 'next/router';
 
 import { LoadScreen, Thumb } from '../../../components';
-import { getPrismicClient } from '../../../services/prismic';
 import { Container } from '../../../styles/ProjectDynamicStyles';
 import { ProjectUID } from '../../../types/Home.types';
-import { projectByGithub } from '../../../utils/getQueryPrismic';
 import { useFetchData } from '../../../hooks';
-import { urlReadmeGithub } from '../../../mocks';
+import { noDataImg, urlReadmeGithub } from '../../../mocks';
 import { decodeBase64 } from '../../../functions/decodeBase64';
+import { Project, ReadmeContent } from '../../../types/Project';
 
 export default function Projeto({ project }: ProjectUID) {
   const router = useRouter();
@@ -19,7 +18,7 @@ export default function Projeto({ project }: ProjectUID) {
     return <LoadScreen />;
   }
 
-  const thumb = project?.thumb ?? 'Sem imagem no momento';
+  const thumb = project.thumb?.length > 0 ? project.thumb : noDataImg;
 
   return (
     <Container>
@@ -56,7 +55,7 @@ export default function Projeto({ project }: ProjectUID) {
       <Thumb title={project.title} type={project.type} imgURL={thumb} />
       <main>
         <p>{project.description}</p>
-        <a href={project.link} target={'_blank'}>
+        <a href={project.link} target="_blank" rel="noreferrer">
           <button type="button">Ver projeto repositório</button>
         </a>
       </main>
@@ -65,42 +64,35 @@ export default function Projeto({ project }: ProjectUID) {
 }
 
 export const getServerSideProps: GetServerSideProps = async context => {
-  const prismic = getPrismicClient();
   const { slug } = context.params;
 
-  // console.log(slug);
-
-  let readmeData;
+  let readmeData: ReadmeContent;
   try {
-    readmeData = await useFetchData(`${urlReadmeGithub}${slug}/readme`);
+    readmeData = await useFetchData<ReadmeContent>(
+      `${urlReadmeGithub}${slug}/readme`
+    );
   } catch (error) {
     if (error.response && error.response.status === 404) {
-      readmeData = { content: '' };
+      readmeData = { ...readmeData, content: '' };
     } else {
-      console.error('Erro ao buscar o README:', error);
       throw error;
     }
   }
 
-  const projectData = await useFetchData(`${urlReadmeGithub}${slug}`);
+  const projectData = await useFetchData<Project>(`${urlReadmeGithub}${slug}`);
 
-  // console.log(readmeData);
-
-  // Verifique se readmeData é definido e use decodeBase64 somente se for
   const thumb = readmeData ? decodeBase64(readmeData.content) : '';
 
   const project = {
     slug: projectData.name,
     title: projectData.name,
-    thumb: thumb,
+    thumb,
     permissions: null,
     type: projectData.language,
     link: projectData.html_url,
     content: decodeBase64(readmeData.content, true),
     ...projectData
   };
-
-  console.log(project);
 
   return {
     props: { project }
