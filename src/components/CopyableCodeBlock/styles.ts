@@ -23,6 +23,8 @@ export const Container = styled.div`
     line-height: 1.6;
     white-space: pre-wrap;
     word-wrap: break-word;
+    word-break: break-all;
+    padding-right: 2rem;
   }
 
   pre > code {

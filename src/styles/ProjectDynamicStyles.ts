@@ -16,7 +16,7 @@ export const Container = styled.div`
       color: ${({ theme }) => theme.textLight};
       font-size: 1.5rem;
       font-weight: 300;
-      text-align: justify;
+      text-align: left;
     }
     a {
       color: ${({ theme }) => theme.background};
