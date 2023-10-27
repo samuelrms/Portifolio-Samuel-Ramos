@@ -62,7 +62,6 @@ export default function Projeto({ project }: ProjectUID) {
       <main>
         <p>{project.description}</p>
         <ReactMarkdown
-          // remarkPlugins={[remarkGfm]}
           components={{
             code: ({ children }) => code(children)
           }}

@@ -25,9 +25,17 @@ export const CopyableCodeBlock = ({ content }: { content: string }) => {
       <Tooltip arrow tooltip={copied ? 'Copiado!' : 'Copiar'}>
         <div>
           {!copied ? (
-            <BiCopy onClick={copyToClipboard} size={20} />
+            <BiCopy
+              onClick={copyToClipboard}
+              size={20}
+              style={{ cursor: 'pointer' }}
+            />
           ) : (
-            <AiOutlineCheckCircle size={20} color={theme.primary} />
+            <AiOutlineCheckCircle
+              size={20}
+              color={theme.primary}
+              style={{ cursor: 'pointer' }}
+            />
           )}
         </div>
       </Tooltip>
