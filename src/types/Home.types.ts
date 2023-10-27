@@ -66,6 +66,8 @@ export type ProjectProps = {
   created_at: string;
   updated_at: string;
   name: string;
+  content: string;
+  homepage: string;
 };
 
 export interface PropsProjectArr {

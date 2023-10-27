@@ -92,9 +92,13 @@ export const getServerSideProps: GetServerSideProps = async () => {
     })
   );
 
+  const removeProjects = projects.filter(
+    project => project.slug !== 'samuelrms'
+  );
+
   return {
     props: {
-      projects
+      projects: removeProjects
     }
   };
 };

@@ -37,6 +37,13 @@ export const Container = styled.div`
       }
     }
 
+    .contentAction {
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
     @media (max-width: 700px) {
       padding: 0 2.5rem;
 
@@ -44,12 +51,85 @@ export const Container = styled.div`
         font-size: 1rem;
       }
 
-      button {
-        padding: 0.7rem 2rem;
-
-        a {
-          font-size: 0.9rem;
+      a {
+        font-size: 0.9rem;
+        button {
+          padding: 0.7rem 2rem;
         }
+      }
+
+      .contentAction {
+        a {
+          width: 100%;
+          button {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+
+  .reactMarkdown {
+    color: ${({ theme }) => theme.textLight};
+
+    h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 2rem;
+      margin-top: 2rem;
+    }
+
+    h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      margin-top: 2rem;
+    }
+
+    ol {
+      padding-left: 1.5rem;
+
+      li > p {
+        font-size: 1rem;
+      }
+    }
+
+    p {
+      margin-bottom: 1rem;
+    }
+
+    a {
+      color: ${({ theme }) => theme.primary};
+      font-weight: 700;
+      text-transform: lowercase;
+    }
+
+    ul {
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: column;
+      gap: 1rem;
+      padding-bottom: 2rem;
+
+      li {
+        ul {
+          padding-top: 1rem;
+        }
+      }
+    }
+
+    img {
+      width: fit-content;
+    }
+
+    hr {
+      margin-bottom: 1rem;
+      margin-top: 0.5rem;
+    }
+
+    @media (max-width: 700px) {
+      h1 {
+        font-size: 1.5rem;
       }
     }
   }
