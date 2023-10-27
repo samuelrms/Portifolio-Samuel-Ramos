@@ -5,8 +5,7 @@ export const decodeBase64 = (value: string, useMask: boolean = false) => {
   if (useMask) {
     return decoded;
   }
-  const regex =
-    /!\[.*]\((https:\/\/user-images\.githubusercontent\.com\/[^)]+)\)/;
+  const regex = /!\[image]\((https:\/\/[^\s)]+)/;
   const match = decoded.match(regex);
 
   if (match && match[1]) {
