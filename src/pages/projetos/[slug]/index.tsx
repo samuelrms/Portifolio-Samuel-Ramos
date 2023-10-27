@@ -2,7 +2,6 @@ import { GetServerSideProps } from 'next';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import ReactMarkdown from 'react-markdown';
-import remarkGfm from 'remark-gfm';
 
 import { ReactNode } from 'react';
 import { LoadScreen, Thumb } from '../../../components';
@@ -63,7 +62,7 @@ export default function Projeto({ project }: ProjectUID) {
       <main>
         <p>{project.description}</p>
         <ReactMarkdown
-          remarkPlugins={[remarkGfm]}
+          // remarkPlugins={[remarkGfm]}
           components={{
             code: ({ children }) => code(children)
           }}
