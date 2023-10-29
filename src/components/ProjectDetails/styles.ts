@@ -5,7 +5,7 @@ export const Container = styled.div<Partial<Props>>`
   > a {
     position: relative;
     width: 100%;
-    background: url(${({ imgURL }) => imgURL}) no-repeat center;
+    background: url(${({ imgURL }) => imgURL}) no-repeat top;
     background-size: cover;
     height: 10rem;
     padding: 1.5rem;

@@ -19,8 +19,8 @@ export const CopyableCodeBlock = ({ content }: { content: string }) => {
           setCopied(true);
           setTimeout(() => setCopied(false), 1500);
         })
-        .catch(error => {
-          console.error('Falha ao copiar para a área de transferência:', error);
+        .catch(() => {
+          toast.error('Erro ao copiar para a área de transferência!');
         });
     } else {
       const textArea = document.createElement('textarea');

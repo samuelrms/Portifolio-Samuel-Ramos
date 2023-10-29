@@ -7,7 +7,7 @@ import { ReactNode } from 'react';
 import { LoadScreen, Thumb } from '../../../components';
 import { Container } from '../../../styles/ProjectDynamicStyles';
 import { ProjectUID } from '../../../types/Home.types';
-import { useFetchData } from '../../../hooks';
+import { useFetchData as fetchData } from '../../../hooks';
 import { noDataImg, urlReadmeGithub } from '../../../mocks';
 import { decodeBase64 } from '../../../functions/decodeBase64';
 import { Project, ReadmeContent } from '../../../types/Project';
@@ -86,13 +86,11 @@ export default function Projeto({ project }: ProjectUID) {
 }
 
 export const getServerSideProps: GetServerSideProps = async context => {
-  const { slug } = context.params;
+  const { slug }: { slug?: string } = context.params;
 
   let readmeData: ReadmeContent;
   try {
-    readmeData = await useFetchData<ReadmeContent>(
-      `${urlReadmeGithub}${slug}/readme`
-    );
+    readmeData = await fetchData<ReadmeContent>(urlReadmeGithub(slug).readme);
   } catch (error) {
     if (error.response && error.response.status === 404) {
       readmeData = { ...readmeData, content: '' };
@@ -101,7 +99,7 @@ export const getServerSideProps: GetServerSideProps = async context => {
     }
   }
 
-  const projectData = await useFetchData<Project>(`${urlReadmeGithub}${slug}`);
+  const projectData = await fetchData<Project>(urlReadmeGithub(slug).repo);
 
   const thumb = readmeData ? decodeBase64(readmeData.content) : '';
 

@@ -32,6 +32,8 @@ module.exports = {
     'react/require-default-props': 'off',
     'jsx-a11y/anchor-is-valid': 'off',
     'react/jsx-no-comment-textnodes': 'off',
-    'react/no-array-index-key': 'off'
+    'react/no-array-index-key': 'off',
+    'no-underscore-dangle': 'off',
+    'react/jsx-no-bind': 'off',
   }
 };

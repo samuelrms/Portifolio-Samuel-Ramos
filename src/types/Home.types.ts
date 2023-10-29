@@ -74,6 +74,12 @@ export interface PropsProjectArr {
   projects: ProjectProps[];
 }
 
+export interface Projects {
+  items: ProjectProps[];
+  incomplete_results: false;
+  total_count: number;
+}
+
 export interface ProjectUID {
   project: ProjectProps;
 }
