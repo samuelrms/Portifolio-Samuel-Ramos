@@ -4,37 +4,31 @@ import { useEffect, useRef, useState } from 'react';
 import { Controller, useFormContext } from 'react-hook-form';
 import { TiDeleteOutline } from 'react-icons/ti';
 
-import toast from 'react-hot-toast';
-import { useTheme } from 'styled-components';
 import { ProjectDetails, SectionTitle } from '../../components';
 import { Container, Search } from '../../styles/ProjectsStyles';
 import { ProjectProps, PropsProjectArr } from '../../types/Home.types';
 import { noDataImg, urlReadmeGithub } from '../../mocks';
 import { Input } from '../../components/Input';
-import {
-  projectByGithub,
-  searchProjects
-} from '../../functions/fetchSearchProjects';
+import { projectByGithub } from '../../functions/fetchSearchProjects';
 import { FormValues } from '../../types';
 import { useFetchData } from '../../hooks';
 import { ReadmeContent } from '../../types/Project';
 import { decodeBase64 } from '../../functions/decodeBase64';
+import { removeCharacter } from '../../functions/clearStr';
 
 export default function Projetos({ projects }: PropsProjectArr) {
   const [searchProject, setSearchProject] = useState<ProjectProps[]>(projects);
   const { control, watch, setValue } = useFormContext<FormValues>();
 
-  const theme = useTheme();
-
   const inputRef = useRef<HTMLInputElement | null>(null);
 
   const watchAllFields = watch('search');
 
-  const DEBOUNCE_DELAY = 200;
-
-  const onSearch = async () => {
+  const onSearch = () => {
     if (watchAllFields !== '') {
-      const searchingProject = await searchProjects(watchAllFields);
+      const searchingProject = projects.filter(project =>
+        removeCharacter(project.title).includes(watchAllFields.toLowerCase())
+      );
       setSearchProject(searchingProject);
     }
     return null;
@@ -44,30 +38,19 @@ export default function Projetos({ projects }: PropsProjectArr) {
     setValue('search', '');
     setSearchProject(projects);
   };
+
   useEffect(() => {
     if (watchAllFields) {
-      if (watchAllFields.length >= 3) {
-        setTimeout(() => {
-          toast.promise(
-            onSearch(),
-            {
-              loading: 'Pesquisando projetos...',
-              success: 'Pesquisa concluída!',
-              error: 'Nenhum projeto encontrado'
-            },
-            {
-              style: {
-                background: theme.primary,
-                color: theme.background
-              }
-            }
-          );
-        }, DEBOUNCE_DELAY);
+      if (watchAllFields.length >= 1) {
+        onSearch();
       }
-      if (watchAllFields.length < 3 || watchAllFields === '') {
+
+      if (watchAllFields.length === 0) {
         setSearchProject(projects);
       }
     }
+
+    return () => {};
   }, [watchAllFields]);
 
   useEffect(() => {
@@ -90,7 +73,7 @@ export default function Projetos({ projects }: PropsProjectArr) {
 
   useEffect(
     () => () => {
-      setValue('search', '');
+      onClear();
     },
     []
   );
@@ -120,7 +103,7 @@ export default function Projetos({ projects }: PropsProjectArr) {
         />
         <meta
           property="og:image"
-          content="https://images.prismic.io/portifolio-samuel-rms/722b4aac-b5a4-4924-9c8a-61bf9096a108_projetos.png?auto=compress,format"
+          content="https://images.prismic.io/portifolio-samuel-rms/90dcb6b7-7114-4be7-b301-014738837fba_Screenshot+from+2023-10-30+10-37-59.png?auto=compress,format"
         />
         <meta
           property="og:description"
