@@ -1,20 +1,19 @@
 import { GetServerSideProps } from 'next';
 import Head from 'next/head';
 import { useEffect, useRef, useState } from 'react';
-import { Controller, useFormContext } from 'react-hook-form';
-import { TiDeleteOutline } from 'react-icons/ti';
+import { useFormContext } from 'react-hook-form';
 
 import { ProjectDetails, SectionTitle } from '../../components';
-import { Container, Search } from '../../styles/ProjectsStyles';
+import { Container } from '../../styles/ProjectsStyles';
 import { ProjectProps, PropsProjectArr } from '../../types/Home.types';
 import { noDataImg, urlReadmeGithub } from '../../mocks';
-import { Input } from '../../components/Input';
 import { projectByGithub } from '../../functions/fetchSearchProjects';
 import { FormValues } from '../../types';
 import { useFetchData } from '../../hooks';
 import { ReadmeContent } from '../../types/Project';
 import { decodeBase64 } from '../../functions/decodeBase64';
 import { removeCharacter } from '../../functions/clearStr';
+import { Search } from '../../components/Search';
 
 export default function Projetos({ projects }: PropsProjectArr) {
   const [searchProject, setSearchProject] = useState<ProjectProps[]>(projects);
@@ -22,30 +21,37 @@ export default function Projetos({ projects }: PropsProjectArr) {
 
   const inputRef = useRef<HTMLInputElement | null>(null);
 
-  const watchAllFields = watch('search');
+  const watchAllFields = watch('searchProjects');
 
   const onSearch = () => {
     if (watchAllFields !== '') {
-      const searchingProject = projects.filter(project =>
-        removeCharacter(project.title).includes(watchAllFields.toLowerCase())
+      const searchingProject = projects.filter(
+        project =>
+          removeCharacter(project.title).includes(
+            removeCharacter(watchAllFields)
+          ) ||
+          removeCharacter(project.type)?.includes(
+            removeCharacter(watchAllFields)
+          )
       );
+
       setSearchProject(searchingProject);
     }
     return null;
   };
 
   const onClear = () => {
-    setValue('search', '');
+    setValue('searchProjects', '');
     setSearchProject(projects);
   };
 
   useEffect(() => {
     if (watchAllFields) {
-      if (watchAllFields.length >= 1) {
+      if (watchAllFields.length >= 3) {
         onSearch();
       }
 
-      if (watchAllFields.length === 0) {
+      if (watchAllFields.length < 2) {
         setSearchProject(projects);
       }
     }
@@ -113,25 +119,14 @@ export default function Projetos({ projects }: PropsProjectArr) {
       </Head>
       <main className="container">
         <SectionTitle title="Projetos" />
-        <Search data-aos="fade-left">
-          <Controller
-            name="search"
-            control={control}
-            render={({ field }) => (
-              <Input
-                {...field}
-                placeholder="Pesquise por projetos específicos..."
-                autoComplete="off"
-                ref={inputRef}
-              />
-            )}
-          />
-          {watchAllFields && (
-            <button type="button" onClick={onClear}>
-              <TiDeleteOutline size="2rem" />
-            </button>
-          )}
-        </Search>
+        <Search
+          name="searchProjects"
+          control={control}
+          onClear={onClear}
+          placeholder="Pesquise por projetos específicos ou linguagem predominante..."
+          ref={inputRef}
+          watchAllFields={!!watchAllFields}
+        />
         <section>
           {searchProject.length > 0 &&
             searchProject.map(data => (

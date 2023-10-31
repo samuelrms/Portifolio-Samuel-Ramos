@@ -1,13 +1,87 @@
 import { GetServerSideProps } from 'next';
 import Head from 'next/head';
 
+import { useEffect, useRef, useState } from 'react';
+import { useFormContext } from 'react-hook-form';
 import { Container } from '../../styles/CoursesStyles';
 import { projectResponse } from '../../utils/getQueryPrismic';
-import { CoursesProps } from '../../types/Courses.types';
+import {
+  Courses as CoursesTypes,
+  CoursesProps
+} from '../../types/Courses.types';
 import { CoursesDetails } from '../../components/CoursesDetails';
 import { SectionTitle } from '../../components';
+import { FormValues } from '../../types';
+import { Search } from '../../components/Search';
+import { removeCharacter } from '../../functions/clearStr';
 
 export default function Courses({ courses }: CoursesProps) {
+  const [searchCourse, setSearchCourse] = useState<CoursesTypes[]>(courses);
+  const { control, watch, setValue } = useFormContext<FormValues>();
+
+  const inputRef = useRef<HTMLInputElement | null>(null);
+
+  const watchAllFields = watch('searchCourses');
+
+  const onSearch = () => {
+    if (watchAllFields !== '') {
+      const searchingCourse = courses.filter(
+        data =>
+          removeCharacter(data.title).includes(
+            removeCharacter(watchAllFields)
+          ) ||
+          removeCharacter(data.achievement_platform).includes(
+            removeCharacter(watchAllFields)
+          )
+      );
+
+      setSearchCourse(searchingCourse);
+    }
+    return null;
+  };
+
+  const onClear = () => {
+    setValue('searchCourses', '');
+    setSearchCourse(courses);
+  };
+
+  useEffect(() => {
+    if (watchAllFields) {
+      if (watchAllFields.length >= 3) {
+        onSearch();
+      }
+
+      if (watchAllFields.length < 2) {
+        setSearchCourse(courses);
+      }
+    }
+  }, [watchAllFields]);
+
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.ctrlKey && event.key === 'Backspace') {
+        onClear();
+      }
+    };
+
+    if (inputRef.current) {
+      inputRef.current.addEventListener('keydown', handleKeyDown);
+    }
+
+    return () => {
+      if (inputRef.current) {
+        inputRef.current.removeEventListener('keydown', handleKeyDown);
+      }
+    };
+  }, [inputRef]);
+
+  useEffect(
+    () => () => {
+      onClear();
+    },
+    []
+  );
+
   return (
     <Container>
       <Head>
@@ -55,8 +129,16 @@ export default function Courses({ courses }: CoursesProps) {
       </Head>
       <main className="container">
         <SectionTitle title="Cursos" />
+        <Search
+          name="searchCourses"
+          control={control}
+          onClear={onClear}
+          placeholder="Pesquise por cursos específicos ou plataforma de cursos..."
+          ref={inputRef}
+          watchAllFields={!!watchAllFields}
+        />
         <section>
-          {courses.map(data => (
+          {searchCourse.map(data => (
             <CoursesDetails
               key={data.route}
               title={data.title}
