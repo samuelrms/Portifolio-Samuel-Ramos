@@ -1,11 +1,10 @@
-import React from 'react';
 import { GetServerSideProps } from 'next';
 // import Prismic from '@prismicio/client';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
-import { Container } from '../../../styles/CoursesDynamicStyles';
-import { getPrismicClient } from '../../../services/prismic';
 import { LoadScreen, Thumb } from '../../../components';
+import { getPrismicClient } from '../../../services/prismic';
+import { Container } from '../../../styles/CoursesDynamicStyles';
 import { Course } from '../../../types/Courses.types';
 
 export default function Curso({ course }: Course) {
@@ -77,25 +76,6 @@ export default function Curso({ course }: Course) {
     </Container>
   );
 }
-
-// export const getStaticPaths: GetStaticPaths = async () => {
-//   const prismic = getPrismicClient();
-//
-//   const projects = await prismic.query([
-//     Prismic.predicates.at('document.type', 'courses')
-//   ]);
-//
-//   const paths = projects.results.map(data => ({
-//     params: {
-//       id: data.uid
-//     }
-//   }));
-//
-//   return {
-//     paths,
-//     fallback: true
-//   };
-// };
 
 export const getServerSideProps: GetServerSideProps = async context => {
   const prismic = getPrismicClient();

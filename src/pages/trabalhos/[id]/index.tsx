@@ -1,10 +1,11 @@
 import { GetServerSideProps } from 'next';
 // import Prismic from '@prismicio/client';
 import Head from 'next/head';
+import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { LoadScreen, Thumb } from '../../../components';
 import { getPrismicClient } from '../../../services/prismic';
-import { Container } from '../../../styles/CoursesDynamicStyles';
+import { Container } from '../../../styles/JobDynamicStyles';
 import { Job as IJob } from '../../../types/Job.types';
 
 export default function Job({ job }: IJob) {
@@ -14,7 +15,7 @@ export default function Job({ job }: IJob) {
     return <LoadScreen />;
   }
 
-  const resume = job.resume?.[0].text;
+  const resume = job.description[0].text;
 
   return (
     <Container>
@@ -50,10 +51,21 @@ export default function Job({ job }: IJob) {
       </Head>
       <Thumb title={job?.title} type={job?.type} imgURL={job?.thumb.url} />
       <main>
-        <p>{resume}</p>
-        <a href={job?.project_link} target="_blank" rel="noreferrer">
-          <button type="button">Ver projeto repositório</button>
-        </a>
+        {job.description.map(data =>
+          data.spans[0]?.type ? (
+            <h2 key={data.text}>{data.text}</h2>
+          ) : (
+            <p key={data.text}>{data.text}</p>
+          )
+        )}
+        <div className="contentAction">
+          <Link href={job?.project_link} target="_blank" rel="noreferrer">
+            <button type="button">Ver trabalho</button>
+          </Link>
+          <Link className="backPage" href="/trabalhos">
+            <button type="button">Voltar</button>
+          </Link>
+        </div>
       </main>
     </Container>
   );

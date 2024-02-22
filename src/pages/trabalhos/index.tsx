@@ -2,7 +2,7 @@ import { GetServerSideProps } from 'next';
 import Head from 'next/head';
 
 import { JobsDetails, SectionTitle } from '../../components';
-import { Container } from '../../styles/CoursesStyles';
+import { Container } from '../../styles/JobStyles';
 import { JobsProps } from '../../types/Job.types';
 import { projectResponse } from '../../utils/getQueryPrismic';
 

@@ -1,15 +1,23 @@
 import { Image } from '.';
-import { Resume } from './About.types';
+
+export interface Resume {
+  type: string;
+  text: string;
+  spans: {
+    start: number;
+    end: number;
+    type: string;
+  }[];
+}
 
 export interface Jobs {
   uid: string;
   title: string;
-  description: string;
+  description: Resume[];
   type: string;
   project_link: string;
   thumb: Image;
   route: string;
-  resume: Resume[];
 }
 
 export interface JobsProps {
