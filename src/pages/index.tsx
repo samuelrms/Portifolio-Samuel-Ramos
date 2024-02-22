@@ -7,23 +7,25 @@ import {
   Experiences,
   Guideline,
   HeroHome,
+  LatestJobs,
   Projects
 } from '../components';
-import { HomeContainer } from '../styles/HomeStyles';
-import { PropsHome } from '../types/Home.types';
-import { projectResponse } from '../utils/getQueryPrismic';
-import { useFetchData } from '../hooks';
-import { ReadmeContent } from '../types/Project';
-import { urlReadmeGithub } from '../mocks';
 import { decodeBase64 } from '../functions/decodeBase64';
 import { projectByGithub } from '../functions/fetchSearchProjects';
+import { useFetchData } from '../hooks';
+import { urlReadmeGithub } from '../mocks';
+import { HomeContainer } from '../styles/HomeStyles';
+import { PropsHome } from '../types/Home.types';
+import { ReadmeContent } from '../types/Project';
+import { projectResponse } from '../utils/getQueryPrismic';
 
 export default function Home({
   projects,
   homeHero,
   experience,
   skills,
-  courses
+  courses,
+  jobs
 }: PropsHome) {
   return (
     <HomeContainer>
@@ -73,8 +75,9 @@ export default function Home({
       <main className="container">
         <HeroHome data={homeHero} />
         <Experiences experience={experience} />
+        <LatestJobs jobs={jobs} />
         <Projects projects={projects} />
-        <Guideline data={skills} />
+        <Guideline data={skills} count={10} />
         <Courses courses={courses} />
         <ContactForm isHome />
       </main>
@@ -139,6 +142,11 @@ export const getServerSideProps: GetServerSideProps = async () => {
     ...res.data
   }));
 
+  const jobs = (await projectResponse('jobs')).results.map(res => ({
+    route: res.uid,
+    ...res.data
+  }));
+
   return {
     props: {
       projects,
@@ -146,7 +154,8 @@ export const getServerSideProps: GetServerSideProps = async () => {
       experience,
       skills,
       about,
-      courses
+      courses,
+      jobs
     }
   };
 };

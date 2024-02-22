@@ -1,0 +1,42 @@
+{
+  "uid": {
+    "__TYPE__": "UIDContent",
+    "value": "lose"
+  },
+  "enterprise": {
+    "__TYPE__": "FieldContent",
+    "value": "art",
+    "type": "Text"
+  },
+  "entry_year": {
+    "__TYPE__": "FieldContent",
+    "value": "condition",
+    "type": "Text"
+  },
+  "exit_year": {
+    "__TYPE__": "FieldContent",
+    "value": "why",
+    "type": "Text"
+  },
+  "function": {
+    "__TYPE__": "FieldContent",
+    "value": "story",
+    "type": "Text"
+  },
+  "description_function": {
+    "__TYPE__": "StructuredTextContent",
+    "value": [
+      {
+        "type": "paragraph",
+        "content": {
+          "text": "In ad incididunt officia commodo incididunt mollit nisi."
+        }
+      }
+    ]
+  },
+  "link_enterprise": {
+    "__TYPE__": "FieldContent",
+    "value": "especially",
+    "type": "Text"
+  }
+}

@@ -1,4 +1,5 @@
 import { Image } from '.';
+import { Skills } from './Home.types';
 
 export interface Resume {
   type: string;
@@ -20,4 +21,5 @@ export interface About {
 
 export interface Props {
   about: About;
+  skills: Skills;
 }

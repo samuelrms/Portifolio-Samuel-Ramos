@@ -1,5 +1,5 @@
-import { FC } from 'react';
 import Link from 'next/link';
+import { FC } from 'react';
 import { WorkExperience } from '../../types/Home.types';
 import { ExperiencesItem } from '../ExperiencesItem';
 import { SectionTitle } from '../SectionTitle';
@@ -22,23 +22,39 @@ export const Experiences: FC<Props> = ({ experience }) => {
         />
       </Link>
       <section>
-        {data.work_experience.map(
-          ({
-            description_function,
-            entry_year,
-            exit_year,
-            function: title
-          }: WorkExperience) => (
-            <ExperiencesItem
-              key={exit_year}
-              yearEntry={entry_year}
-              yearExit={exit_year}
-              description={description_function}
-              title={title}
-            />
-          )
-        )}
+        {data.work_experience
+          .slice(0, 3)
+          .map(
+            ({
+              description_function,
+              entry_year,
+              exit_year,
+              function: title
+            }: WorkExperience) => (
+              <ExperiencesItem
+                key={exit_year}
+                yearEntry={entry_year}
+                yearExit={exit_year}
+                description={description_function}
+                title={title}
+                href={`/experiencia/${title}`}
+              />
+            )
+          )}
       </section>
+      <div className="contentExperience">
+        <Link
+          href="/experiencia"
+          aria-label="Redirecionamento para pagina de experiência"
+        >
+          <button
+            type="button"
+            aria-label="Redirecionamento para ver todas as experiências"
+          >
+            Todas as experiências
+          </button>
+        </Link>
+      </div>
     </Container>
   );
 };

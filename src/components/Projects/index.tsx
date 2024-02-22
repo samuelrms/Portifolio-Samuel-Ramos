@@ -1,9 +1,9 @@
 import Link from 'next/link';
+import { noDataImg } from '../../mocks';
 import { PropsProjectArr } from '../../types/Home.types';
 import { ProjectsItem } from '../ProjectsItem';
 import { SectionTitle } from '../SectionTitle';
 import { Container } from './styles';
-import { noDataImg } from '../../mocks';
 
 export const Projects = ({ projects }: PropsProjectArr) => (
   <Container>
@@ -11,7 +11,7 @@ export const Projects = ({ projects }: PropsProjectArr) => (
       href="#ultimos-projetos"
       aria-label="Redirecionamento para seção de últimos projetos"
     >
-      <SectionTitle id="ultimos-projetos" title="Últimos Projetos" />
+      <SectionTitle id="ultimos-projetos" title="Últimos Projetos GitHub" />
     </Link>
     <section>
       {projects.slice(0, 3).map(data => (
