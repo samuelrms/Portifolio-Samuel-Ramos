@@ -45,7 +45,7 @@ export const Container = styled.div<Partial<Props>>`
 
   @media (max-width: 700px) {
     padding: 2rem 2.5rem;
-    height: 30rem;
+    height: 20rem;
 
     > section {
       h1 {

@@ -280,6 +280,85 @@ interface CoursesDocumentData {
  * @typeParam Lang - Language API ID of the document.
  */
 export type CoursesDocument<Lang extends string = string> = prismicT.PrismicDocumentWithUID<Simplify<CoursesDocumentData>, "courses", Lang>;
+/** Content for experience_list documents */
+interface ExperienceListDocumentData {
+    /**
+     * enterprise field in *experience_list*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: experience_list.enterprise
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    enterprise: prismicT.KeyTextField;
+    /**
+     * entry_year field in *experience_list*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: experience_list.entry_year
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    entry_year: prismicT.KeyTextField;
+    /**
+     * exit_year field in *experience_list*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: experience_list.exit_year
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    exit_year: prismicT.KeyTextField;
+    /**
+     * function field in *experience_list*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: experience_list.function
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    function: prismicT.KeyTextField;
+    /**
+     * description_function field in *experience_list*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: experience_list.description_function
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    description_function: prismicT.RichTextField;
+    /**
+     * link_enterprise field in *experience_list*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: experience_list.link_enterprise
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    link_enterprise: prismicT.KeyTextField;
+}
+/**
+ * experience_list document from Prismic
+ *
+ * - **API ID**: `experience_list`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type ExperienceListDocument<Lang extends string = string> = prismicT.PrismicDocumentWithUID<Simplify<ExperienceListDocumentData>, "experience_list", Lang>;
 /** Content for experience work documents */
 interface ExperienceWorkDocumentData {
     /**
@@ -759,76 +838,6 @@ export interface HomeHeroDocumentDataAboutItem {
  * @typeParam Lang - Language API ID of the document.
  */
 export type HomeHeroDocument<Lang extends string = string> = prismicT.PrismicDocumentWithoutUID<Simplify<HomeHeroDocumentData>, "home_hero", Lang>;
-/** Content for jobs_list documents */
-interface JobsListDocumentData {
-    /**
-     * jobs field in *jobs_list*
-     *
-     * - **Field Type**: Group
-     * - **Placeholder**: *None*
-     * - **API ID Path**: jobs_list.jobs[]
-     * - **Tab**: Main
-     * - **Documentation**: https://prismic.io/docs/core-concepts/group
-     *
-     */
-    jobs: prismicT.GroupField<Simplify<JobsListDocumentDataJobsItem>>;
-}
-/**
- * Item in jobs_list → jobs
- *
- */
-export interface JobsListDocumentDataJobsItem {
-    /**
-     * title field in *jobs_list → jobs*
-     *
-     * - **Field Type**: Text
-     * - **Placeholder**: *None*
-     * - **API ID Path**: jobs_list.jobs[].title
-     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
-     *
-     */
-    title: prismicT.KeyTextField;
-    /**
-     * description field in *jobs_list → jobs*
-     *
-     * - **Field Type**: Rich Text
-     * - **Placeholder**: *None*
-     * - **API ID Path**: jobs_list.jobs[].description
-     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
-     *
-     */
-    description: prismicT.RichTextField;
-    /**
-     * type field in *jobs_list → jobs*
-     *
-     * - **Field Type**: Text
-     * - **Placeholder**: *None*
-     * - **API ID Path**: jobs_list.jobs[].type
-     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
-     *
-     */
-    type: prismicT.KeyTextField;
-    /**
-     * thumb field in *jobs_list → jobs*
-     *
-     * - **Field Type**: Image
-     * - **Placeholder**: *None*
-     * - **API ID Path**: jobs_list.jobs[].thumb
-     * - **Documentation**: https://prismic.io/docs/core-concepts/image
-     *
-     */
-    thumb: prismicT.ImageField<never>;
-}
-/**
- * jobs_list document from Prismic
- *
- * - **API ID**: `jobs_list`
- * - **Repeatable**: `true`
- * - **Documentation**: https://prismic.io/docs/core-concepts/custom-types
- *
- * @typeParam Lang - Language API ID of the document.
- */
-export type JobsListDocument<Lang extends string = string> = prismicT.PrismicDocumentWithUID<Simplify<JobsListDocumentData>, "jobs_list", Lang>;
 /** Content for jobs documents */
 interface JobsDocumentData {
     /**
@@ -1026,12 +1035,12 @@ export interface SkillsDocumentDataSkillsItem {
  * @typeParam Lang - Language API ID of the document.
  */
 export type SkillsDocument<Lang extends string = string> = prismicT.PrismicDocumentWithoutUID<Simplify<SkillsDocumentData>, "skills", Lang>;
-export type AllDocumentTypes = AboutDocument | ContactDocument | CoursesDocument | ExperienceWorkDocument | ExperienceDocument | HomeHeroDocument | JobsListDocument | JobsDocument | ProjectsDocument | SkillsDocument;
+export type AllDocumentTypes = AboutDocument | ContactDocument | CoursesDocument | ExperienceListDocument | ExperienceWorkDocument | ExperienceDocument | HomeHeroDocument | JobsDocument | ProjectsDocument | SkillsDocument;
 declare module "@prismicio/client" {
     interface CreateClient {
         (repositoryNameOrEndpoint: string, options?: prismic.ClientConfig): prismic.Client<AllDocumentTypes>;
     }
     namespace Content {
-        export type { AboutDocumentData, AboutDocument, ContactDocumentData, ContactDocumentDataContactsItem, ContactDocument, CoursesDocumentData, CoursesDocument, ExperienceWorkDocumentData, ExperienceWorkDocument, ExperienceDocumentData, ExperienceDocumentDataWorkExperienceItem, ExperienceDocument, HomeHeroDocumentData, HomeHeroDocumentDataPresentationAreaItem, HomeHeroDocumentDataPresentationSkillsItem, HomeHeroDocumentDataAboutItem, HomeHeroDocument, JobsListDocumentData, JobsListDocumentDataJobsItem, JobsListDocument, JobsDocumentData, JobsDocument, ProjectsDocumentData, ProjectsDocument, SkillsDocumentData, SkillsDocumentDataSkillsItem, SkillsDocument, AllDocumentTypes };
+        export type { AboutDocumentData, AboutDocument, ContactDocumentData, ContactDocumentDataContactsItem, ContactDocument, CoursesDocumentData, CoursesDocument, ExperienceListDocumentData, ExperienceListDocument, ExperienceWorkDocumentData, ExperienceWorkDocument, ExperienceDocumentData, ExperienceDocumentDataWorkExperienceItem, ExperienceDocument, HomeHeroDocumentData, HomeHeroDocumentDataPresentationAreaItem, HomeHeroDocumentDataPresentationSkillsItem, HomeHeroDocumentDataAboutItem, HomeHeroDocument, JobsDocumentData, JobsDocument, ProjectsDocumentData, ProjectsDocument, SkillsDocumentData, SkillsDocumentDataSkillsItem, SkillsDocument, AllDocumentTypes };
     }
 }

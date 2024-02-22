@@ -1,6 +1,7 @@
 export * from './Contact';
 export * from './ContactForm';
 export * from './Courses';
+export * from './ExperienceDetails';
 export * from './Experiences';
 export * from './Footer';
 export * from './Guideline';

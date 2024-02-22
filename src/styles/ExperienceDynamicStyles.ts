@@ -11,6 +11,7 @@ export const Container = styled.div`
     margin: 2rem 0;
     width: 100%;
     padding: 0 5rem;
+    padding-top: 8rem;
 
     p,
     h2 {
@@ -23,7 +24,7 @@ export const Container = styled.div`
     h2 {
       font-size: 2rem;
       font-weight: 500;
-      color: ${({ theme }) => theme.primary};
+      color: ${({ theme }) => theme.secondary};
     }
 
     p {
@@ -58,6 +59,40 @@ export const Container = styled.div`
       font-weight: 500;
     }
 
+    h1 {
+      color: ${({ theme }) => theme.primary};
+      font-size: 3rem;
+      font-weight: 700;
+      padding-bottom: 0.5rem;
+    }
+
+    b {
+      color: ${({ theme }) => theme.primary};
+    }
+
+    .description {
+      padding-bottom: 2rem;
+      h2 {
+        color: ${({ theme }) => theme.secondary};
+        font-size: 1.5rem;
+        font-weight: 500;
+        padding-bottom: 1rem;
+      }
+
+      @media (max-width: 500px) {
+        h2 {
+          font-size: 1.2rem;
+        }
+      }
+    }
+
+    .function {
+      color: ${({ theme }) => theme.secondary};
+      font-size: 2rem;
+      font-weight: 500;
+      padding-bottom: 3rem;
+    }
+
     @media (max-width: 700px) {
       padding: 0 2.5rem;
 
@@ -75,8 +110,13 @@ export const Container = styled.div`
     }
 
     @media (max-width: 500px) {
-      h2 {
+      h2,
+      .function {
         font-size: 1.5rem;
+      }
+
+      h1 {
+        font-size: 2.5rem;
       }
     }
   }
@@ -120,5 +160,9 @@ export const Container = styled.div`
         }
       }
     }
+  }
+
+  @media (max-width: 600px) {
+    padding-top: 4rem;
   }
 `;
