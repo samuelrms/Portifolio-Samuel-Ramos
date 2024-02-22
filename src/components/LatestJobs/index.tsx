@@ -1,20 +1,20 @@
 import Link from 'next/link';
 import { noDataImg } from '../../mocks';
-import { PropsProjectArr } from '../../types/Home.types';
+import { LatestJobsArr } from '../../types/Home.types';
 import { ProjectsItem } from '../ProjectsItem';
 import { SectionTitle } from '../SectionTitle';
 import { Container } from './styles';
 
-export const Projects = ({ projects }: PropsProjectArr) => (
+export const LatestJobs = ({ jobs }: LatestJobsArr) => (
   <Container>
     <Link
-      href="#ultimos-projetos"
-      aria-label="Redirecionamento para seção de últimos projetos"
+      href="#ultimos-trabalhos"
+      aria-label="Redirecionamento para seção de últimos trabalhos"
     >
-      <SectionTitle id="ultimos-projetos" title="Últimos Projetos" />
+      <SectionTitle id="ultimos-trabalhos" title="Últimos Trabalhos" />
     </Link>
     <section>
-      {projects.slice(0, 3).map(data => (
+      {jobs.slice(0, 3).map(data => (
         <ProjectsItem
           key={data.slug}
           imgURL={data.thumb?.length > 0 ? data.thumb : noDataImg}
@@ -25,14 +25,14 @@ export const Projects = ({ projects }: PropsProjectArr) => (
       ))}
     </section>
     <Link
-      href="/projetos"
-      aria-label="Redirecionamento para pagina de projetos"
+      href="/trabalhos"
+      aria-label="Redirecionamento para pagina de trabalhos"
     >
       <button
         type="button"
-        aria-label="Redirecionamento para ver todos os projetos"
+        aria-label="Redirecionamento para ver todos os trabalhos"
       >
-        Ver todos os projetos
+        Ver todos os trabalhos
       </button>
     </Link>
   </Container>

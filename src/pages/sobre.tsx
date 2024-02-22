@@ -1,12 +1,12 @@
 import { GetServerSideProps } from 'next';
 import Head from 'next/head';
-import React from 'react';
+import { Guideline } from '../components';
 import { HeroAbout } from '../components/HeroAbout';
 import { AboutContainer } from '../styles/AboutStyles';
 import { About, Props } from '../types/About.types';
 import { projectResponse } from '../utils/getQueryPrismic';
 
-const Sobre = ({ about }: Props) => {
+const Sobre = ({ about, skills }: Props) => {
   const value: About = about[0];
   return (
     <AboutContainer>
@@ -55,6 +55,7 @@ const Sobre = ({ about }: Props) => {
       </Head>
       <main className="container">
         <HeroAbout data={value} />
+        <Guideline data={skills} count={-1} />
       </main>
     </AboutContainer>
   );
@@ -67,9 +68,15 @@ export const getServerSideProps: GetServerSideProps = async () => {
     response => response.data
   );
 
+  const skills = (await projectResponse('skills')).results.map(({ data }) => ({
+    skillsTitle: data.skills_title,
+    skills: data.skills
+  }));
+
   return {
     props: {
-      about
+      about,
+      skills
     }
   };
 };

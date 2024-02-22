@@ -7,15 +7,16 @@ import {
   Experiences,
   Guideline,
   HeroHome,
+  LatestJobs,
   Projects
 } from '../components';
+import { decodeBase64 } from '../functions/decodeBase64';
+import { useFetchData } from '../hooks';
+import { urlReadmeGithub } from '../mocks';
 import { HomeContainer } from '../styles/HomeStyles';
 import { PropsHome } from '../types/Home.types';
-import { projectByGithub, projectResponse } from '../utils/getQueryPrismic';
-import { useFetchData } from '../hooks';
 import { ReadmeContent } from '../types/Project';
-import { urlReadmeGithub } from '../mocks';
-import { decodeBase64 } from '../functions/decodeBase64';
+import { projectByGithub, projectResponse } from '../utils/getQueryPrismic';
 
 export default function Home({
   projects,
@@ -73,7 +74,8 @@ export default function Home({
         <HeroHome data={homeHero} />
         <Experiences experience={experience} />
         <Projects projects={projects} />
-        <Guideline data={skills} />
+        <LatestJobs jobs={projects} />
+        <Guideline data={skills} count={10} />
         <Courses courses={courses} />
         <ContactForm isHome />
       </main>

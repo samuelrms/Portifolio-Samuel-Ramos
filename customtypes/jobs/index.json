@@ -1,0 +1,55 @@
+{
+  "id": "jobs",
+  "label": "jobs",
+  "repeatable": true,
+  "status": true,
+  "json": {
+    "Main": {
+      "uid": {
+        "type": "UID",
+        "config": {
+          "label": "Slug",
+          "placeholder": ""
+        }
+      },
+      "title": {
+        "type": "Text",
+        "config": {
+          "label": "Title",
+          "placeholder": ""
+        }
+      },
+      "description": {
+        "type": "StructuredText",
+        "config": {
+          "label": "Description",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+        }
+      },
+      "type": {
+        "type": "Text",
+        "config": {
+          "label": "type",
+          "placeholder": ""
+        }
+      },
+      "project_link": {
+        "type": "Text",
+        "config": {
+          "label": "Project Link",
+          "placeholder": ""
+        }
+      },
+      "thumb": {
+        "type": "Image",
+        "config": {
+          "label": "Thumb",
+          "constraint": {},
+          "thumbnails": []
+        }
+      }
+    }
+  }
+}

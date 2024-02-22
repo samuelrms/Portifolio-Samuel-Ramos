@@ -5,4 +5,5 @@ export interface Props {
   yearExit: Year;
   title: string;
   description: string;
+  href: string;
 }

@@ -1,10 +1,12 @@
+import Link from 'next/link';
 import styled from 'styled-components';
 
-export const Container = styled.div`
+export const Container = styled(Link)`
   > div {
     background: ${({ theme }) => theme.gradient};
     padding: 1rem;
     padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
     min-height: 20rem;
     display: flex;
     flex-direction: column;
@@ -13,6 +15,8 @@ export const Container = styled.div`
     max-width: 25rem;
     width: 100%;
     border-radius: 8px;
+
+    overflow: hidden;
 
     transition: 0.5s;
 
@@ -27,12 +31,24 @@ export const Container = styled.div`
       font-size: 1.5rem;
       font-weight: 300;
       margin-bottom: 1rem;
+      text-overflow: ellipsis;
+      border-radius: 8px;
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-line-clamp: 1;
+      -webkit-box-orient: vertical;
     }
 
     p {
       color: ${({ theme }) => theme.textLight};
       font-size: 1rem;
       font-weight: 300;
+      text-overflow: ellipsis;
+      border-radius: 8px;
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-line-clamp: 6;
+      -webkit-box-orient: vertical;
     }
   }
 
@@ -43,6 +59,9 @@ export const Container = styled.div`
 
   &:nth-child(even) > div {
     margin-top: 4rem;
+    p {
+      -webkit-line-clamp: 8;
+    }
   }
 
   @media (max-width: 1000px) {

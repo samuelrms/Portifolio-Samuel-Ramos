@@ -72,6 +72,10 @@ export interface PropsProjectArr {
   projects: ProjectProps[];
 }
 
+export interface LatestJobsArr {
+  jobs: ProjectProps[];
+}
+
 export interface ProjectUID {
   project: ProjectProps;
 }

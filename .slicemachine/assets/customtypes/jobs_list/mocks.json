@@ -1,0 +1,70 @@
+{
+  "uid": {
+    "__TYPE__": "UIDContent",
+    "value": "skill"
+  },
+  "jobs": {
+    "__TYPE__": "GroupContentType",
+    "value": [
+      {
+        "__TYPE__": "GroupItemContent",
+        "value": [
+          [
+            "title",
+            {
+              "__TYPE__": "FieldContent",
+              "value": "origin",
+              "type": "Text"
+            }
+          ],
+          [
+            "description",
+            {
+              "__TYPE__": "StructuredTextContent",
+              "value": [
+                {
+                  "type": "paragraph",
+                  "content": {
+                    "text": "Veniam consectetur occaecat laborum aute adipisicing enim est et nisi elit et. Non voluptate sit ex et duis anim nisi deserunt sit sint anim eiusmod consectetur tempor nisi."
+                  }
+                }
+              ]
+            }
+          ],
+          [
+            "type",
+            {
+              "__TYPE__": "FieldContent",
+              "value": "luck",
+              "type": "Text"
+            }
+          ],
+          [
+            "thumb",
+            {
+              "__TYPE__": "ImageContent",
+              "origin": {
+                "id": "main",
+                "url": "https://images.unsplash.com/photo-1545239351-1141bd82e8a6",
+                "width": 3212,
+                "height": 3880
+              },
+              "url": "https://images.unsplash.com/photo-1545239351-1141bd82e8a6",
+              "width": 3212,
+              "height": 3880,
+              "edit": {
+                "zoom": 1,
+                "crop": {
+                  "x": 0,
+                  "y": 0
+                },
+                "background": "transparent"
+              },
+              "thumbnails": {}
+            }
+          ]
+        ]
+      }
+    ]
+  }
+}

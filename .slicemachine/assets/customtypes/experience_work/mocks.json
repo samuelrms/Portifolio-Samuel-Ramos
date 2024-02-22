@@ -1,0 +1,41 @@
+{
+  "uid": {
+    "__TYPE__": "UIDContent",
+    "value": "for"
+  },
+  "title": {
+    "__TYPE__": "FieldContent",
+    "value": "into",
+    "type": "Text"
+  },
+  "subtitle": {
+    "__TYPE__": "FieldContent",
+    "value": "extra",
+    "type": "Text"
+  },
+  "entry_year": {
+    "__TYPE__": "FieldContent",
+    "value": "equator",
+    "type": "Text"
+  },
+  "exit_year": {
+    "__TYPE__": "FieldContent",
+    "value": "dress",
+    "type": "Text"
+  },
+  "function": {
+    "__TYPE__": "FieldContent",
+    "value": "standard",
+    "type": "Text"
+  },
+  "description_function": {
+    "__TYPE__": "FieldContent",
+    "value": "policeman",
+    "type": "Text"
+  },
+  "location": {
+    "__TYPE__": "FieldContent",
+    "value": "team",
+    "type": "Text"
+  }
+}

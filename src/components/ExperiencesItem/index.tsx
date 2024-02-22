@@ -6,9 +6,10 @@ export const ExperiencesItem: FC<Props> = ({
   description,
   title,
   yearEntry,
-  yearExit
+  yearExit,
+  href
 }) => (
-  <Container data-aos="fade-up">
+  <Container href={href} data-aos="fade-up">
     <div>
       <h1>
         {yearEntry} - {yearExit}

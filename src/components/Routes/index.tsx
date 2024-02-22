@@ -23,5 +23,15 @@ export const routes = [
     title: 'Contato',
     path: '/contato',
     includes: false
+  },
+  {
+    title: 'Experiência',
+    path: '/experiencia',
+    includes: true
+  },
+  {
+    title: 'Trabalhos',
+    path: '/trabalhos',
+    includes: true
   }
 ];
