@@ -1,5 +1,6 @@
 import { Image, Year } from '.';
 import { Courses } from './Courses.types';
+import { Jobs } from './Job.types';
 
 export interface PresentationArea {
   comment: string;
@@ -81,7 +82,7 @@ export interface Projects {
 }
 
 export interface LatestJobsArr {
-  jobs: ProjectProps[];
+  jobs: Jobs[];
 }
 
 export interface ProjectUID {
@@ -104,4 +105,5 @@ export interface PropsHome {
   experience: Experience;
   skills: Skills;
   courses: Courses[];
+  jobs: Jobs[];
 }

@@ -1,7 +1,6 @@
 import Link from 'next/link';
-import { noDataImg } from '../../mocks';
 import { LatestJobsArr } from '../../types/Home.types';
-import { ProjectsItem } from '../ProjectsItem';
+import { JobsItem } from '../JobsItem';
 import { SectionTitle } from '../SectionTitle';
 import { Container } from './styles';
 
@@ -15,12 +14,12 @@ export const LatestJobs = ({ jobs }: LatestJobsArr) => (
     </Link>
     <section>
       {jobs.slice(0, 3).map(data => (
-        <ProjectsItem
-          key={data.slug}
-          imgURL={data.thumb?.length > 0 ? data.thumb : noDataImg}
+        <JobsItem
+          key={data.uid}
+          imgURL={data.thumb?.url}
           title={data.title}
           type={data.type}
-          slug={data.slug}
+          route={data.route}
         />
       ))}
     </section>

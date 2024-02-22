@@ -24,7 +24,8 @@ export default function Home({
   homeHero,
   experience,
   skills,
-  courses
+  courses,
+  jobs
 }: PropsHome) {
   return (
     <HomeContainer>
@@ -74,8 +75,8 @@ export default function Home({
       <main className="container">
         <HeroHome data={homeHero} />
         <Experiences experience={experience} />
+        <LatestJobs jobs={jobs} />
         <Projects projects={projects} />
-        <LatestJobs jobs={projects} />
         <Guideline data={skills} count={10} />
         <Courses courses={courses} />
         <ContactForm isHome />
@@ -141,6 +142,11 @@ export const getServerSideProps: GetServerSideProps = async () => {
     ...res.data
   }));
 
+  const jobs = (await projectResponse('jobs')).results.map(res => ({
+    route: res.uid,
+    ...res.data
+  }));
+
   return {
     props: {
       projects,
@@ -148,7 +154,8 @@ export const getServerSideProps: GetServerSideProps = async () => {
       experience,
       skills,
       about,
-      courses
+      courses,
+      jobs
     }
   };
 };

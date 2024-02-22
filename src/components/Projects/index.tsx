@@ -11,7 +11,7 @@ export const Projects = ({ projects }: PropsProjectArr) => (
       href="#ultimos-projetos"
       aria-label="Redirecionamento para seção de últimos projetos"
     >
-      <SectionTitle id="ultimos-projetos" title="Últimos Projetos" />
+      <SectionTitle id="ultimos-projetos" title="Últimos Projetos GitHub" />
     </Link>
     <section>
       {projects.slice(0, 3).map(data => (
