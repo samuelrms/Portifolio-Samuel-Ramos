@@ -1,15 +1,17 @@
 import { GetServerSideProps } from 'next';
-// import Prismic from '@prismicio/client';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
+import ReactMarkdown from 'react-markdown';
 
+import { ReactNode } from 'react';
 import { LoadScreen, Thumb } from '../../../components';
 import { Container } from '../../../styles/ProjectDynamicStyles';
 import { ProjectUID } from '../../../types/Home.types';
-import { useFetchData } from '../../../hooks';
+import { useFetchData as fetchData } from '../../../hooks';
 import { noDataImg, urlReadmeGithub } from '../../../mocks';
 import { decodeBase64 } from '../../../functions/decodeBase64';
 import { Project, ReadmeContent } from '../../../types/Project';
+import { CopyableCodeBlock } from '../../../components/CopyableCodeBlock';
 
 export default function Projeto({ project }: ProjectUID) {
   const router = useRouter();
@@ -19,6 +21,10 @@ export default function Projeto({ project }: ProjectUID) {
   }
 
   const thumb = project.thumb?.length > 0 ? project.thumb : noDataImg;
+
+  const code = (children: ReactNode) => (
+    <CopyableCodeBlock content={children as unknown as string} />
+  );
 
   return (
     <Container>
@@ -55,22 +61,36 @@ export default function Projeto({ project }: ProjectUID) {
       <Thumb title={project.title} type={project.type} imgURL={thumb} />
       <main>
         <p>{project.description}</p>
-        <a href={project.link} target="_blank" rel="noreferrer">
-          <button type="button">Ver projeto repositório</button>
-        </a>
+        <ReactMarkdown
+          components={{
+            code: ({ children }) => code(children)
+          }}
+          className="reactMarkdown"
+        >
+          {project.content}
+        </ReactMarkdown>
+
+        <div className="contentAction">
+          <a href={project.link} target="_blank" rel="noreferrer">
+            <button type="button">Ver repositório</button>
+          </a>
+          {project.homepage && (
+            <a href={project.homepage} target="_blank" rel="noreferrer">
+              <button type="button">Visitar site</button>
+            </a>
+          )}
+        </div>
       </main>
     </Container>
   );
 }
 
 export const getServerSideProps: GetServerSideProps = async context => {
-  const { slug } = context.params;
+  const { slug }: { slug?: string } = context.params;
 
   let readmeData: ReadmeContent;
   try {
-    readmeData = await useFetchData<ReadmeContent>(
-      `${urlReadmeGithub}${slug}/readme`
-    );
+    readmeData = await fetchData<ReadmeContent>(urlReadmeGithub(slug).readme);
   } catch (error) {
     if (error.response && error.response.status === 404) {
       readmeData = { ...readmeData, content: '' };
@@ -79,7 +99,7 @@ export const getServerSideProps: GetServerSideProps = async context => {
     }
   }
 
-  const projectData = await useFetchData<Project>(`${urlReadmeGithub}${slug}`);
+  const projectData = await fetchData<Project>(urlReadmeGithub(slug).repo);
 
   const thumb = readmeData ? decodeBase64(readmeData.content) : '';
 

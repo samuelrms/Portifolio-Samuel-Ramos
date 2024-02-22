@@ -1,4 +1,4 @@
-const instagram = 'https://www.instagram.com/ramoos.sam';
+const instagram = 'https://www.instagram.com/samuelramos.dev';
 const github = 'https://www.github.com/samuelrms';
 const linkedIn = 'https://www.linkedin.com/in/samuelaoramos/';
 const whatsApp = 'https://api.whatsapp.com/send?1=pt_BR&phone=5534988676166';

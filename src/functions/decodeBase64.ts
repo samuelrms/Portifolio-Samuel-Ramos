@@ -1,17 +1,12 @@
 export const decodeBase64 = (value: string, useMask: boolean = false) => {
   if (!value) return null;
 
-  const decoded = atob(value);
+  const decoded = Buffer.from(value, 'base64').toString('utf-8');
   if (useMask) {
     return decoded;
   }
-  const regex =
-    /!\[.*]\((https:\/\/user-images\.githubusercontent\.com\/[^)]+)\)/;
-  const match = decoded.match(regex);
+  const regex = /!\[image]\((https:\/\/[^\s)]+)/;
+  const match = RegExp(regex).exec(decoded)?.[1];
 
-  if (match && match[1]) {
-    return match[1];
-  }
-
-  return null;
+  return match || null;
 };

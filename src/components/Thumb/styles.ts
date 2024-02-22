@@ -4,7 +4,7 @@ import { Props } from './Thumb.types';
 export const Container = styled.div<Partial<Props>>`
   width: 100%;
   background: url(${({ imgURL }) => imgURL}) no-repeat;
-  background-position: inherit;
+  background-position: center;
   background-size: cover;
   height: 36rem;
   position: relative;

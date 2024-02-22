@@ -11,12 +11,13 @@ import {
   Projects
 } from '../components';
 import { decodeBase64 } from '../functions/decodeBase64';
+import { projectByGithub } from '../functions/fetchSearchProjects';
 import { useFetchData } from '../hooks';
 import { urlReadmeGithub } from '../mocks';
 import { HomeContainer } from '../styles/HomeStyles';
 import { PropsHome } from '../types/Home.types';
 import { ReadmeContent } from '../types/Project';
-import { projectByGithub, projectResponse } from '../utils/getQueryPrismic';
+import { projectResponse } from '../utils/getQueryPrismic';
 
 export default function Home({
   projects,
@@ -90,7 +91,7 @@ export const getServerSideProps: GetServerSideProps = async () => {
     ).map(async project => {
       try {
         const readmeData = await useFetchData<ReadmeContent>(
-          `${urlReadmeGithub}${project.name}/readme`
+          urlReadmeGithub(project.name).readme
         );
         return {
           slug: project.name,

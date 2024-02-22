@@ -25,6 +25,7 @@ export const Guideline: FC<Props> = ({ data, count }) => {
               key={value.name_skill}
               title={value.name_skill}
               icon={icons[i].icon}
+              href={icons[i].documentation}
             />
           ))}
       </section>

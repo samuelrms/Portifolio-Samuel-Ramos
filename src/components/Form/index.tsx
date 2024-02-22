@@ -3,8 +3,10 @@ import { toast } from 'react-hot-toast';
 import emailjs from 'emailjs-com';
 
 import { useTheme } from 'styled-components';
-import { Container, Input, TextArea } from './styles';
+import { Container } from './styles';
 import { maskOnlyLetters, maskPhone } from '../../utils/mask';
+import { Input } from '../Input';
+import { TextArea } from '../TextArea';
 
 export const Form = () => {
   const [name, setName] = useState('');

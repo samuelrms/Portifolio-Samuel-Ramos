@@ -66,10 +66,18 @@ export type ProjectProps = {
   created_at: string;
   updated_at: string;
   name: string;
+  content: string;
+  homepage: string;
 };
 
 export interface PropsProjectArr {
   projects: ProjectProps[];
+}
+
+export interface Projects {
+  items: ProjectProps[];
+  incomplete_results: false;
+  total_count: number;
 }
 
 export interface LatestJobsArr {

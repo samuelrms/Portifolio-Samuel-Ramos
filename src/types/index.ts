@@ -6,3 +6,8 @@ export type Image = {
 };
 
 export type Year = number | string;
+
+export type FormValues = {
+  searchProjects?: string;
+  searchCourses?: string;
+};

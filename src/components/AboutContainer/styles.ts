@@ -122,6 +122,7 @@ export const ContentImage = styled.div`
   > img {
     width: 20rem;
     flex: 1;
-    border-radius: 100%;
+    border-radius: 50%;
+    aspect-ratio: 1/1;
   }
 `;
