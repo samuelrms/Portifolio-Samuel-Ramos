@@ -29,7 +29,8 @@ export const Experiences: FC<Props> = ({ experience }) => {
               description_function,
               entry_year,
               exit_year,
-              function: title
+              function: title,
+              link
             }: WorkExperience) => (
               <ExperiencesItem
                 key={exit_year}
@@ -37,7 +38,7 @@ export const Experiences: FC<Props> = ({ experience }) => {
                 yearExit={exit_year}
                 description={description_function}
                 title={title}
-                href={`/experiencia/${title}`}
+                href={`/experiencia/${link}`}
               />
             )
           )}

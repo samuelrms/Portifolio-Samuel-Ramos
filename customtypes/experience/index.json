@@ -58,6 +58,13 @@
                 "label": "description_function",
                 "placeholder": ""
               }
+            },
+            "link": {
+              "type": "Text",
+              "config": {
+                "label": "link",
+                "placeholder": ""
+              }
             }
           }
         }
