@@ -7,7 +7,6 @@ import { ExperienceProps } from '../../types/Experience.types';
 import { projectResponse } from '../../utils/getQueryPrismic';
 
 export default function Experience({ experiences }: ExperienceProps) {
-  console.log(experiences);
   return (
     <Container>
       <Head>
@@ -64,6 +63,8 @@ export default function Experience({ experiences }: ExperienceProps) {
               title={data?.enterprise}
               slug={data?.route}
               type={data?.function}
+              start={data?.entry_year}
+              end={data?.exit_year}
             />
           ))}
         </section>
@@ -73,12 +74,25 @@ export default function Experience({ experiences }: ExperienceProps) {
 }
 
 export const getServerSideProps: GetServerSideProps = async () => {
-  const experiences = (await projectResponse('experience_list')).results.map(
+  const experience = (await projectResponse('experience_list')).results.map(
     res => ({
       route: res.uid,
       ...res.data
     })
   );
+
+  const experiences = experience.sort((a, b) => {
+    if (a.exit_year === 'Atualmente') return -1;
+    if (b.exit_year === 'Atualmente') return 1;
+
+    const [monthA, yearA] = a.exit_year.split('/').map(Number);
+    const [monthB, yearB] = b.exit_year.split('/').map(Number);
+
+    if (yearA !== yearB) {
+      return yearB - yearA;
+    }
+    return monthB - monthA;
+  });
 
   return {
     props: { experiences }
