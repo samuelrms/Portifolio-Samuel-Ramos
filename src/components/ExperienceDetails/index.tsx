@@ -3,7 +3,13 @@ import { FC } from 'react';
 import { Props } from './ExperienceDetails.types';
 import { Container } from './styles';
 
-export const ExperienceDetails: FC<Props> = ({ title, slug, type }) => (
+export const ExperienceDetails: FC<Props> = ({
+  title,
+  slug,
+  type,
+  start,
+  end
+}) => (
   <Container data-aos="fade-up">
     <Link
       href={`/experiencia/${slug}`}
@@ -11,7 +17,12 @@ export const ExperienceDetails: FC<Props> = ({ title, slug, type }) => (
     >
       <div className="overlay" />
       <section>
-        <h1>{title}</h1>
+        <div className="contentPeriod">
+          <h1>{title}</h1>
+          <h2>
+            {start} - {end}
+          </h2>
+        </div>
         <h2>{type}</h2>
       </section>
     </Link>

@@ -25,6 +25,8 @@ export const Container = styled.div<Partial<Props>>`
 
     > section {
       z-index: 2;
+      width: 100%;
+
       h1 {
         color: ${({ theme }) => theme.primary};
         font-size: 1.5rem;
@@ -46,6 +48,20 @@ export const Container = styled.div<Partial<Props>>`
       background: ${({ theme }) => theme.gradient};
       opacity: 0.7;
       transition: 0.5s;
+    }
+
+    .contentPeriod {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 1rem;
+      width: 100%;
+      align-items: flex-end;
+
+      h2 {
+        color: ${({ theme }) => theme.secondary};
+        font-size: 0.75rem;
+        font-weight: 300;
+      }
     }
   }
 `;
