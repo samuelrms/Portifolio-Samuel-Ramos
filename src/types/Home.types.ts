@@ -45,6 +45,7 @@ export interface WorkExperience {
   exit_year: Year;
   function: string;
   description_function: string;
+  link: string;
 }
 
 export interface Experience {
