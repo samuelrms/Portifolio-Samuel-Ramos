@@ -7,7 +7,7 @@ export const Thumb: FC<Props> = ({ imgURL, title, type }) => (
   <Container imgURL={imgURL}>
     <div className="overlay" />
     <section>
-      <h1>{title}</h1>
+      <h1>{title.replace(/-/g, ' ')}</h1>
       <h2>{type}</h2>
     </section>
   </Container>

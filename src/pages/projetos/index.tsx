@@ -4,16 +4,16 @@ import { useEffect, useRef, useState } from 'react';
 import { useFormContext } from 'react-hook-form';
 
 import { ProjectDetails, SectionTitle } from '../../components';
-import { Container } from '../../styles/ProjectsStyles';
-import { ProjectProps, PropsProjectArr } from '../../types/Home.types';
-import { noDataImg, urlReadmeGithub } from '../../mocks';
-import { projectByGithub } from '../../functions/fetchSearchProjects';
-import { FormValues } from '../../types';
-import { useFetchData } from '../../hooks';
-import { ReadmeContent } from '../../types/Project';
-import { decodeBase64 } from '../../functions/decodeBase64';
-import { removeCharacter } from '../../functions/clearStr';
 import { Search } from '../../components/Search';
+import { removeCharacter } from '../../functions/clearStr';
+import { decodeBase64 } from '../../functions/decodeBase64';
+import { projectByGithub } from '../../functions/fetchSearchProjects';
+import { useFetchData } from '../../hooks';
+import { noDataImg, urlReadmeGithub } from '../../mocks';
+import { Container } from '../../styles/ProjectsStyles';
+import { FormValues } from '../../types';
+import { ProjectProps, PropsProjectArr } from '../../types/Home.types';
+import { ReadmeContent } from '../../types/Project';
 
 export default function Projetos({ projects }: PropsProjectArr) {
   const [searchProject, setSearchProject] = useState<ProjectProps[]>(projects);

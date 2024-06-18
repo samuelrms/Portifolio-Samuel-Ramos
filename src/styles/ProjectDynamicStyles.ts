@@ -104,6 +104,18 @@ export const Container = styled.div`
       text-transform: lowercase;
     }
 
+    pre {
+      background: none;
+      border-radius: 0.5rem;
+      padding: 0;
+      margin-bottom: 0;
+      color: ${({ theme }) => theme.textLight};
+
+      > div {
+        gap: 1rem;
+      }
+    }
+
     ul {
       display: flex;
       flex-wrap: wrap;

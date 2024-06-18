@@ -70,6 +70,7 @@ export const Container = styled.div<Partial<Props>>`
         color: ${({ theme }) => theme.primary};
         font-size: 2.5rem;
         text-shadow: ${({ theme }) => theme.textShadow};
+        text-transform: capitalize;
       }
 
       h2 {
