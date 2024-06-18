@@ -1,5 +1,5 @@
-import { FC } from 'react';
 import Link from 'next/link';
+import { FC } from 'react';
 import { Props } from './ProjectDetails.types';
 import { Container } from './styles';
 
@@ -11,7 +11,7 @@ export const ProjectDetails: FC<Props> = ({ title, imgURL, slug, type }) => (
     >
       <div className="overlay" />
       <section>
-        <h1>{title}</h1>
+        <h1>{title.replace(/-/g, ' ')}</h1>
         <h2>{type}</h2>
       </section>
     </Link>
