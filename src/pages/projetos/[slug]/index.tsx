@@ -5,13 +5,13 @@ import ReactMarkdown from 'react-markdown';
 
 import { ReactNode } from 'react';
 import { LoadScreen, Thumb } from '../../../components';
-import { Container } from '../../../styles/ProjectDynamicStyles';
-import { ProjectUID } from '../../../types/Home.types';
+import { CopyableCodeBlock } from '../../../components/CopyableCodeBlock';
+import { decodeBase64 } from '../../../functions/decodeBase64';
 import { useFetchData as fetchData } from '../../../hooks';
 import { noDataImg, urlReadmeGithub } from '../../../mocks';
-import { decodeBase64 } from '../../../functions/decodeBase64';
+import { Container } from '../../../styles/ProjectDynamicStyles';
+import { ProjectUID } from '../../../types/Home.types';
 import { Project, ReadmeContent } from '../../../types/Project';
-import { CopyableCodeBlock } from '../../../components/CopyableCodeBlock';
 
 export default function Projeto({ project }: ProjectUID) {
   const router = useRouter();
@@ -65,7 +65,7 @@ export default function Projeto({ project }: ProjectUID) {
           components={{
             code: ({ children }) => code(children)
           }}
-          className="reactMarkdown"
+          className="reactMarkdown markdown-body"
         >
           {project.content}
         </ReactMarkdown>
