@@ -22,6 +22,7 @@ export const Container = styled.div<Partial<Props>>`
       color: ${({ theme }) => theme.primary};
       font-size: 3rem;
       text-shadow: 8px 8px 8px rgba(0, 0, 0, 0.6);
+      text-transform: capitalize;
     }
 
     h2 {
