@@ -1,16 +1,17 @@
-import { ThemeProvider } from 'styled-components';
+import { Analytics } from '@vercel/analytics/react';
 import { useEffect } from 'react';
 import { Toaster } from 'react-hot-toast';
-import { Analytics } from '@vercel/analytics/react';
+import { ThemeProvider } from 'styled-components';
 
 import Aos from 'aos';
 import 'aos/dist/aos.css';
 import NextNProgress from 'nextjs-progressbar';
-import { useForm, FormProvider } from 'react-hook-form';
+import { FormProvider, useForm } from 'react-hook-form';
 
-import GlobalStyles from '../styles/global';
-import theme from '../styles/theme';
 import { Footer, Header } from '../components';
+import GlobalStyles from '../styles/global';
+import '../styles/md.css';
+import theme from '../styles/theme';
 import { FormValues } from '../types';
 
 function MyApp({ Component, pageProps }) {
